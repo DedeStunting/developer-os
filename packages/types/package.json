@@ -1,0 +1,14 @@
+{
+  "name": "@developer-os/types",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./project": "./project.ts",
+    "./resume": "./resume.ts",
+    "./navigation": "./navigation.ts",
+    "./seo": "./seo.ts",
+    "./blog": "./blog.ts"
+  }
+}

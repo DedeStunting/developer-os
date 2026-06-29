@@ -13,6 +13,7 @@
     "./services": "./services/index.ts"
   },
   "dependencies": {
-    "@developer-os/platform": "workspace:*"
+    "@developer-os/platform": "workspace:*",
+    "@developer-os/types": "workspace:*"
   }
 }
