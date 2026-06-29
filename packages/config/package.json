@@ -1,0 +1,15 @@
+{
+  "name": "@developer-os/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./site": "./site.ts",
+    "./navigation": "./navigation.ts",
+    "./features": "./features.ts",
+    "./analytics": "./analytics.ts",
+    "./metadata": "./metadata.ts",
+    "./theme": "./theme.ts"
+  }
+}
