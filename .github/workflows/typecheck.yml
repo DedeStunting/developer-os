@@ -1,0 +1,12 @@
+# TODO(Phase 3): Wire TypeScript typecheck on push and pull_request
+
+name: Typecheck (placeholder)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "TODO(Phase 3): Implement typecheck workflow — see comments in this file"

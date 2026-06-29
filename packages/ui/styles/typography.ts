@@ -1,19 +1,18 @@
 export const typography = {
   fontFamily: {
-    sans: "var(--font-sans, ui-sans-serif, system-ui, sans-serif)",
-    mono: "var(--font-mono, ui-monospace, monospace)",
+    sans: "var(--font-geist-sans, ui-sans-serif, system-ui, sans-serif)",
+    mono: "var(--font-geist-mono, ui-monospace, monospace)",
   },
   fontSize: {
-    xs: 12,
+    caption: 12,
     sm: 14,
     base: 16,
-    lg: 18,
-    xl: 20,
-    "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
+    lg: 20,
+    xl: 24,
+    "2xl": 30,
+    "3xl": 36,
+    "4xl": 48,
+    "5xl": 64,
   },
   fontWeight: {
     normal: 400,

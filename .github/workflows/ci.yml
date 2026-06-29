@@ -1,0 +1,16 @@
+# TODO(Phase 3): Wire full CI pipeline
+# - typecheck (pnpm turbo typecheck)
+# - lint (pnpm turbo lint)
+# - build (pnpm turbo build)
+# - storybook build (pnpm --filter @developer-os/storybook build)
+
+name: CI (placeholder)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "TODO(Phase 3): Implement CI workflow — see comments in this file"

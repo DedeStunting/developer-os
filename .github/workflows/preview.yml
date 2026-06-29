@@ -1,0 +1,15 @@
+# TODO(Phase 3): Wire Vercel preview deployments on pull_request
+# - Deploy preview URL
+# - Comment on PR
+# - Lighthouse CI on preview (future)
+
+name: Preview (placeholder)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "TODO(Phase 3): Implement preview workflow — see comments in this file"

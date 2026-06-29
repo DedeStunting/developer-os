@@ -1,0 +1,3 @@
+// Composite component stories
+
+export {};
