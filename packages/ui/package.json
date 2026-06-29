@@ -1,0 +1,19 @@
+{
+  "name": "@developer-os/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./styles": "./styles/index.ts",
+    "./styles/*": "./styles/*.ts",
+    "./components": "./components/index.ts",
+    "./hooks": "./hooks/index.ts",
+    "./lib": "./lib/index.ts",
+    "./icons": "./icons/index.ts",
+    "./providers": "./providers/index.ts"
+  },
+  "dependencies": {
+    "@developer-os/types": "workspace:*"
+  }
+}
