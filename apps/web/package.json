@@ -1,0 +1,23 @@
+{
+  "name": "@developer-os/web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@developer-os/config": "workspace:*",
+    "@developer-os/core": "workspace:*",
+    "@developer-os/types": "workspace:*",
+    "@developer-os/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "next": "^15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.3"
+  }
+}
