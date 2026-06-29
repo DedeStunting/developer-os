@@ -113,45 +113,45 @@ This page is the engineering case-study engine. Bundo is the reference implement
 
 ## Section Template (Required for All Projects)
 
-| # | Section | Content Source | MVP |
-|---|---------|----------------|-----|
-| 1 | Hero | `metadata.ts` | ✓ |
-| 2 | Overview | `overview.mdx` | ✓ |
-| 3 | The Problem | `overview.mdx` | ✓ |
-| 4 | Architecture | `architecture.mdx` | ✓ |
-| 5 | Technology Choices | `metadata.ts` + MDX | ✓ |
-| 6 | Challenges | `overview.mdx` | ✓ |
-| 7 | Lessons Learned | `lessons.mdx` | ✓ |
-| 8 | Next Project | Derived from project list | ✓ |
+| #   | Section            | Content Source            | MVP |
+| --- | ------------------ | ------------------------- | --- |
+| 1   | Hero               | `metadata.ts`             | ✓   |
+| 2   | Overview           | `overview.mdx`            | ✓   |
+| 3   | The Problem        | `overview.mdx`            | ✓   |
+| 4   | Architecture       | `architecture.mdx`        | ✓   |
+| 5   | Technology Choices | `metadata.ts` + MDX       | ✓   |
+| 6   | Challenges         | `overview.mdx`            | ✓   |
+| 7   | Lessons Learned    | `lessons.mdx`             | ✓   |
+| 8   | Next Project       | Derived from project list | ✓   |
 
 ### Future Sections (Post-MVP)
 
-| Section | Epic |
-|---------|------|
+| Section               | Epic   |
+| --------------------- | ------ |
 | System Design diagram | Epic 4 |
-| API Design | Epic 4 |
-| Security | Epic 4 |
-| Performance | Epic 4 |
-| Deployment | Epic 4 |
-| Screenshot Gallery | Epic 4 |
-| Future Improvements | Epic 4 |
+| API Design            | Epic 4 |
+| Security              | Epic 4 |
+| Performance           | Epic 4 |
+| Deployment            | Epic 4 |
+| Screenshot Gallery    | Epic 4 |
+| Future Improvements   | Epic 4 |
 
 ---
 
 ## Content Width
 
-| Section | Container |
-|---------|-----------|
-| Hero | `container` (1280px) |
-| Prose sections | `container-narrow` (768px) |
+| Section              | Container                           |
+| -------------------- | ----------------------------------- |
+| Hero                 | `container` (1280px)                |
+| Prose sections       | `container-narrow` (768px)          |
 | Architecture diagram | `container` (full width within max) |
-| Next Project | `container` |
+| Next Project         | `container`                         |
 
 ---
 
 ## MDX Prose Layout
 
-```
+````
 ┌──────────────────────────────────────┐
 │  Section Heading (h2)                │
 │  ──────────────────────────────────  │
@@ -165,20 +165,20 @@ This page is the engineering case-study engine. Bundo is the reference implement
 │  ```code blocks```                   │
 │                                      │
 └──────────────────────────────────────┘
-```
+````
 
 ---
 
 ## Hero Specifications
 
-| Element | Detail |
-|---------|--------|
-| Title | `metadata.title` |
-| Summary | `metadata.summary` |
-| Tech badges | `metadata.technologies` |
-| Live Demo | `metadata.liveUrl` (if exists) |
-| GitHub | `metadata.repositoryUrl` |
-| Screenshot | Right side desktop, below title mobile |
+| Element     | Detail                                 |
+| ----------- | -------------------------------------- |
+| Title       | `metadata.title`                       |
+| Summary     | `metadata.summary`                     |
+| Tech badges | `metadata.technologies`                |
+| Live Demo   | `metadata.liveUrl` (if exists)         |
+| GitHub      | `metadata.repositoryUrl`               |
+| Screenshot  | Right side desktop, below title mobile |
 
 ---
 
@@ -196,18 +196,18 @@ Bundo → Real-Time Chat → Pizza Ordering → (loop or end)
 
 Implementation lives in `apps/web/src/features/projects/`.
 
-| Subfolder | Responsibility |
-|-----------|----------------|
+| Subfolder     | Responsibility                             |
+| ------------- | ------------------------------------------ |
 | `components/` | ProjectCard, CaseStudyHero, ProjectContent |
-| `lib/` | Project loader, slug validation |
-| `index.ts` | Public exports |
+| `lib/`        | Project loader, slug validation            |
+| `index.ts`    | Public exports                             |
 
 ---
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `14-content-strategy.md` | Case study content requirements |
-| `17-projects-wireframe.md` | Projects listing |
-| `15-page-specifications.md` | Project detail spec |
+| Document                    | Scope                           |
+| --------------------------- | ------------------------------- |
+| `14-content-strategy.md`    | Case study content requirements |
+| `17-projects-wireframe.md`  | Projects listing                |
+| `15-page-specifications.md` | Project detail spec             |

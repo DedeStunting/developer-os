@@ -83,11 +83,11 @@ We don't have enough projects yet. Filters add complexity without value at three
 
 ## Section Specifications
 
-| Section | Content | Notes |
-|---------|---------|-------|
-| Page Hero | Title + one-line description | Static copy |
-| Project Grid | 3 project cards | Featured first, then production, then demo |
-| Footer | Standard | — |
+| Section      | Content                      | Notes                                      |
+| ------------ | ---------------------------- | ------------------------------------------ |
+| Page Hero    | Title + one-line description | Static copy                                |
+| Project Grid | 3 project cards              | Featured first, then production, then demo |
+| Footer       | Standard                     | —                                          |
 
 ---
 
@@ -108,32 +108,32 @@ We don't have enough projects yet. Filters add complexity without value at three
 
 ## Ordering Rules
 
-| Order | Project | Reason |
-|-------|---------|--------|
-| 1 | Bundo | Featured, flagship case study |
-| 2 | Real-Time Chat | Production project |
-| 3 | Pizza Ordering Platform | Learning/demo project |
+| Order | Project                 | Reason                        |
+| ----- | ----------------------- | ----------------------------- |
+| 1     | Bundo                   | Featured, flagship case study |
+| 2     | Real-Time Chat          | Production project            |
+| 3     | Pizza Ordering Platform | Learning/demo project         |
 
 ---
 
 ## Content Requirements
 
-| Element | Source |
-|---------|--------|
-| Card data | `portfolio/projects/*/metadata.ts` |
-| Summary | `metadata.summary` |
-| Technologies | `metadata.technologies` (first 3) |
-| Thumbnail | `screenshots.ts` (future) or placeholder |
+| Element      | Source                                   |
+| ------------ | ---------------------------------------- |
+| Card data    | `portfolio/projects/*/metadata.ts`       |
+| Summary      | `metadata.summary`                       |
+| Technologies | `metadata.technologies` (first 3)        |
+| Thumbnail    | `screenshots.ts` (future) or placeholder |
 
 ---
 
 ## Responsive Grid
 
-| Breakpoint | Columns |
-|------------|---------|
-| Mobile (< 768px) | 1 |
-| Tablet (768–1024px) | 2 |
-| Desktop (> 1024px) | 3 |
+| Breakpoint          | Columns |
+| ------------------- | ------- |
+| Mobile (< 768px)    | 1       |
+| Tablet (768–1024px) | 2       |
+| Desktop (> 1024px)  | 3       |
 
 ---
 
@@ -153,7 +153,7 @@ Implementation lives in `apps/web/src/features/projects/`.
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `18-project-detail-wireframe.md` | Detail page template |
-| `15-page-specifications.md` | Projects implementation contract |
+| Document                         | Scope                            |
+| -------------------------------- | -------------------------------- |
+| `18-project-detail-wireframe.md` | Detail page template             |
+| `15-page-specifications.md`      | Projects implementation contract |

@@ -1,6 +1,19 @@
-// TODO(Phase 3): Configure Storybook preview
-// - Import @developer-os/ui styles and design tokens
-// - Set default background and font (Geist Sans)
-// - Configure a11y addon defaults
+import type { Preview } from "@storybook/react";
 
-export {};
+import "../styles/globals.css";
+
+const preview: Preview = {
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+    a11y: {
+      test: "todo",
+    },
+  },
+};
+
+export default preview;

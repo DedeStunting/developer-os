@@ -86,38 +86,38 @@ Everything else lives on the Projects page. The home page is a conversion funnel
 
 ## Section Specifications
 
-| Section | Height | Content | Interaction |
-|---------|--------|---------|-------------|
-| Navbar | 64px fixed | Logo, nav links, CTA | Sticky, transparent → solid |
-| Hero | ~60vh desktop | Name, title, mission, 2 CTAs | None |
-| Featured Project | Auto | Bundo card only | Link to case study |
-| Experience | Auto | 2 most recent roles | Link to resume |
-| Technologies | Auto | Top 6–8 skill badges | None |
-| CTA | Auto | Single line + button | Link to contact |
-| Footer | Auto | Links, copyright | External + internal links |
+| Section          | Height        | Content                      | Interaction                 |
+| ---------------- | ------------- | ---------------------------- | --------------------------- |
+| Navbar           | 64px fixed    | Logo, nav links, CTA         | Sticky, transparent → solid |
+| Hero             | ~60vh desktop | Name, title, mission, 2 CTAs | None                        |
+| Featured Project | Auto          | Bundo card only              | Link to case study          |
+| Experience       | Auto          | 2 most recent roles          | Link to resume              |
+| Technologies     | Auto          | Top 6–8 skill badges         | None                        |
+| CTA              | Auto          | Single line + button         | Link to contact             |
+| Footer           | Auto          | Links, copyright             | External + internal links   |
 
 ---
 
 ## Content Requirements
 
-| Element | Source | Max Length |
-|---------|--------|------------|
-| Name | `resume/profile.ts` | — |
-| Title | `resume/profile.ts` | — |
-| Mission | `resume/profile.ts` → summary | 1 sentence |
-| Featured project | `portfolio/projects/bundo/` | Card summary only |
-| Experience | `resume/experience.ts` | 2 entries |
-| Skills | `resume/skills.ts` | Top categories |
+| Element          | Source                        | Max Length        |
+| ---------------- | ----------------------------- | ----------------- |
+| Name             | `resume/profile.ts`           | —                 |
+| Title            | `resume/profile.ts`           | —                 |
+| Mission          | `resume/profile.ts` → summary | 1 sentence        |
+| Featured project | `portfolio/projects/bundo/`   | Card summary only |
+| Experience       | `resume/experience.ts`        | 2 entries         |
+| Skills           | `resume/skills.ts`            | Top categories    |
 
 ---
 
 ## Responsive Behavior
 
-| Breakpoint | Changes |
-|------------|---------|
-| Mobile (< 768px) | Hero stacks; featured project image above text; experience cards stack |
-| Tablet (768–1024px) | Hero centered; featured project side-by-side |
-| Desktop (> 1024px) | Full wireframe as shown |
+| Breakpoint          | Changes                                                                |
+| ------------------- | ---------------------------------------------------------------------- |
+| Mobile (< 768px)    | Hero stacks; featured project image above text; experience cards stack |
+| Tablet (768–1024px) | Hero centered; featured project side-by-side                           |
+| Desktop (> 1024px)  | Full wireframe as shown                                                |
 
 ---
 
@@ -140,8 +140,8 @@ Implementation lives in `apps/web/src/features/home/`.
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
+| Document                    | Scope                        |
+| --------------------------- | ---------------------------- |
 | `15-page-specifications.md` | Home implementation contract |
-| `14-content-strategy.md` | Home content requirements |
-| `11-layout-system.md` | Home section anatomy |
+| `14-content-strategy.md`    | Home content requirements    |
+| `11-layout-system.md`       | Home section anatomy         |

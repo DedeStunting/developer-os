@@ -16,14 +16,14 @@ This document defines the technical architecture of Developer OS. It is the auth
 
 ### Architectural Goals
 
-| Goal | Description |
-|------|-------------|
-| **Maintainability** | Code and content are organized so changes are localized and predictable. |
-| **Scalability** | New products, pages, and content types fit without architectural rewrites. |
-| **Replaceability** | Applications are thin consumers; the platform and core layers persist if UI frameworks change. |
-| **Performance** | Static generation by default; client JavaScript minimized. |
-| **Testability** | Business logic in `packages/core` is framework-agnostic and unit-testable. |
-| **Developer Experience** | Clear dependency rules, typed contracts, and schema validation reduce errors. |
+| Goal                     | Description                                                                                    |
+| ------------------------ | ---------------------------------------------------------------------------------------------- |
+| **Maintainability**      | Code and content are organized so changes are localized and predictable.                       |
+| **Scalability**          | New products, pages, and content types fit without architectural rewrites.                     |
+| **Replaceability**       | Applications are thin consumers; the platform and core layers persist if UI frameworks change. |
+| **Performance**          | Static generation by default; client JavaScript minimized.                                     |
+| **Testability**          | Business logic in `packages/core` is framework-agnostic and unit-testable.                     |
+| **Developer Experience** | Clear dependency rules, typed contracts, and schema validation reduce errors.                  |
 
 ---
 
@@ -52,11 +52,11 @@ Developer OS is a **platform**, not a website. Applications are products that co
 
 ### Product Applications
 
-| Product | Path | Purpose |
-|---------|------|---------|
-| **Web** | `apps/web` | Primary website — portfolio, resume, blog, contact, and all public-facing pages |
-| **Studio** | `apps/studio` | Future content management application |
-| **Resume** | `apps/resume` | Dedicated resume generator — ATS and branded PDF variants |
+| Product    | Path          | Purpose                                                                         |
+| ---------- | ------------- | ------------------------------------------------------------------------------- |
+| **Web**    | `apps/web`    | Primary website — portfolio, resume, blog, contact, and all public-facing pages |
+| **Studio** | `apps/studio` | Future content management application                                           |
+| **Resume** | `apps/resume` | Dedicated resume generator — ATS and branded PDF variants                       |
 
 "Portfolio" is a feature within Web, not a product. Web grows to contain portfolio, blog, speaking, open source, uses, notes, architecture, timeline, certifications, reading, and contact — without renaming the application.
 
@@ -131,14 +131,14 @@ Applications may import from `ui`, `core`, `types`, and platform schemas. Core m
 
 ### Forbidden
 
-| Rule | Reason |
-|------|--------|
-| `platform` → React | Platform must remain framework-agnostic |
-| `platform` → Next.js | Platform must remain framework-agnostic |
-| `packages/core` → Next.js | Core must remain framework-agnostic |
-| `packages/core` → React | Core must remain framework-agnostic |
-| `packages/types` → any app or UI package | Types are leaf contracts |
-| `apps/*` → `platform/content` directly | Apps consume content through `packages/core` |
+| Rule                                     | Reason                                       |
+| ---------------------------------------- | -------------------------------------------- |
+| `platform` → React                       | Platform must remain framework-agnostic      |
+| `platform` → Next.js                     | Platform must remain framework-agnostic      |
+| `packages/core` → Next.js                | Core must remain framework-agnostic          |
+| `packages/core` → React                  | Core must remain framework-agnostic          |
+| `packages/types` → any app or UI package | Types are leaf contracts                     |
+| `apps/*` → `platform/content` directly   | Apps consume content through `packages/core` |
 
 These rules keep the architecture clean and prevent coupling that would make applications difficult to replace.
 
@@ -176,13 +176,13 @@ platform
 
 TypeScript interfaces define contracts between packages and applications. Zod schemas in `platform/schemas/` validate data at runtime. Types and schemas describe the same shapes — schemas enforce, types contract.
 
-| File | Domain |
-|------|--------|
-| `project.ts` | Project metadata and listing |
-| `resume.ts` | Profile, experience, education, skills |
-| `navigation.ts` | Site navigation items |
-| `seo.ts` | Page-level SEO metadata |
-| `blog.ts` | Blog post metadata (future) |
+| File            | Domain                                 |
+| --------------- | -------------------------------------- |
+| `project.ts`    | Project metadata and listing           |
+| `resume.ts`     | Profile, experience, education, skills |
+| `navigation.ts` | Site navigation items                  |
+| `seo.ts`        | Page-level SEO metadata                |
+| `blog.ts`       | Blog post metadata (future)            |
 
 ---
 
@@ -190,21 +190,21 @@ TypeScript interfaces define contracts between packages and applications. Zod sc
 
 Every page must declare its rendering strategy at implementation time.
 
-| Page | Strategy | Rationale |
-|------|----------|-----------|
-| Home | Static | Content rarely changes; maximum performance |
-| About | Static | Content rarely changes |
-| Projects (listing) | Static | Rebuilt on content change |
-| Project Details | Static | MDX + metadata compiled at build time |
-| Resume | Static | Content-driven; PDF generated separately |
-| Contact | Server Action | Form submission requires server runtime |
+| Page               | Strategy      | Rationale                                   |
+| ------------------ | ------------- | ------------------------------------------- |
+| Home               | Static        | Content rarely changes; maximum performance |
+| About              | Static        | Content rarely changes                      |
+| Projects (listing) | Static        | Rebuilt on content change                   |
+| Project Details    | Static        | MDX + metadata compiled at build time       |
+| Resume             | Static        | Content-driven; PDF generated separately    |
+| Contact            | Server Action | Form submission requires server runtime     |
 
 ### Component Defaults
 
-| Type | Default | When to use Client |
-|------|---------|-------------------|
-| Server Component | Yes | Default for all pages and layouts |
-| Client Component | No | Forms, animations, interactive UI only |
+| Type             | Default | When to use Client                     |
+| ---------------- | ------- | -------------------------------------- |
+| Server Component | Yes     | Default for all pages and layouts      |
+| Client Component | No      | Forms, animations, interactive UI only |
 
 ### Caching
 
@@ -243,14 +243,14 @@ Build fails on invalid schema. No invalid content reaches production.
 
 ## 8. Error Boundaries
 
-| Failure | Behavior |
-|---------|----------|
-| Missing content file | `404` page |
-| Invalid schema at build time | Build failure with descriptive error |
-| Invalid schema at runtime | Log error; render fallback UI |
-| Contact form submission failure | Graceful UI message; no stack trace exposed |
-| Missing project slug | `404` page |
-| External link failure (GitHub, demo) | Link renders; failure is external |
+| Failure                              | Behavior                                    |
+| ------------------------------------ | ------------------------------------------- |
+| Missing content file                 | `404` page                                  |
+| Invalid schema at build time         | Build failure with descriptive error        |
+| Invalid schema at runtime            | Log error; render fallback UI               |
+| Contact form submission failure      | Graceful UI message; no stack trace exposed |
+| Missing project slug                 | `404` page                                  |
+| External link failure (GitHub, demo) | Link renders; failure is external           |
 
 ### Error Page Strategy
 
@@ -264,11 +264,11 @@ Build fails on invalid schema. No invalid content reaches production.
 
 ### Targets
 
-| Metric | Target |
-|--------|--------|
-| Initial JavaScript | < 200 KB |
-| Lighthouse Performance | ≥ 95 |
-| Time to Interactive | < 2 seconds |
+| Metric                   | Target        |
+| ------------------------ | ------------- |
+| Initial JavaScript       | < 200 KB      |
+| Lighthouse Performance   | ≥ 95          |
+| Time to Interactive      | < 2 seconds   |
 | Largest Contentful Paint | < 1.5 seconds |
 
 ### Strategies
@@ -286,15 +286,15 @@ Build fails on invalid schema. No invalid content reaches production.
 
 Although Developer OS is a personal platform, production security standards apply.
 
-| Concern | Strategy |
-|---------|----------|
-| **CSP** | Content Security Policy headers via Next.js config |
-| **Secure headers** | `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` |
-| **Rate limiting** | Contact form rate limited per IP (Vercel middleware or Upstash) |
-| **Input validation** | Zod validation on all form inputs server-side |
-| **Email abuse prevention** | Honeypot field + rate limiting on contact form |
-| **Environment variables** | Secrets in Vercel env; never committed to repository |
-| **Dependencies** | Regular audit via `pnpm audit` in CI |
+| Concern                    | Strategy                                                        |
+| -------------------------- | --------------------------------------------------------------- |
+| **CSP**                    | Content Security Policy headers via Next.js config              |
+| **Secure headers**         | `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`  |
+| **Rate limiting**          | Contact form rate limited per IP (Vercel middleware or Upstash) |
+| **Input validation**       | Zod validation on all form inputs server-side                   |
+| **Email abuse prevention** | Honeypot field + rate limiting on contact form                  |
+| **Environment variables**  | Secrets in Vercel env; never committed to repository            |
+| **Dependencies**           | Regular audit via `pnpm audit` in CI                            |
 
 ---
 
@@ -334,28 +334,28 @@ Adding a new content type:
 
 ## 12. Technology Stack
 
-| Layer | Technology |
-|-------|------------|
-| Framework | Next.js 15 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS |
-| UI | shadcn/ui |
-| Content | MDX + TypeScript modules |
-| Validation | Zod |
-| Monorepo | Turborepo + pnpm |
-| Deployment | Vercel |
-| Email | Resend |
-| Analytics | Plausible (post-MVP) |
+| Layer      | Technology               |
+| ---------- | ------------------------ |
+| Framework  | Next.js 15 (App Router)  |
+| Language   | TypeScript               |
+| Styling    | Tailwind CSS             |
+| UI         | shadcn/ui                |
+| Content    | MDX + TypeScript modules |
+| Validation | Zod                      |
+| Monorepo   | Turborepo + pnpm         |
+| Deployment | Vercel                   |
+| Email      | Resend                   |
+| Analytics  | Plausible (post-MVP)     |
 
 ---
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `08-design-system.md` | Visual language and component standards |
-| `09-routing-architecture.md` | URL structure and navigation |
-| `10-component-architecture.md` | Component hierarchy and patterns |
-| `11-data-flow.md` | Content loading and prop flow |
-| `12-state-management.md` | Client and server state strategy |
-| `13-deployment-architecture.md` | CI/CD, environments, and hosting |
+| Document                        | Scope                                   |
+| ------------------------------- | --------------------------------------- |
+| `08-design-system.md`           | Visual language and component standards |
+| `09-routing-architecture.md`    | URL structure and navigation            |
+| `10-component-architecture.md`  | Component hierarchy and patterns        |
+| `11-data-flow.md`               | Content loading and prop flow           |
+| `12-state-management.md`        | Client and server state strategy        |
+| `13-deployment-architecture.md` | CI/CD, environments, and hosting        |

@@ -228,13 +228,13 @@ The system shall:
 
 ## 8. Non-functional Requirements
 
-| Requirement | Target |
-|-------------|--------|
-| Page load | < 2 seconds |
-| Lighthouse | 95+ |
-| Accessibility | WCAG AA |
-| SEO | 100 |
-| Mobile-first | Required |
+| Requirement   | Target      |
+| ------------- | ----------- |
+| Page load     | < 2 seconds |
+| Lighthouse    | 95+         |
+| Accessibility | WCAG AA     |
+| SEO           | 100         |
+| Mobile-first  | Required    |
 
 ## 9. Risks
 

@@ -16,14 +16,14 @@ Information architecture defines the structure of Developer OS — what pages ex
 
 ### Page Purpose Framework
 
-| User Question | Page |
-|---------------|------|
-| Who are you? | Home |
-| What do you build? | Projects |
-| How do you think? | Project Details (Case Studies) |
-| Can you do the job? | Resume |
-| Tell me your story | About |
-| How can I contact you? | Contact |
+| User Question          | Page                           |
+| ---------------------- | ------------------------------ |
+| Who are you?           | Home                           |
+| What do you build?     | Projects                       |
+| How do you think?      | Project Details (Case Studies) |
+| Can you do the job?    | Resume                         |
+| Tell me your story     | About                          |
+| How can I contact you? | Contact                        |
 
 ---
 
@@ -63,15 +63,15 @@ We do not design for features we are not building.
 
 ## 2. Page Inventory
 
-| Route | Page | User Question | Primary Persona |
-|-------|------|---------------|-----------------|
-| `/` | Home | Who are you? | Recruiter |
-| `/about` | About | Tell me your story | Founder |
-| `/projects` | Projects | What do you build? | Engineering Manager |
-| `/projects/[slug]` | Project Detail | How do you think? | Senior Engineer |
-| `/resume` | Resume | Can you do the job? | Recruiter |
-| `/contact` | Contact | How can I contact you? | Recruiter, Founder |
-| `/404` | Not Found | — | All |
+| Route              | Page           | User Question          | Primary Persona     |
+| ------------------ | -------------- | ---------------------- | ------------------- |
+| `/`                | Home           | Who are you?           | Recruiter           |
+| `/about`           | About          | Tell me your story     | Founder             |
+| `/projects`        | Projects       | What do you build?     | Engineering Manager |
+| `/projects/[slug]` | Project Detail | How do you think?      | Senior Engineer     |
+| `/resume`          | Resume         | Can you do the job?    | Recruiter           |
+| `/contact`         | Contact        | How can I contact you? | Recruiter, Founder  |
+| `/404`             | Not Found      | —                      | All                 |
 
 ---
 
@@ -85,25 +85,25 @@ Flat structure. No dropdowns. No mega menus.
 Home → Projects → Resume → About → Contact
 ```
 
-| Order | Label | Route | Rationale |
-|-------|-------|-------|-----------|
-| 1 | Home | `/` | Entry point |
-| 2 | Projects | `/projects` | Core value — engineering work |
-| 3 | Resume | `/resume` | Recruiter fast path |
-| 4 | About | `/about` | Deeper narrative |
-| 5 | Contact | `/contact` | Conversion |
+| Order | Label    | Route       | Rationale                     |
+| ----- | -------- | ----------- | ----------------------------- |
+| 1     | Home     | `/`         | Entry point                   |
+| 2     | Projects | `/projects` | Core value — engineering work |
+| 3     | Resume   | `/resume`   | Recruiter fast path           |
+| 4     | About    | `/about`    | Deeper narrative              |
+| 5     | Contact  | `/contact`  | Conversion                    |
 
 ### Footer Navigation
 
 Secondary navigation and external links.
 
-| Link | Type | MVP |
-|------|------|-----|
-| GitHub | External | ✓ |
-| Email | External | ✓ |
-| Resume | Internal | ✓ |
-| Bundo | Internal | ✓ |
-| RSS | External | Future |
+| Link        | Type     | MVP    |
+| ----------- | -------- | ------ |
+| GitHub      | External | ✓      |
+| Email       | External | ✓      |
+| Resume      | Internal | ✓      |
+| Bundo       | Internal | ✓      |
+| RSS         | External | Future |
 | Source Code | External | Future |
 
 ### CTA Placement
@@ -136,22 +136,22 @@ Applications consume content through `packages/core`. No page hardcodes content.
 
 ## 5. URL Strategy
 
-| Pattern | Example | Notes |
-|---------|---------|-------|
-| Top-level | `/about` | Lowercase, hyphenated |
-| Project slug | `/projects/bundo` | Matches `metadata.slug` |
-| No trailing slash | `/projects` | Canonical without slash |
-| 404 | Any invalid route | Custom not-found page |
+| Pattern           | Example           | Notes                   |
+| ----------------- | ----------------- | ----------------------- |
+| Top-level         | `/about`          | Lowercase, hyphenated   |
+| Project slug      | `/projects/bundo` | Matches `metadata.slug` |
+| No trailing slash | `/projects`       | Canonical without slash |
+| 404               | Any invalid route | Custom not-found page   |
 
 ### Reserved Routes (Future)
 
-| Route | Feature | Epic |
-|-------|---------|------|
-| `/blog` | Blog | Epic 6 |
-| `/blog/[slug]` | Blog post | Epic 6 |
-| `/speaking` | Speaking | Version 4 |
-| `/uses` | Uses page | Version 4 |
-| `/notes` | Developer notes | Epic 6 |
+| Route          | Feature         | Epic      |
+| -------------- | --------------- | --------- |
+| `/blog`        | Blog            | Epic 6    |
+| `/blog/[slug]` | Blog post       | Epic 6    |
+| `/speaking`    | Speaking        | Version 4 |
+| `/uses`        | Uses page       | Version 4 |
+| `/notes`       | Developer notes | Epic 6    |
 
 These routes are reserved in `packages/config/features.ts` but not implemented.
 
@@ -161,17 +161,17 @@ These routes are reserved in `packages/config/features.ts` but not implemented.
 
 Pages link to each other to support user journeys.
 
-| From | To | Link Context |
-|------|-----|--------------|
-| Home | Projects | "View all projects" |
-| Home | Resume | "Download resume" |
-| Home | Featured Project | Bundo case study |
-| Projects | Project Detail | Card click |
-| Project Detail | Next Project | Bottom navigation |
-| Project Detail | Resume | Sidebar or footer |
-| Resume | Projects | Project highlights |
-| About | Projects | "See my work" |
-| All pages | Contact | Navbar CTA |
+| From           | To               | Link Context        |
+| -------------- | ---------------- | ------------------- |
+| Home           | Projects         | "View all projects" |
+| Home           | Resume           | "Download resume"   |
+| Home           | Featured Project | Bundo case study    |
+| Projects       | Project Detail   | Card click          |
+| Project Detail | Next Project     | Bottom navigation   |
+| Project Detail | Resume           | Sidebar or footer   |
+| Resume         | Projects         | Project highlights  |
+| About          | Projects         | "See my work"       |
+| All pages      | Contact          | Navbar CTA          |
 
 ---
 
@@ -190,8 +190,8 @@ Search is deferred to Epic 7.
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `13-navigation.md` | Navigation behavior and interaction |
-| `14-content-strategy.md` | Content requirements per page |
-| `15-page-specifications.md` | Implementation contract per page |
+| Document                    | Scope                               |
+| --------------------------- | ----------------------------------- |
+| `13-navigation.md`          | Navigation behavior and interaction |
+| `14-content-strategy.md`    | Content requirements per page       |
+| `15-page-specifications.md` | Implementation contract per page    |

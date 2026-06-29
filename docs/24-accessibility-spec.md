@@ -33,13 +33,13 @@ Logical, predictable tab order on every page:
 
 ### Focus Management
 
-| Context | Behavior |
-|---------|----------|
-| Page load | Focus on skip link (hidden until Tab) |
-| Mobile drawer open | Focus trap inside drawer |
-| Mobile drawer close | Focus returns to hamburger button |
-| Form submission success | Focus moves to success message |
-| Form validation error | Focus moves to first invalid field |
+| Context                 | Behavior                              |
+| ----------------------- | ------------------------------------- |
+| Page load               | Focus on skip link (hidden until Tab) |
+| Mobile drawer open      | Focus trap inside drawer              |
+| Mobile drawer close     | Focus returns to hamburger button     |
+| Form submission success | Focus moves to success message        |
+| Form validation error   | Focus moves to first invalid field    |
 
 ### Focus Trap (Mobile Nav)
 
@@ -50,10 +50,8 @@ Logical, predictable tab order on every page:
 ### Skip to Content
 
 ```html
-<a href="#main-content" class="sr-only focus:not-sr-only">
-  Skip to main content
-</a>
-<main id="main-content">
+<a href="#main-content" class="sr-only focus:not-sr-only"> Skip to main content </a>
+<main id="main-content"></main>
 ```
 
 First focusable element in DOM on every page.
@@ -62,12 +60,12 @@ First focusable element in DOM on every page.
 
 ## 2. Focus Visibility
 
-| Requirement | Implementation |
-|-------------|----------------|
-| Focus ring always visible on keyboard nav | `:focus-visible` with 2px ring |
-| No focus ring on mouse click | `:focus:not(:focus-visible)` — no ring |
-| Ring color | `accent` with 2px offset |
-| Contrast | Focus ring meets 3:1 against background |
+| Requirement                               | Implementation                          |
+| ----------------------------------------- | --------------------------------------- |
+| Focus ring always visible on keyboard nav | `:focus-visible` with 2px ring          |
+| No focus ring on mouse click              | `:focus:not(:focus-visible)` — no ring  |
+| Ring color                                | `accent` with 2px offset                |
+| Contrast                                  | Focus ring meets 3:1 against background |
 
 All interactive elements must have a visible focus state.
 
@@ -77,21 +75,21 @@ All interactive elements must have a visible focus state.
 
 WCAG AA minimum ratios:
 
-| Content Type | Ratio | Standard |
-|-------------|-------|----------|
-| Normal text (< 18px) | 4.5:1 | AA |
-| Large text (≥ 18px bold or ≥ 24px) | 3:1 | AA |
-| UI components & graphics | 3:1 | AA |
-| Focus indicators | 3:1 | AA |
+| Content Type                       | Ratio | Standard |
+| ---------------------------------- | ----- | -------- |
+| Normal text (< 18px)               | 4.5:1 | AA       |
+| Large text (≥ 18px bold or ≥ 24px) | 3:1   | AA       |
+| UI components & graphics           | 3:1   | AA       |
+| Focus indicators                   | 3:1   | AA       |
 
 ### Verified Pairs (Light Mode)
 
-| Foreground | Background | Ratio | Pass |
-|------------|------------|-------|------|
-| `foreground` (#09090b) | `background` (#ffffff) | 19.8:1 | ✓ |
-| `foreground-secondary` (#3f3f46) | `background` (#ffffff) | 9.7:1 | ✓ |
-| `foreground-muted` (#71717a) | `background` (#ffffff) | 4.6:1 | ✓ |
-| `accentForeground` (#fafafa) | `accent` (#18181b) | 17.4:1 | ✓ |
+| Foreground                       | Background             | Ratio  | Pass |
+| -------------------------------- | ---------------------- | ------ | ---- |
+| `foreground` (#09090b)           | `background` (#ffffff) | 19.8:1 | ✓    |
+| `foreground-secondary` (#3f3f46) | `background` (#ffffff) | 9.7:1  | ✓    |
+| `foreground-muted` (#71717a)     | `background` (#ffffff) | 4.6:1  | ✓    |
+| `accentForeground` (#fafafa)     | `accent` (#18181b)     | 17.4:1 | ✓    |
 
 ### Rules
 
@@ -105,13 +103,13 @@ WCAG AA minimum ratios:
 
 Respect `prefers-reduced-motion: reduce` on all animations and transitions.
 
-| Animation | Reduced Motion Behavior |
-|-----------|------------------------|
-| Navbar background transition | Instant |
-| Drawer slide | Instant show/hide |
-| Button hover | Color change only, no scale |
-| Skeleton pulse | Static background |
-| Smooth scroll | `scroll-behavior: auto` |
+| Animation                    | Reduced Motion Behavior     |
+| ---------------------------- | --------------------------- |
+| Navbar background transition | Instant                     |
+| Drawer slide                 | Instant show/hide           |
+| Button hover                 | Color change only, no scale |
+| Skeleton pulse               | Static background           |
+| Smooth scroll                | `scroll-behavior: auto`     |
 
 See `23-interaction-spec.md` for implementation.
 
@@ -124,10 +122,16 @@ See `23-interaction-spec.md` for implementation.
 Every page includes:
 
 ```html
-<header>   <!-- Navbar -->
-<main>     <!-- Page content -->
-<footer>   <!-- Footer -->
-<nav>      <!-- Navigation, with aria-label -->
+<header>
+  <!-- Navbar -->
+  <main>
+    <!-- Page content -->
+    <footer>
+      <!-- Footer -->
+      <nav><!-- Navigation, with aria-label --></nav>
+    </footer>
+  </main>
+</header>
 ```
 
 ### Heading Hierarchy
@@ -140,15 +144,15 @@ Every page includes:
 
 **Use ARIA only when HTML semantics are insufficient.**
 
-| Use ARIA | When |
-|----------|------|
-| `aria-label` | Icon-only buttons, external links |
-| `aria-expanded` | Mobile nav hamburger |
-| `aria-controls` | Hamburger → drawer relationship |
-| `aria-busy` | Loading buttons |
-| `aria-invalid` | Form validation errors |
-| `aria-describedby` | Error messages linked to inputs |
-| `role="alert"` | Success/error announcements |
+| Use ARIA           | When                              |
+| ------------------ | --------------------------------- |
+| `aria-label`       | Icon-only buttons, external links |
+| `aria-expanded`    | Mobile nav hamburger              |
+| `aria-controls`    | Hamburger → drawer relationship   |
+| `aria-busy`        | Loading buttons                   |
+| `aria-invalid`     | Form validation errors            |
+| `aria-describedby` | Error messages linked to inputs   |
+| `role="alert"`     | Success/error announcements       |
 
 **Do not use ARIA when native HTML suffices:**
 
@@ -162,13 +166,13 @@ Every page includes:
 
 Every image must have meaningful `alt` text.
 
-| Image Type | Alt Text |
-|------------|----------|
-| Project screenshot | "{Project name} application screenshot" |
-| Architecture diagram | Description of what the diagram shows |
-| Decorative | `alt=""` (empty, not omitted) |
-| Avatar | "{Name}'s profile photo" |
-| Logo | "Developer OS" or site name |
+| Image Type           | Alt Text                                |
+| -------------------- | --------------------------------------- |
+| Project screenshot   | "{Project name} application screenshot" |
+| Architecture diagram | Description of what the diagram shows   |
+| Decorative           | `alt=""` (empty, not omitted)           |
+| Avatar               | "{Name}'s profile photo"                |
+| Logo                 | "Developer OS" or site name             |
 
 ### Rules
 
@@ -181,25 +185,25 @@ Every image must have meaningful `alt` text.
 
 ## 7. Forms
 
-| Requirement | Implementation |
-|-------------|----------------|
-| Labels | Visible `<label>` for every input, associated via `htmlFor` |
-| Required fields | `aria-required="true"` + visual asterisk |
-| Errors | `aria-invalid="true"` + `aria-describedby` pointing to error |
-| Error announcement | `role="alert"` on error message |
-| Submit loading | `aria-busy="true"` on button |
-| Honeypot | `aria-hidden="true"`, `tabindex="-1"` |
+| Requirement        | Implementation                                               |
+| ------------------ | ------------------------------------------------------------ |
+| Labels             | Visible `<label>` for every input, associated via `htmlFor`  |
+| Required fields    | `aria-required="true"` + visual asterisk                     |
+| Errors             | `aria-invalid="true"` + `aria-describedby` pointing to error |
+| Error announcement | `role="alert"` on error message                              |
+| Submit loading     | `aria-busy="true"` on button                                 |
+| Honeypot           | `aria-hidden="true"`, `tabindex="-1"`                        |
 
 ---
 
 ## 8. Links
 
-| Type | Requirement |
-|------|-------------|
-| Internal | Descriptive link text (not "click here") |
-| External | `target="_blank"` + `rel="noopener noreferrer"` |
-| External announcement | `aria-label` includes "opens in new tab" |
-| Icon-only links | `aria-label` required |
+| Type                  | Requirement                                     |
+| --------------------- | ----------------------------------------------- |
+| Internal              | Descriptive link text (not "click here")        |
+| External              | `target="_blank"` + `rel="noopener noreferrer"` |
+| External announcement | `aria-label` includes "opens in new tab"        |
+| Icon-only links       | `aria-label` required                           |
 
 ---
 
@@ -207,12 +211,12 @@ Every image must have meaningful `alt` text.
 
 Minimum touch target size: **44×44px** on mobile.
 
-| Element | Minimum Size |
-|---------|-------------|
-| Buttons | 40px height (md), 44px on mobile |
-| Nav links | 44px tap area |
-| Hamburger menu | 44×44px |
-| Form inputs | 40px height |
+| Element        | Minimum Size                     |
+| -------------- | -------------------------------- |
+| Buttons        | 40px height (md), 44px on mobile |
+| Nav links      | 44px tap area                    |
+| Hamburger menu | 44×44px                          |
+| Form inputs    | 40px height                      |
 
 ---
 
@@ -232,8 +236,8 @@ Before any page ships:
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `23-interaction-spec.md` | Focus and motion |
-| `25-design-review-checklist.md` | Pre-merge checklist |
-| `22-component-spec.md` | Component accessibility states |
+| Document                        | Scope                          |
+| ------------------------------- | ------------------------------ |
+| `23-interaction-spec.md`        | Focus and motion               |
+| `25-design-review-checklist.md` | Pre-merge checklist            |
+| `22-component-spec.md`          | Component accessibility states |

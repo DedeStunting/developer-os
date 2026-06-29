@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "strict": true,
@@ -12,5 +12,5 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next", "storybook-static", "dist"]
 }

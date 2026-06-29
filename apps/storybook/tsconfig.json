@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "@developer-os/ui": ["../../packages/ui/index.ts"],
+      "@developer-os/ui/*": ["../../packages/ui/*"]
+    }
+  },
+  "include": [".storybook/**/*.ts", "stories/**/*.ts", "stories/**/*.tsx"],
+  "exclude": ["node_modules", "storybook-static"]
+}

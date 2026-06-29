@@ -1,3 +1,0 @@
-// Layout component stories
-
-export {};

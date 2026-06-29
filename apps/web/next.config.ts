@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     "@developer-os/core",
     "@developer-os/config",
     "@developer-os/types",
+    "@developer-os/platform",
   ],
 };
 

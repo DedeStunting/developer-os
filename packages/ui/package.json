@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
   "exports": {
     ".": "./index.ts",
     "./primitives": "./primitives/index.ts",
@@ -15,6 +20,15 @@
     "./providers": "./providers/index.ts"
   },
   "dependencies": {
-    "@developer-os/types": "workspace:*"
+    "@developer-os/types": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "react": "^19.1.0"
   }
 }

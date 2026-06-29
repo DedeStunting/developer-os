@@ -112,31 +112,31 @@ Form replaced with confirmation. No redirect.
 
 ## Form Fields
 
-| Field | Required | Validation |
-|-------|----------|------------|
-| Name | ✓ | Min 2 characters |
-| Email | ✓ | Valid email format |
-| Company | — | Optional |
-| Message | ✓ | Min 20 characters |
+| Field   | Required | Validation         |
+| ------- | -------- | ------------------ |
+| Name    | ✓        | Min 2 characters   |
+| Email   | ✓        | Valid email format |
+| Company | —        | Optional           |
+| Message | ✓        | Min 20 characters  |
 
 ### Hidden Fields
 
-| Field | Purpose |
-|-------|---------|
+| Field    | Purpose                             |
+| -------- | ----------------------------------- |
 | Honeypot | Spam prevention (hidden from users) |
 
 ---
 
 ## Layout Specifications
 
-| Property | Value |
-|----------|-------|
-| Form width | 480px max |
-| Form position | Centered horizontally |
-| Field spacing | `space-6` (24px) |
-| Label position | Above input |
-| Button | Full width, primary variant |
-| Button position | Below message field |
+| Property        | Value                       |
+| --------------- | --------------------------- |
+| Form width      | 480px max                   |
+| Form position   | Centered horizontally       |
+| Field spacing   | `space-6` (24px)            |
+| Label position  | Above input                 |
+| Button          | Full width, primary variant |
+| Button position | Below message field         |
 
 ---
 
@@ -172,12 +172,12 @@ Success UI / Error UI
 
 ## Security
 
-| Measure | Implementation |
-|---------|----------------|
-| Rate limiting | Per IP, Vercel middleware or Upstash |
-| Honeypot | Hidden field; bots fill it, humans don't |
-| Server validation | Zod schema on Server Action |
-| No exposed API keys | Resend key in env only |
+| Measure             | Implementation                           |
+| ------------------- | ---------------------------------------- |
+| Rate limiting       | Per IP, Vercel middleware or Upstash     |
+| Honeypot            | Hidden field; bots fill it, humans don't |
+| Server validation   | Zod schema on Server Action              |
+| No exposed API keys | Resend key in env only                   |
 
 ---
 
@@ -185,18 +185,18 @@ Success UI / Error UI
 
 Implementation lives in `apps/web/src/features/contact/`.
 
-| Subfolder | Responsibility |
-|-----------|----------------|
-| `components/` | ContactForm |
-| `actions/` | Server Action for submission |
-| `schemas/` | Form validation schema |
-| `index.ts` | Public exports |
+| Subfolder     | Responsibility               |
+| ------------- | ---------------------------- |
+| `components/` | ContactForm                  |
+| `actions/`    | Server Action for submission |
+| `schemas/`    | Form validation schema       |
+| `index.ts`    | Public exports               |
 
 ---
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `15-page-specifications.md` | Contact implementation contract |
+| Document                    | Scope                            |
+| --------------------------- | -------------------------------- |
+| `15-page-specifications.md` | Contact implementation contract  |
 | `07-system-architecture.md` | Server Action rendering strategy |

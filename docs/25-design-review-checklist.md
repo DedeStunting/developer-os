@@ -135,18 +135,18 @@ Use this for pull requests, vertical slice completions, and pre-deployment revie
 
 ## Sign-Off
 
-| Reviewer | Date | Slice/Page |
-|----------|------|------------|
-| Chiedu David | | |
+| Reviewer     | Date | Slice/Page |
+| ------------ | ---- | ---------- |
+| Chiedu David |      |            |
 
 ---
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `21-typography-spec.md` | Typography rules |
-| `22-component-spec.md` | Component variants |
-| `23-interaction-spec.md` | Motion and hover |
-| `24-accessibility-spec.md` | Accessibility requirements |
-| `07-system-architecture.md` | Engineering rules |
+| Document                    | Scope                      |
+| --------------------------- | -------------------------- |
+| `21-typography-spec.md`     | Typography rules           |
+| `22-component-spec.md`      | Component variants         |
+| `23-interaction-spec.md`    | Motion and hover           |
+| `24-accessibility-spec.md`  | Accessibility requirements |
+| `07-system-architecture.md` | Engineering rules          |

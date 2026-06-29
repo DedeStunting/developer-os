@@ -1,0 +1,10 @@
+{
+  "name": "@developer-os/resume",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "node -e \"process.exit(0)\"",
+    "test": "vitest run --passWithNoTests"
+  }
+}

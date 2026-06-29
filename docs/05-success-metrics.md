@@ -20,13 +20,13 @@ Developer OS success is measured across four dimensions: business outcomes, prod
 
 These measure whether the platform achieves its primary goal: obtaining backend software engineering opportunities.
 
-| Metric | Description | Target |
-|--------|-------------|--------|
-| Resume downloads | PDF or page views on resume | Track monthly; baseline TBD after launch |
-| Contact form submissions | Inbound recruiter or hiring inquiries | ≥ 2 per month |
-| Recruiter responses | Replies to outreach citing the platform | Qualitative tracking |
-| Interview invitations | Interviews attributed to Developer OS | ≥ 1 per quarter |
-| Job offers | Offers resulting from platform-driven interviews | Primary success indicator |
+| Metric                   | Description                                      | Target                                   |
+| ------------------------ | ------------------------------------------------ | ---------------------------------------- |
+| Resume downloads         | PDF or page views on resume                      | Track monthly; baseline TBD after launch |
+| Contact form submissions | Inbound recruiter or hiring inquiries            | ≥ 2 per month                            |
+| Recruiter responses      | Replies to outreach citing the platform          | Qualitative tracking                     |
+| Interview invitations    | Interviews attributed to Developer OS            | ≥ 1 per quarter                          |
+| Job offers               | Offers resulting from platform-driven interviews | Primary success indicator                |
 
 ---
 
@@ -34,13 +34,13 @@ These measure whether the platform achieves its primary goal: obtaining backend 
 
 These measure whether users engage with the platform as intended.
 
-| Metric | Description | Target |
-|--------|-------------|--------|
-| Returning visitors | Users who visit more than once | ≥ 20% of total visitors |
-| Time on project pages | Average session duration on project detail pages | ≥ 2 minutes (Eng. Manager persona) |
-| Case study completion rate | Users who scroll to Lessons Learned section | ≥ 40% of project page visitors |
-| Bounce rate | Single-page sessions | ≤ 50% |
-| Portfolio loading speed | Time to interactive on landing page | < 2 seconds |
+| Metric                     | Description                                      | Target                             |
+| -------------------------- | ------------------------------------------------ | ---------------------------------- |
+| Returning visitors         | Users who visit more than once                   | ≥ 20% of total visitors            |
+| Time on project pages      | Average session duration on project detail pages | ≥ 2 minutes (Eng. Manager persona) |
+| Case study completion rate | Users who scroll to Lessons Learned section      | ≥ 40% of project page visitors     |
+| Bounce rate                | Single-page sessions                             | ≤ 50%                              |
+| Portfolio loading speed    | Time to interactive on landing page              | < 2 seconds                        |
 
 ---
 
@@ -48,12 +48,12 @@ These measure whether users engage with the platform as intended.
 
 These measure whether the platform meets production quality standards defined in the project charter.
 
-| Metric | Tool | Target |
-|--------|------|--------|
-| Lighthouse Performance | Lighthouse CI | ≥ 95 |
-| Accessibility | Lighthouse CI | ≥ 95 |
-| SEO | Lighthouse CI | ≥ 95 |
-| Best Practices | Lighthouse CI | ≥ 95 |
+| Metric                 | Tool          | Target |
+| ---------------------- | ------------- | ------ |
+| Lighthouse Performance | Lighthouse CI | ≥ 95   |
+| Accessibility          | Lighthouse CI | ≥ 95   |
+| SEO                    | Lighthouse CI | ≥ 95   |
+| Best Practices         | Lighthouse CI | ≥ 95   |
 
 All four scores must pass on every MVP page before launch.
 
@@ -63,11 +63,11 @@ All four scores must pass on every MVP page before launch.
 
 These measure whether the platform architecture delivers on the "build once" principle.
 
-| Metric | Description | Target |
-|--------|-------------|--------|
-| Time to publish a new project | From content written to live on site | < 30 minutes |
-| Time to update resume | From content change to reflected everywhere | < 10 minutes |
-| Time to publish a case study | From MDX draft to live project page | < 1 hour |
+| Metric                        | Description                                 | Target       |
+| ----------------------------- | ------------------------------------------- | ------------ |
+| Time to publish a new project | From content written to live on site        | < 30 minutes |
+| Time to update resume         | From content change to reflected everywhere | < 10 minutes |
+| Time to publish a case study  | From MDX draft to live project page         | < 1 hour     |
 
 The goal is to make updates take minutes, not hours.
 

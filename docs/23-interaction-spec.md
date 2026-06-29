@@ -12,17 +12,17 @@
 
 ## Overview
 
-Motion is intentional. Every animation answers: *Why does this move?* If there is no answer, it does not animate. This document defines durations, easing, hover rules, scroll behavior, and loading patterns.
+Motion is intentional. Every animation answers: _Why does this move?_ If there is no answer, it does not animate. This document defines durations, easing, hover rules, scroll behavior, and loading patterns.
 
 ---
 
 ## 1. Duration Scale
 
-| Token | Value | Use |
-|-------|-------|-----|
-| `fast` | 150ms | Micro-interactions — opacity, color |
-| `normal` | 200ms | Standard transitions — hover, focus |
-| `slow` | 300ms | Layout changes — drawer open, navbar background |
+| Token    | Value | Use                                             |
+| -------- | ----- | ----------------------------------------------- |
+| `fast`   | 150ms | Micro-interactions — opacity, color             |
+| `normal` | 200ms | Standard transitions — hover, focus             |
+| `slow`   | 300ms | Layout changes — drawer open, navbar background |
 
 ### Rules
 
@@ -36,11 +36,11 @@ Motion is intentional. Every animation answers: *Why does this move?* If there i
 
 Use a **single easing curve** consistently across all interactions.
 
-| Token | Value | Use |
-|-------|-------|-----|
-| `ease-out` | `cubic-bezier(0, 0, 0.2, 1)` | Entrances, hover states |
-| `ease-in` | `cubic-bezier(0.4, 0, 1, 1)` | Exits, drawer close |
-| `ease-in-out` | `cubic-bezier(0.4, 0, 0.2, 1)` | State toggles |
+| Token         | Value                          | Use                     |
+| ------------- | ------------------------------ | ----------------------- |
+| `ease-out`    | `cubic-bezier(0, 0, 0.2, 1)`   | Entrances, hover states |
+| `ease-in`     | `cubic-bezier(0.4, 0, 1, 1)`   | Exits, drawer close     |
+| `ease-in-out` | `cubic-bezier(0.4, 0, 0.2, 1)` | State toggles           |
 
 **Default:** `ease-out` for all hover and focus transitions.
 
@@ -54,28 +54,28 @@ transition: property 200ms cubic-bezier(0, 0, 0.2, 1);
 
 ### Buttons
 
-| Property | Transition |
-|----------|------------|
+| Property         | Transition                |
+| ---------------- | ------------------------- |
 | Background color | `fast` (150ms) `ease-out` |
-| Opacity | `fast` (150ms) `ease-out` |
-| Scale (active) | `fast` (150ms) `ease-out` |
+| Opacity          | `fast` (150ms) `ease-out` |
+| Scale (active)   | `fast` (150ms) `ease-out` |
 
 No shadow change on hover for buttons.
 
 ### Links
 
-| Property | Transition |
-|----------|------------|
-| Color | `fast` (150ms) |
+| Property  | Transition              |
+| --------- | ----------------------- |
+| Color     | `fast` (150ms)          |
 | Underline | Instant (no transition) |
 
 ### Cards (Project Cards)
 
-| Property | Transition |
-|----------|------------|
-| Shadow | `normal` (200ms) `ease-out` |
-| Border color | `normal` (200ms) |
-| Transform | None — no lift/scale on hover |
+| Property     | Transition                    |
+| ------------ | ----------------------------- |
+| Shadow       | `normal` (200ms) `ease-out`   |
+| Border color | `normal` (200ms)              |
+| Transform    | None — no lift/scale on hover |
 
 Entire card is clickable. Cursor: pointer.
 
@@ -90,21 +90,21 @@ No image zoom. No card lift. Subtle elevation only.
 
 ### Navigation Links
 
-| Property | Transition |
-|----------|------------|
-| Color | `fast` (150ms) |
-| Underline (active) | None |
+| Property           | Transition     |
+| ------------------ | -------------- |
+| Color              | `fast` (150ms) |
+| Underline (active) | None           |
 
 ---
 
 ## 4. Focus Rules
 
-| Element | Focus Style |
-|---------|-------------|
-| Buttons | 2px ring, `accent`, offset 2px |
-| Links | 2px ring, `accent`, offset 2px |
-| Inputs | Border `accent` + ring `accent` at 20% |
-| Cards (interactive) | 2px ring, `accent`, offset 2px |
+| Element             | Focus Style                            |
+| ------------------- | -------------------------------------- |
+| Buttons             | 2px ring, `accent`, offset 2px         |
+| Links               | 2px ring, `accent`, offset 2px         |
+| Inputs              | Border `accent` + ring `accent` at 20% |
+| Cards (interactive) | 2px ring, `accent`, offset 2px         |
 
 Focus visible on keyboard navigation only (`:focus-visible`). No focus ring on mouse click.
 
@@ -112,13 +112,13 @@ Focus visible on keyboard navigation only (`:focus-visible`). No focus ring on m
 
 ## 5. Scroll Behavior
 
-| Behavior | Specification |
-|----------|---------------|
-| **Smooth scroll** | `scroll-behavior: smooth` for anchor links only |
+| Behavior              | Specification                                        |
+| --------------------- | ---------------------------------------------------- |
+| **Smooth scroll**     | `scroll-behavior: smooth` for anchor links only      |
 | **Navbar transition** | Transparent → solid at 16px scroll, `normal` (200ms) |
-| **Sticky navbar** | `position: sticky`, `top: 0` |
-| **Scroll reveal** | Not used — content visible immediately |
-| **Parallax** | Not used |
+| **Sticky navbar**     | `position: sticky`, `top: 0`                         |
+| **Scroll reveal**     | Not used — content visible immediately               |
+| **Parallax**          | Not used                                             |
 
 ### Navbar Scroll Transition
 
@@ -134,21 +134,21 @@ Transition:      background-color 200ms ease-out, border-color 200ms ease-out
 
 ### Preference: Skeletons over Spinners
 
-| Context | Pattern |
-|---------|---------|
-| Page content | Static generation — no loading state needed |
-| Contact form submit | Button loading spinner (inline) |
-| Image loading | Blur placeholder via Next.js Image |
-| Future dynamic content | Skeleton components |
+| Context                | Pattern                                     |
+| ---------------------- | ------------------------------------------- |
+| Page content           | Static generation — no loading state needed |
+| Contact form submit    | Button loading spinner (inline)             |
+| Image loading          | Blur placeholder via Next.js Image          |
+| Future dynamic content | Skeleton components                         |
 
 ### Skeleton Specs
 
-| Property | Value |
-|----------|-------|
-| Background | `backgroundMuted` |
-| Animation | Pulse opacity 50% ↔ 100% |
-| Duration | 1.5s infinite |
-| Radius | Match target component |
+| Property   | Value                    |
+| ---------- | ------------------------ |
+| Background | `backgroundMuted`        |
+| Animation  | Pulse opacity 50% ↔ 100% |
+| Duration   | 1.5s infinite            |
+| Radius     | Match target component   |
 
 ### Button Loading
 
@@ -161,11 +161,11 @@ Transition:      background-color 200ms ease-out, border-color 200ms ease-out
 
 ## 7. Empty States
 
-| Context | Message | Action |
-|---------|---------|--------|
-| No projects (future) | "No projects yet." | — |
-| Form success | "Message sent successfully." | — |
-| 404 | "Page not found." | Link to Home, Projects |
+| Context              | Message                      | Action                 |
+| -------------------- | ---------------------------- | ---------------------- |
+| No projects (future) | "No projects yet."           | —                      |
+| Form success         | "Message sent successfully." | —                      |
+| 404                  | "Page not found."            | Link to Home, Projects |
 
 Empty states use `body` typography, `foreground-muted`, centered layout.
 
@@ -173,12 +173,12 @@ Empty states use `body` typography, `foreground-muted`, centered layout.
 
 ## 8. Error States
 
-| Context | Pattern |
-|---------|---------|
-| Form validation | Inline error below field, `error` color |
+| Context                 | Pattern                                 |
+| ----------------------- | --------------------------------------- |
+| Form validation         | Inline error below field, `error` color |
 | Form submission failure | Alert banner above form, `role="alert"` |
-| 404 | Full page, recovery links |
-| Build failure | N/A — caught at CI |
+| 404                     | Full page, recovery links               |
+| Build failure           | N/A — caught at CI                      |
 
 Error messages: `body-sm`, `error` color, `role="alert"` where appropriate.
 
@@ -188,17 +188,19 @@ Error messages: `body-sm`, `error` color, `role="alert"` where appropriate.
 
 When `prefers-reduced-motion: reduce` is set:
 
-| Behavior | Change |
-|----------|--------|
-| All transitions | `0ms` or removed |
-| Skeleton pulse | Static `backgroundMuted` |
-| Navbar scroll | Instant background change |
-| Drawer | Instant open/close |
-| Smooth scroll | `scroll-behavior: auto` |
+| Behavior        | Change                    |
+| --------------- | ------------------------- |
+| All transitions | `0ms` or removed          |
+| Skeleton pulse  | Static `backgroundMuted`  |
+| Navbar scroll   | Instant background change |
+| Drawer          | Instant open/close        |
+| Smooth scroll   | `scroll-behavior: auto`   |
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
@@ -221,8 +223,8 @@ When `prefers-reduced-motion: reduce` is set:
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `22-component-spec.md` | Component states |
+| Document                   | Scope                 |
+| -------------------------- | --------------------- |
+| `22-component-spec.md`     | Component states      |
 | `24-accessibility-spec.md` | Reduced motion, focus |
-| `08-design-system.md` | Motion philosophy |
+| `08-design-system.md`      | Motion philosophy     |

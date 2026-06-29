@@ -3,21 +3,28 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
     "@developer-os/config": "workspace:*",
     "@developer-os/core": "workspace:*",
+    "@developer-os/platform": "workspace:*",
     "@developer-os/types": "workspace:*",
-    "@developer-os/ui": "workspace:*"
-  },
-  "devDependencies": {
+    "@developer-os/ui": "workspace:*",
+    "geist": "^1.4.2",
     "next": "^15.3.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3"
   }
 }

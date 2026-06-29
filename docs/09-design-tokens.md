@@ -20,20 +20,20 @@ Design tokens are the single source of truth for visual values. All tokens are d
 
 Based on a 4px base unit. Use consistently for margin, padding, and gap.
 
-| Token | Value | Use |
-|-------|-------|-----|
-| `space-1` | 4px | Tight inline spacing, icon gaps |
-| `space-2` | 8px | Compact padding, badge padding |
-| `space-3` | 12px | Small component padding |
-| `space-4` | 16px | Default component padding |
-| `space-6` | 24px | Card padding, section gaps |
-| `space-8` | 32px | Section padding (mobile) |
-| `space-10` | 40px | Medium section spacing |
-| `space-12` | 48px | Large section spacing |
-| `space-16` | 64px | Section margins |
-| `space-20` | 80px | Major section breaks |
-| `space-24` | 96px | Page section spacing |
-| `space-32` | 128px | Hero spacing, page top padding |
+| Token      | Value | Use                             |
+| ---------- | ----- | ------------------------------- |
+| `space-1`  | 4px   | Tight inline spacing, icon gaps |
+| `space-2`  | 8px   | Compact padding, badge padding  |
+| `space-3`  | 12px  | Small component padding         |
+| `space-4`  | 16px  | Default component padding       |
+| `space-6`  | 24px  | Card padding, section gaps      |
+| `space-8`  | 32px  | Section padding (mobile)        |
+| `space-10` | 40px  | Medium section spacing          |
+| `space-12` | 48px  | Large section spacing           |
+| `space-16` | 64px  | Section margins                 |
+| `space-20` | 80px  | Major section breaks            |
+| `space-24` | 96px  | Page section spacing            |
+| `space-32` | 128px | Hero spacing, page top padding  |
 
 ### Rules
 
@@ -45,15 +45,15 @@ Based on a 4px base unit. Use consistently for margin, padding, and gap.
 
 ## 2. Radius Scale
 
-| Token | Value | Use |
-|-------|-------|-----|
-| `radius-sm` | 4px | Badges, small chips |
-| `radius-md` | 8px | Buttons, inputs |
-| `radius-lg` | 12px | Cards, modals |
-| `radius-xl` | 16px | Large cards, images |
-| `radius-2xl` | 20px | Hero elements |
-| `radius-3xl` | 24px | Feature containers |
-| `radius-full` | 9999px | Avatars, pills |
+| Token         | Value  | Use                 |
+| ------------- | ------ | ------------------- |
+| `radius-sm`   | 4px    | Badges, small chips |
+| `radius-md`   | 8px    | Buttons, inputs     |
+| `radius-lg`   | 12px   | Cards, modals       |
+| `radius-xl`   | 16px   | Large cards, images |
+| `radius-2xl`  | 20px   | Hero elements       |
+| `radius-3xl`  | 24px   | Feature containers  |
+| `radius-full` | 9999px | Avatars, pills      |
 
 ### Rules
 
@@ -67,12 +67,12 @@ Based on a 4px base unit. Use consistently for margin, padding, and gap.
 
 Keep shadows subtle. Developer OS is not a material design showcase.
 
-| Token | Value | Use |
-|-------|-------|-----|
-| `shadow-none` | none | Default — most elements |
-| `shadow-sm` | subtle | Cards on hover, dropdowns |
-| `shadow-md` | moderate | Modals, popovers |
-| `shadow-lg` | pronounced | Rare — floating panels only |
+| Token         | Value      | Use                         |
+| ------------- | ---------- | --------------------------- |
+| `shadow-none` | none       | Default — most elements     |
+| `shadow-sm`   | subtle     | Cards on hover, dropdowns   |
+| `shadow-md`   | moderate   | Modals, popovers            |
+| `shadow-lg`   | pronounced | Rare — floating panels only |
 
 ### Rules
 
@@ -86,12 +86,12 @@ Keep shadows subtle. Developer OS is not a material design showcase.
 
 Mobile-first. Design for smallest screen, enhance upward.
 
-| Token | Value | Target |
-|-------|-------|--------|
-| `sm` | 640px | Large phones |
-| `md` | 768px | Tablets |
-| `lg` | 1024px | Laptops |
-| `xl` | 1280px | Desktops |
+| Token | Value  | Target       |
+| ----- | ------ | ------------ |
+| `sm`  | 640px  | Large phones |
+| `md`  | 768px  | Tablets      |
+| `lg`  | 1024px | Laptops      |
+| `xl`  | 1280px | Desktops     |
 | `2xl` | 1536px | Wide screens |
 
 ### Rules
@@ -104,20 +104,20 @@ Mobile-first. Design for smallest screen, enhance upward.
 
 ## 5. Container Width
 
-| Token | Value |
-|-------|-------|
-| `container-max` | 1280px |
+| Token               | Value                                                        |
+| ------------------- | ------------------------------------------------------------ |
+| `container-max`     | 1280px                                                       |
 | `container-padding` | `space-4` (mobile), `space-6` (tablet+), `space-8` (desktop) |
 
 **Never wider than 1280px.** Content readability degrades beyond this width. Wide screens show more whitespace, not wider content.
 
 ### Content Width Variants
 
-| Variant | Max Width | Use |
-|---------|-----------|-----|
-| `container` | 1280px | Default page layout |
-| `container-narrow` | 768px | Blog posts, case study prose |
-| `container-wide` | 1280px | Project grids, resume layout |
+| Variant            | Max Width | Use                          |
+| ------------------ | --------- | ---------------------------- |
+| `container`        | 1280px    | Default page layout          |
+| `container-narrow` | 768px     | Blog posts, case study prose |
+| `container-wide`   | 1280px    | Project grids, resume layout |
 
 ---
 
@@ -125,13 +125,13 @@ Mobile-first. Design for smallest screen, enhance upward.
 
 See `packages/ui/styles/colors.ts` for implementation.
 
-| Category | Tokens |
-|----------|--------|
-| Background | `background`, `background-subtle`, `background-muted` |
+| Category   | Tokens                                                   |
+| ---------- | -------------------------------------------------------- |
+| Background | `background`, `background-subtle`, `background-muted`    |
 | Foreground | `foreground`, `foreground-secondary`, `foreground-muted` |
-| Border | `border`, `border-subtle` |
-| Accent | `accent`, `accent-foreground` |
-| Semantic | `success`, `warning`, `error` (+ foreground variants) |
+| Border     | `border`, `border-subtle`                                |
+| Accent     | `accent`, `accent-foreground`                            |
+| Semantic   | `success`, `warning`, `error` (+ foreground variants)    |
 
 All color tokens are defined as CSS-compatible string values. Dark mode variants will be added as `*-dark` counterparts when implemented.
 
@@ -141,13 +141,13 @@ All color tokens are defined as CSS-compatible string values. Dark mode variants
 
 See `packages/ui/styles/typography.ts` for implementation.
 
-| Category | Tokens |
-|----------|--------|
-| Font family | `font-sans`, `font-mono` |
-| Font size | `text-xs` through `text-6xl` |
-| Font weight | `font-normal`, `font-medium`, `font-semibold`, `font-bold` |
-| Line height | `leading-tight`, `leading-normal`, `leading-relaxed` |
-| Letter spacing | `tracking-tight`, `tracking-normal` |
+| Category       | Tokens                                                     |
+| -------------- | ---------------------------------------------------------- |
+| Font family    | `font-sans`, `font-mono`                                   |
+| Font size      | `text-xs` through `text-6xl`                               |
+| Font weight    | `font-normal`, `font-medium`, `font-semibold`, `font-bold` |
+| Line height    | `leading-tight`, `leading-normal`, `leading-relaxed`       |
+| Letter spacing | `tracking-tight`, `tracking-normal`                        |
 
 ---
 
@@ -171,11 +171,11 @@ const cardPadding = spacing[6]; // 24px
 
 ## Implementation
 
-| File | Tokens |
-|------|--------|
-| `packages/ui/styles/spacing.ts` | Spacing scale |
-| `packages/ui/styles/radius.ts` | Border radius |
-| `packages/ui/styles/shadows.ts` | Box shadows |
+| File                                | Tokens                 |
+| ----------------------------------- | ---------------------- |
+| `packages/ui/styles/spacing.ts`     | Spacing scale          |
+| `packages/ui/styles/radius.ts`      | Border radius          |
+| `packages/ui/styles/shadows.ts`     | Box shadows            |
 | `packages/ui/styles/breakpoints.ts` | Responsive breakpoints |
-| `packages/ui/styles/colors.ts` | Color palette |
-| `packages/ui/styles/typography.ts` | Type scale |
+| `packages/ui/styles/colors.ts`      | Color palette          |
+| `packages/ui/styles/typography.ts`  | Type scale             |

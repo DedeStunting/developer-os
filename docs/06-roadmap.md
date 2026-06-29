@@ -167,15 +167,15 @@ Applications are thin presentation layers. Core owns business logic. Platform ow
 
 ## Phase 1 Completion Checklist
 
-| Document | Status |
-|----------|--------|
-| 00-project-charter.md | ✅ Complete |
+| Document                | Status      |
+| ----------------------- | ----------- |
+| 00-project-charter.md   | ✅ Complete |
 | 01-product-discovery.md | ✅ Complete |
-| 02-product-vision.md | ✅ Complete |
-| 03-user-personas.md | ✅ Complete |
-| 04-user-journeys.md | ✅ Complete |
-| 05-success-metrics.md | ✅ Complete |
-| 06-roadmap.md | ✅ Complete |
+| 02-product-vision.md    | ✅ Complete |
+| 03-user-personas.md     | ✅ Complete |
+| 04-user-journeys.md     | ✅ Complete |
+| 05-success-metrics.md   | ✅ Complete |
+| 06-roadmap.md           | ✅ Complete |
 
 **Phase 1: Product Discovery — COMPLETE**
 

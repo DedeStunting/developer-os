@@ -132,14 +132,14 @@ No navbar. No footer. No buttons. Single column. Black and white friendly.
 
 ## Section Specifications
 
-| Section | Source | Web | PDF |
-|---------|--------|-----|-----|
-| Header | `profile.ts` | ✓ | ✓ |
-| Summary | `profile.ts` → summary | ✓ | ✓ |
-| Experience | `experience.ts` | ✓ | ✓ |
-| Projects | Derived from portfolio metadata | ✓ | ✓ |
-| Education | `education.ts` | ✓ | ✓ |
-| Skills | `skills.ts` | ✓ | ✓ |
+| Section    | Source                          | Web | PDF |
+| ---------- | ------------------------------- | --- | --- |
+| Header     | `profile.ts`                    | ✓   | ✓   |
+| Summary    | `profile.ts` → summary          | ✓   | ✓   |
+| Experience | `experience.ts`                 | ✓   | ✓   |
+| Projects   | Derived from portfolio metadata | ✓   | ✓   |
+| Education  | `education.ts`                  | ✓   | ✓   |
+| Skills     | `skills.ts`                     | ✓   | ✓   |
 
 ---
 
@@ -147,10 +147,10 @@ No navbar. No footer. No buttons. Single column. Black and white friendly.
 
 Fixed below navbar on web view:
 
-| Action | Behavior | MVP |
-|--------|----------|-----|
-| Download PDF | Generate and download PDF | Epic 5 |
-| Print | Browser print with print stylesheet | ✓ |
+| Action       | Behavior                            | MVP    |
+| ------------ | ----------------------------------- | ------ |
+| Download PDF | Generate and download PDF           | Epic 5 |
+| Print        | Browser print with print stylesheet | ✓      |
 
 ---
 
@@ -167,10 +167,10 @@ Fixed below navbar on web view:
 
 ## Content Width
 
-| View | Width |
-|------|-------|
-| Web | `container-narrow` (768px) centered |
-| PDF | Full page width, 1-inch margins |
+| View | Width                               |
+| ---- | ----------------------------------- |
+| Web  | `container-narrow` (768px) centered |
+| PDF  | Full page width, 1-inch margins     |
 
 ---
 
@@ -197,7 +197,7 @@ Implementation lives in `apps/web/src/features/resume/`.
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `14-content-strategy.md` | Resume content requirements |
+| Document                    | Scope                          |
+| --------------------------- | ------------------------------ |
+| `14-content-strategy.md`    | Resume content requirements    |
 | `15-page-specifications.md` | Resume implementation contract |

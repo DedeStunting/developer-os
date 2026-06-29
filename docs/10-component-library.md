@@ -30,18 +30,18 @@ This document defines every UI component before implementation. Components live 
 
 Primary interactive element for actions.
 
-| Variant | Use |
-|---------|-----|
-| `primary` | Main CTAs — contact, download resume |
-| `secondary` | Secondary actions — view project, learn more |
-| `ghost` | Tertiary actions — navigation, cancel |
-| `destructive` | Irreversible actions (future admin) |
+| Variant       | Use                                          |
+| ------------- | -------------------------------------------- |
+| `primary`     | Main CTAs — contact, download resume         |
+| `secondary`   | Secondary actions — view project, learn more |
+| `ghost`       | Tertiary actions — navigation, cancel        |
+| `destructive` | Irreversible actions (future admin)          |
 
-| Size | Use |
-|------|-----|
+| Size | Use                        |
+| ---- | -------------------------- |
 | `sm` | Inline actions, compact UI |
-| `md` | Default |
-| `lg` | Hero CTAs |
+| `md` | Default                    |
+| `lg` | Hero CTAs                  |
 
 **Props:** `variant`, `size`, `disabled`, `loading`, `asChild`  
 **Accessibility:** `aria-disabled`, focus ring, keyboard activation
@@ -52,11 +52,11 @@ Primary interactive element for actions.
 
 Compact label for metadata and status.
 
-| Variant | Use |
-|---------|-----|
+| Variant   | Use                         |
+| --------- | --------------------------- |
 | `default` | Technology tags, categories |
-| `outline` | Subtle labels |
-| `success` | Status indicators |
+| `outline` | Subtle labels               |
+| `success` | Status indicators           |
 
 **Props:** `variant`, `children`  
 **Use:** Technology badges on project cards, skill labels
@@ -67,10 +67,10 @@ Compact label for metadata and status.
 
 Styled anchor for internal and external navigation.
 
-| Variant | Use |
-|---------|-----|
-| `default` | Inline text links |
-| `nav` | Navigation items |
+| Variant    | Use                                                |
+| ---------- | -------------------------------------------------- |
+| `default`  | Inline text links                                  |
+| `nav`      | Navigation items                                   |
 | `external` | External links (GitHub, live demo) — includes icon |
 
 **Props:** `href`, `variant`, `external`  
@@ -83,10 +83,10 @@ Styled anchor for internal and external navigation.
 Wrapper for Lucide React icons with consistent sizing.
 
 | Size | Value |
-|------|-------|
-| `sm` | 16px |
-| `md` | 20px |
-| `lg` | 24px |
+| ---- | ----- |
+| `sm` | 16px  |
+| `md` | 20px  |
+| `lg` | 24px  |
 
 **Props:** `name`, `size`, `className`  
 **Rule:** Icons always paired with text or `aria-label`
@@ -307,11 +307,11 @@ Syntax-highlighted code with copy button.
 
 Highlighted block for notes, warnings, tips.
 
-| Variant | Use |
-|---------|-----|
-| `info` | General notes |
-| `warning` | Cautions |
-| `tip` | Best practices |
+| Variant   | Use            |
+| --------- | -------------- |
+| `info`    | General notes  |
+| `warning` | Cautions       |
+| `tip`     | Best practices |
 
 ---
 
@@ -364,16 +364,16 @@ Submit button with loading state.
 
 ## Component Inventory Summary
 
-| Category | Count | MVP Priority |
-|----------|-------|--------------|
-| Foundation | 5 | High |
-| Layout | 5 | High |
-| Navigation | 4 | High |
-| Portfolio | 5 | High |
-| Resume | 4 | High |
-| Blog | 4 | Deferred |
-| Forms | 5 | High (Contact) |
-| **Total** | **32** | **24 for MVP** |
+| Category   | Count  | MVP Priority   |
+| ---------- | ------ | -------------- |
+| Foundation | 5      | High           |
+| Layout     | 5      | High           |
+| Navigation | 4      | High           |
+| Portfolio  | 5      | High           |
+| Resume     | 4      | High           |
+| Blog       | 4      | Deferred       |
+| Forms      | 5      | High (Contact) |
+| **Total**  | **32** | **24 for MVP** |
 
 ---
 

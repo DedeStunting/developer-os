@@ -21,6 +21,10 @@ apps/storybook/
 └── package.json
 ```
 
+## Framework
+
+Storybook uses **React + Vite** to load components from `@developer-os/ui` in isolation. This avoids webpack conflicts with Next.js 15 in the monorepo while keeping the same React 19 component surface area as `apps/web`.
+
 ## Usage
 
 Stories consume components from `@developer-os/ui`. Business logic stays in `packages/core`.

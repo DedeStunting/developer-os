@@ -22,12 +22,12 @@ Developer OS serves four distinct audiences. Each persona arrives with different
 
 ### Profile
 
-| Attribute | Detail |
-|-----------|--------|
-| Role | Technical recruiter or talent acquisition specialist |
-| Time on site | 30–60 seconds |
-| Decision driver | Speed and clarity |
-| Primary entry | Google search, LinkedIn, job board referral |
+| Attribute       | Detail                                               |
+| --------------- | ---------------------------------------------------- |
+| Role            | Technical recruiter or talent acquisition specialist |
+| Time on site    | 30–60 seconds                                        |
+| Decision driver | Speed and clarity                                    |
+| Primary entry   | Google search, LinkedIn, job board referral          |
 
 ### Goals
 
@@ -61,12 +61,12 @@ Developer OS serves four distinct audiences. Each persona arrives with different
 
 ### Profile
 
-| Attribute | Detail |
-|-----------|--------|
-| Role | Engineering manager or tech lead evaluating candidates |
-| Time on site | 3–5 minutes |
-| Decision driver | Engineering maturity and team fit |
-| Primary entry | Referral, portfolio link on application |
+| Attribute       | Detail                                                 |
+| --------------- | ------------------------------------------------------ |
+| Role            | Engineering manager or tech lead evaluating candidates |
+| Time on site    | 3–5 minutes                                            |
+| Decision driver | Engineering maturity and team fit                      |
+| Primary entry   | Referral, portfolio link on application                |
 
 ### Goals
 
@@ -99,12 +99,12 @@ Developer OS serves four distinct audiences. Each persona arrives with different
 
 ### Profile
 
-| Attribute | Detail |
-|-----------|--------|
-| Role | Senior or staff engineer, architect, or technical peer |
-| Time on site | 5–10 minutes |
-| Decision driver | Technical depth and craft |
-| Primary entry | GitHub, technical blog, conference referral |
+| Attribute       | Detail                                                 |
+| --------------- | ------------------------------------------------------ |
+| Role            | Senior or staff engineer, architect, or technical peer |
+| Time on site    | 5–10 minutes                                           |
+| Decision driver | Technical depth and craft                              |
+| Primary entry   | GitHub, technical blog, conference referral            |
 
 ### Goals
 
@@ -139,12 +139,12 @@ Developer OS serves four distinct audiences. Each persona arrives with different
 
 ### Profile
 
-| Attribute | Detail |
-|-----------|--------|
-| Role | Startup founder, CTO, or hiring decision-maker |
-| Time on site | 2–5 minutes |
-| Decision driver | Can this person ship independently? |
-| Primary entry | Referral, direct outreach, portfolio link |
+| Attribute       | Detail                                         |
+| --------------- | ---------------------------------------------- |
+| Role            | Startup founder, CTO, or hiring decision-maker |
+| Time on site    | 2–5 minutes                                    |
+| Decision driver | Can this person ship independently?            |
+| Primary entry   | Referral, direct outreach, portfolio link      |
 
 ### Goals
 
@@ -175,9 +175,9 @@ Developer OS serves four distinct audiences. Each persona arrives with different
 
 ## Persona Priority Matrix
 
-| Persona | Priority | MVP Focus |
-|---------|----------|-----------|
-| Technical Recruiter | Primary | Resume, featured project, contact |
-| Engineering Manager | High | Case studies, architecture, GitHub |
-| Senior Engineer | Medium | Deep case studies, technical content |
-| Founder / CTO | Medium | Featured project, About, contact |
+| Persona             | Priority | MVP Focus                            |
+| ------------------- | -------- | ------------------------------------ |
+| Technical Recruiter | Primary  | Resume, featured project, contact    |
+| Engineering Manager | High     | Case studies, architecture, GitHub   |
+| Senior Engineer     | Medium   | Deep case studies, technical content |
+| Founder / CTO       | Medium   | Featured project, About, contact     |

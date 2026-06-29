@@ -45,7 +45,7 @@ One button style. One card style. One spacing rhythm. Consistency builds trust a
 
 ### Motion With Purpose
 
-Animation answers a question: *Why does this move?* If there is no answer, it does not animate. Motion guides attention, confirms interaction, and smooths transitions — it never decorates.
+Animation answers a question: _Why does this move?_ If there is no answer, it does not animate. Motion guides attention, confirms interaction, and smooths transitions — it never decorates.
 
 ### Performance Is UX
 
@@ -57,14 +57,14 @@ A slow site is a broken site. Design choices that increase bundle size or block 
 
 ### Desired Feel
 
-| Quality | Description |
-|---------|-------------|
-| **Modern** | Contemporary without trend-chasing |
-| **Technical** | Feels built by engineers, for engineers |
-| **Calm** | No visual noise; comfortable to read for 10+ minutes |
-| **Spacious** | Generous whitespace; content breathes |
+| Quality          | Description                                            |
+| ---------------- | ------------------------------------------------------ |
+| **Modern**       | Contemporary without trend-chasing                     |
+| **Technical**    | Feels built by engineers, for engineers                |
+| **Calm**         | No visual noise; comfortable to read for 10+ minutes   |
+| **Spacious**     | Generous whitespace; content breathes                  |
 | **Professional** | Credible to recruiters, managers, and senior engineers |
-| **Editorial** | Long-form content reads like quality technical writing |
+| **Editorial**    | Long-form content reads like quality technical writing |
 
 ### Avoid
 
@@ -84,15 +84,15 @@ A slow site is a broken site. Design choices that increase bundle size or block 
 
 ### Palette Roles
 
-| Role | Purpose |
-|------|---------|
-| **Primary** | Primary text, headings, key UI elements |
-| **Secondary** | Supporting text, labels, metadata |
-| **Muted** | Placeholders, disabled states, subtle borders |
-| **Accent** | Links, active states, primary CTAs |
-| **Success** | Confirmations, positive status |
-| **Warning** | Caution states |
-| **Error** | Validation errors, destructive actions |
+| Role          | Purpose                                       |
+| ------------- | --------------------------------------------- |
+| **Primary**   | Primary text, headings, key UI elements       |
+| **Secondary** | Supporting text, labels, metadata             |
+| **Muted**     | Placeholders, disabled states, subtle borders |
+| **Accent**    | Links, active states, primary CTAs            |
+| **Success**   | Confirmations, positive status                |
+| **Warning**   | Caution states                                |
+| **Error**     | Validation errors, destructive actions        |
 
 ### Dark Mode
 
@@ -113,15 +113,15 @@ Typography does most of the visual work. Hierarchy comes from **size**, **weight
 
 ### Hierarchy
 
-| Level | Use |
-|-------|-----|
-| Display | Page heroes, landing headlines |
-| Heading 1 | Page titles |
-| Heading 2 | Major sections |
-| Heading 3 | Subsections |
-| Body | Paragraphs, case study content |
-| Small | Metadata, captions, labels |
-| Mono | Code snippets, technical labels |
+| Level     | Use                             |
+| --------- | ------------------------------- |
+| Display   | Page heroes, landing headlines  |
+| Heading 1 | Page titles                     |
+| Heading 2 | Major sections                  |
+| Heading 3 | Subsections                     |
+| Body      | Paragraphs, case study content  |
+| Small     | Metadata, captions, labels      |
+| Mono      | Code snippets, technical labels |
 
 ### Rules
 
@@ -137,13 +137,13 @@ Typography does most of the visual work. Hierarchy comes from **size**, **weight
 
 ### When to Animate
 
-| Scenario | Motion |
-|----------|--------|
-| Page transition | Subtle fade (optional) |
-| Hover state | Color or opacity shift |
-| Modal open/close | Scale + fade |
-| List item enter | Staggered fade-up (sparingly) |
-| Scroll reveal | Avoid — content should be immediately visible |
+| Scenario         | Motion                                        |
+| ---------------- | --------------------------------------------- |
+| Page transition  | Subtle fade (optional)                        |
+| Hover state      | Color or opacity shift                        |
+| Modal open/close | Scale + fade                                  |
+| List item enter  | Staggered fade-up (sparingly)                 |
+| Scroll reveal    | Avoid — content should be immediately visible |
 
 ### When Not to Animate
 
@@ -166,13 +166,13 @@ Typography does most of the visual work. Hierarchy comes from **size**, **weight
 
 Every component in `packages/ui` must follow these rules:
 
-| Rule | Description |
-|------|-------------|
-| **Stateless by default** | Props in, markup out. No internal business state. |
-| **Server Components by default** | Client components only when interactivity requires it. |
-| **Accessible by default** | ARIA labels, keyboard support, focus management built in. |
-| **Theme-aware** | Consume design tokens; support future dark mode without rewrites. |
-| **Independent of business logic** | No imports from `packages/core` or `platform/`. |
+| Rule                              | Description                                                       |
+| --------------------------------- | ----------------------------------------------------------------- |
+| **Stateless by default**          | Props in, markup out. No internal business state.                 |
+| **Server Components by default**  | Client components only when interactivity requires it.            |
+| **Accessible by default**         | ARIA labels, keyboard support, focus management built in.         |
+| **Theme-aware**                   | Consume design tokens; support future dark mode without rewrites. |
+| **Independent of business logic** | No imports from `packages/core` or `platform/`.                   |
 
 **Business logic** belongs in `packages/core`.  
 **Presentation** belongs in `packages/ui`.  
@@ -182,8 +182,8 @@ Every component in `packages/ui` must follow these rules:
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `09-design-tokens.md` | Spacing, radius, shadows, breakpoints, container |
-| `10-component-library.md` | Component inventory and specifications |
-| `11-layout-system.md` | Page anatomy and section structure |
+| Document                  | Scope                                            |
+| ------------------------- | ------------------------------------------------ |
+| `09-design-tokens.md`     | Spacing, radius, shadows, breakpoints, container |
+| `10-component-library.md` | Component inventory and specifications           |
+| `11-layout-system.md`     | Page anatomy and section structure               |

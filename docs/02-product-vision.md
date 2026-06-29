@@ -50,18 +50,18 @@ Developer OS is never finished. It evolves throughout my career.
 
 These become engineering rules.
 
-| # | Principle |
-|---|-----------|
-| 1 | **Single Source of Truth** — All professional content lives in one place. |
-| 2 | **Everything is version controlled** — Content, config, and generated artifacts are tracked. |
-| 3 | **Every project deserves a case study** — Significant work includes engineering narrative. |
-| 4 | **Every feature is documented** — No undocumented behavior ships. |
-| 5 | **No duplicated content** — Update once, propagate everywhere. |
-| 6 | **Readable beats clever** — Maintainability over novelty. |
-| 7 | **Accessibility is required** — WCAG AA is the baseline, not a stretch goal. |
-| 8 | **Performance is a feature** — Fast load times are part of the product. |
-| 9 | **Design for maintainability** — Architecture should scale without rewrites. |
-| 10 | **Automate repetitive work** — Resume generation, feeds, and sitemaps should be automated. |
+| #   | Principle                                                                                    |
+| --- | -------------------------------------------------------------------------------------------- |
+| 1   | **Single Source of Truth** — All professional content lives in one place.                    |
+| 2   | **Everything is version controlled** — Content, config, and generated artifacts are tracked. |
+| 3   | **Every project deserves a case study** — Significant work includes engineering narrative.   |
+| 4   | **Every feature is documented** — No undocumented behavior ships.                            |
+| 5   | **No duplicated content** — Update once, propagate everywhere.                               |
+| 6   | **Readable beats clever** — Maintainability over novelty.                                    |
+| 7   | **Accessibility is required** — WCAG AA is the baseline, not a stretch goal.                 |
+| 8   | **Performance is a feature** — Fast load times are part of the product.                      |
+| 9   | **Design for maintainability** — Architecture should scale without rewrites.                 |
+| 10  | **Automate repetitive work** — Resume generation, feeds, and sitemaps should be automated.   |
 
 ## Long-Term Vision
 

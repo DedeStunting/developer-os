@@ -28,14 +28,14 @@ Content strategy defines what content belongs on every page and what makes Devel
 
 **User question:** Who are you?
 
-| Section | Content | Source |
-|---------|---------|--------|
-| Hero | Name, title, one-line mission | `resume/profile.ts` + `site/` |
-| Mission | 2–3 sentence value proposition | `site/` |
-| Featured Project | Bundo summary with CTA | `portfolio/projects/bundo/` |
-| Experience | 2–3 most recent roles | `resume/experience.ts` |
-| Technologies | Top skills by category | `resume/skills.ts` |
-| CTA | Contact + Download Resume | Static |
+| Section          | Content                        | Source                        |
+| ---------------- | ------------------------------ | ----------------------------- |
+| Hero             | Name, title, one-line mission  | `resume/profile.ts` + `site/` |
+| Mission          | 2–3 sentence value proposition | `site/`                       |
+| Featured Project | Bundo summary with CTA         | `portfolio/projects/bundo/`   |
+| Experience       | 2–3 most recent roles          | `resume/experience.ts`        |
+| Technologies     | Top skills by category         | `resume/skills.ts`            |
+| CTA              | Contact + Download Resume      | Static                        |
 
 ### Tone
 
@@ -47,13 +47,13 @@ Confident, concise. A recruiter should understand who Chiedu is within 30 second
 
 **User question:** Tell me your story.
 
-| Section | Content | Required |
-|---------|---------|----------|
-| Story | Engineering origin and career narrative | ✓ |
-| Engineering Philosophy | Values, approach, what matters | ✓ |
-| Current Focus | What you're building and learning now | ✓ |
-| Career Timeline | Visual timeline of roles | ✓ |
-| Fun Facts | Personal touches (optional) | Optional |
+| Section                | Content                                 | Required |
+| ---------------------- | --------------------------------------- | -------- |
+| Story                  | Engineering origin and career narrative | ✓        |
+| Engineering Philosophy | Values, approach, what matters          | ✓        |
+| Current Focus          | What you're building and learning now   | ✓        |
+| Career Timeline        | Visual timeline of roles                | ✓        |
+| Fun Facts              | Personal touches (optional)             | Optional |
 
 ### Tone
 
@@ -65,10 +65,10 @@ Personal but professional. Shows personality without undermining credibility.
 
 **User question:** What do you build?
 
-| Section | Content | Rule |
-|---------|---------|------|
-| Page intro | Brief description of project philosophy | Static |
-| Project grid | All projects as cards | From `portfolio/projects/` |
+| Section      | Content                                 | Rule                       |
+| ------------ | --------------------------------------- | -------------------------- |
+| Page intro   | Brief description of project philosophy | Static                     |
+| Project grid | All projects as cards                   | From `portfolio/projects/` |
 
 ### Ordering Rules
 
@@ -78,11 +78,11 @@ Personal but professional. Shows personality without undermining credibility.
 
 ### MVP Projects
 
-| Project | Type | Featured |
-|---------|------|----------|
-| Bundo | Production | ✓ |
-| Real-Time Chat | Production | — |
-| Pizza Ordering Platform | Demo/Learning | — |
+| Project                 | Type          | Featured |
+| ----------------------- | ------------- | -------- |
+| Bundo                   | Production    | ✓        |
+| Real-Time Chat          | Production    | —        |
+| Pizza Ordering Platform | Demo/Learning | —        |
 
 ---
 
@@ -94,27 +94,27 @@ This is the most important page in the platform. It differentiates Developer OS 
 
 ### Required Sections (MVP)
 
-| Section | Content Type | Source |
-|---------|-------------|--------|
-| Executive Summary | MDX | `overview.mdx` |
-| Business Problem | MDX | `overview.mdx` |
-| Technical Problem | MDX | `overview.mdx` |
-| Architecture | MDX + diagram | `architecture.mdx` |
-| Technology Choices | Structured | `metadata.ts` |
-| Challenges | MDX | `overview.mdx` or dedicated |
-| Lessons Learned | MDX | `lessons.mdx` |
+| Section            | Content Type  | Source                      |
+| ------------------ | ------------- | --------------------------- |
+| Executive Summary  | MDX           | `overview.mdx`              |
+| Business Problem   | MDX           | `overview.mdx`              |
+| Technical Problem  | MDX           | `overview.mdx`              |
+| Architecture       | MDX + diagram | `architecture.mdx`          |
+| Technology Choices | Structured    | `metadata.ts`               |
+| Challenges         | MDX           | `overview.mdx` or dedicated |
+| Lessons Learned    | MDX           | `lessons.mdx`               |
 
 ### Future Sections (Post-MVP)
 
-| Section | Epic |
-|---------|------|
-| System Design diagram | Epic 4 |
-| API Design | Epic 4 |
+| Section                 | Epic   |
+| ----------------------- | ------ |
+| System Design diagram   | Epic 4 |
+| API Design              | Epic 4 |
 | Security considerations | Epic 4 |
-| Performance analysis | Epic 4 |
-| Deployment walkthrough | Epic 4 |
-| Screenshots / Gallery | Epic 4 |
-| Future Improvements | Epic 4 |
+| Performance analysis    | Epic 4 |
+| Deployment walkthrough  | Epic 4 |
+| Screenshots / Gallery   | Epic 4 |
+| Future Improvements     | Epic 4 |
 
 ### Bundo — Flagship Case Study
 
@@ -126,23 +126,23 @@ Bundo is the reference implementation. All future project pages follow the Bundo
 
 **User question:** Can you do the job?
 
-| Section | Content | Format |
-|---------|---------|--------|
-| Header | Name, title, contact, summary | Structured |
-| Experience | Work history with bullets | Structured |
-| Projects | Key project highlights | Derived from portfolio |
-| Education | Degrees and institutions | Structured |
-| Skills | Categorized skill lists | Structured |
+| Section    | Content                       | Format                 |
+| ---------- | ----------------------------- | ---------------------- |
+| Header     | Name, title, contact, summary | Structured             |
+| Experience | Work history with bullets     | Structured             |
+| Projects   | Key project highlights        | Derived from portfolio |
+| Education  | Degrees and institutions      | Structured             |
+| Skills     | Categorized skill lists       | Structured             |
 
 ### Delivery Modes
 
-| Mode | MVP | Future |
-|------|-----|--------|
-| Interactive (web) | ✓ | ✓ |
-| Download PDF | ✓ | ✓ |
-| Print stylesheet | ✓ | ✓ |
-| ATS-optimized variant | — | Epic 5 |
-| Multiple versions | — | Epic 5 |
+| Mode                  | MVP | Future |
+| --------------------- | --- | ------ |
+| Interactive (web)     | ✓   | ✓      |
+| Download PDF          | ✓   | ✓      |
+| Print stylesheet      | ✓   | ✓      |
+| ATS-optimized variant | —   | Epic 5 |
+| Multiple versions     | —   | Epic 5 |
 
 ### ATS Considerations
 
@@ -157,13 +157,13 @@ Bundo is the reference implementation. All future project pages follow the Bundo
 
 **User question:** How can I contact you?
 
-| Element | Specification |
-|---------|---------------|
-| Form fields | Name, Email, Company, Message |
-| Tone | Minimal, professional |
-| Response | Resend email notification |
-| Success state | Clear confirmation message |
-| Error state | Inline validation errors |
+| Element       | Specification                 |
+| ------------- | ----------------------------- |
+| Form fields   | Name, Email, Company, Message |
+| Tone          | Minimal, professional         |
+| Response      | Resend email notification     |
+| Success state | Clear confirmation message    |
+| Error state   | Inline validation errors      |
 
 ### Rules
 
@@ -177,14 +177,14 @@ Bundo is the reference implementation. All future project pages follow the Bundo
 
 ## 7. Content Ownership
 
-| Content Type | Location | Format |
-|-------------|----------|--------|
-| Structured data | `platform/content/resume/` | TypeScript modules |
-| Project metadata | `platform/content/portfolio/projects/*/metadata.ts` | TypeScript modules |
-| Long-form narrative | `platform/content/portfolio/projects/*.mdx` | MDX |
-| Site copy | `platform/content/site/` | TypeScript modules |
-| Blog posts (future) | `platform/content/blog/` | MDX |
-| App configuration | `packages/config/` | TypeScript modules |
+| Content Type        | Location                                            | Format             |
+| ------------------- | --------------------------------------------------- | ------------------ |
+| Structured data     | `platform/content/resume/`                          | TypeScript modules |
+| Project metadata    | `platform/content/portfolio/projects/*/metadata.ts` | TypeScript modules |
+| Long-form narrative | `platform/content/portfolio/projects/*.mdx`         | MDX                |
+| Site copy           | `platform/content/site/`                            | TypeScript modules |
+| Blog posts (future) | `platform/content/blog/`                            | MDX                |
+| App configuration   | `packages/config/`                                  | TypeScript modules |
 
 ---
 
@@ -203,8 +203,8 @@ Before any content ships:
 
 ## Related Documents
 
-| Document | Scope |
-|----------|-------|
-| `15-page-specifications.md` | Implementation contract per page |
-| `12-information-architecture.md` | Site structure |
-| `01-product-discovery.md` | MVP scope |
+| Document                         | Scope                            |
+| -------------------------------- | -------------------------------- |
+| `15-page-specifications.md`      | Implementation contract per page |
+| `12-information-architecture.md` | Site structure                   |
+| `01-product-discovery.md`        | MVP scope                        |
