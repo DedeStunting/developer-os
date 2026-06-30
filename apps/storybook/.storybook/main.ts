@@ -14,6 +14,9 @@ const config: StorybookConfig = {
       resolve: {
         alias: {
           "@developer-os/ui": path.resolve(__dirname, "../../../packages/ui"),
+          "@developer-os/config": path.resolve(__dirname, "../../../packages/config"),
+          "next/link": path.resolve(__dirname, "../mocks/next-link.tsx"),
+          "next/navigation": path.resolve(__dirname, "../mocks/next-navigation.ts"),
         },
       },
     });

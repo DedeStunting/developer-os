@@ -1,3 +1,1 @@
-// Theme and context providers (future dark mode).
-
-export {};
+export { ThemeProvider, type ThemeProviderProps } from "./ThemeProvider";

@@ -15,20 +15,31 @@
     "./layouts": "./layouts/index.ts",
     "./styles": "./styles/index.ts",
     "./styles/*": "./styles/*.ts",
+    "./styles/globals.css": "./styles/globals.css",
+    "./styles/tokens.css": "./styles/tokens.css",
     "./hooks": "./hooks/index.ts",
     "./icons": "./icons/index.ts",
     "./providers": "./providers/index.ts"
   },
   "dependencies": {
+    "@developer-os/config": "workspace:*",
     "@developer-os/types": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.525.0",
+    "next-themes": "^0.4.6",
     "tailwind-merge": "^3.3.1"
   },
   "peerDependencies": {
-    "react": "^19.0.0"
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "react": "^19.1.0"
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "next": "^15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }

@@ -10,3 +10,4 @@ export { features, isFeatureEnabled, type Features, type FeatureFlag } from "./f
 export { analytics, type AnalyticsConfig } from "./analytics";
 export { metadata, type MetadataConfig } from "./metadata";
 export { theme, type ThemeConfig } from "./theme";
+export { social, type SocialConfig } from "./social";

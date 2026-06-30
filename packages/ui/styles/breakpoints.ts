@@ -16,4 +16,4 @@ export const container = {
 } as const;
 
 export type Breakpoints = typeof breakpoints;
-export type Container = typeof container;
+export type ContainerTokens = typeof container;

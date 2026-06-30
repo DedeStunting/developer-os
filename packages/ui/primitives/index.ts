@@ -1,3 +1,1 @@
-// Primitive components — Button, Input, Badge, Link, Icon, Avatar.
-
-export {};
+export { Button, type ButtonProps } from "./Button";

@@ -15,6 +15,7 @@
     "./features": "./features.ts",
     "./analytics": "./analytics.ts",
     "./metadata": "./metadata.ts",
-    "./theme": "./theme.ts"
+    "./theme": "./theme.ts",
+    "./social": "./social.ts"
   }
 }
