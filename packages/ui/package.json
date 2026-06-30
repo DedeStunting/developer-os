@@ -19,11 +19,13 @@
     "./styles/tokens.css": "./styles/tokens.css",
     "./hooks": "./hooks/index.ts",
     "./icons": "./icons/index.ts",
-    "./providers": "./providers/index.ts"
+    "./providers": "./providers/index.ts",
+    "./pdf": "./pdf/index.ts"
   },
   "dependencies": {
     "@developer-os/config": "workspace:*",
     "@developer-os/types": "workspace:*",
+    "@react-pdf/renderer": "^4.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",

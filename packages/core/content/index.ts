@@ -4,23 +4,17 @@ import {
   profile,
   seo,
   social,
-  techStackGroups,
   trustMetrics,
-  experience,
   bundoProject,
 } from "@developer-os/platform/content";
 import {
   CallToActionContentSchema,
-  ExperienceSchema,
   FeaturedProjectShowcaseSchema,
   HeroContentSchema,
-  ProfileSchema,
-  TechStackGroupSchema,
   TrustMetricSchema,
 } from "@developer-os/platform/schemas";
 import type {
   CallToActionContent,
-  ExperienceEntry,
   FeaturedProjectShowcase,
   HeroContent,
   HomePageData,
@@ -29,9 +23,9 @@ import type {
   TrustMetric,
 } from "@developer-os/types";
 
-import { sortExperience } from "../formatting";
 import { validateContent } from "../validation";
 import { getProjects } from "./projects";
+import { getExperience, getSkillGroups } from "./resume";
 
 export function getHero(): HeroContent {
   const hero: HeroContent = {
@@ -60,13 +54,8 @@ export function getFeaturedProject(): FeaturedProjectShowcase {
   return validateContent(FeaturedProjectShowcaseSchema, featured, "featured project");
 }
 
-export function getExperience(): ExperienceEntry[] {
-  const validated = validateContent(ExperienceSchema, experience, "experience");
-  return sortExperience(validated);
-}
-
 export function getTechStack(): TechStackGroup[] {
-  return validateContent(TechStackGroupSchema.array(), techStackGroups, "tech stack");
+  return getSkillGroups();
 }
 
 export function getSelectedProjects(): ProjectPreview[] {
@@ -75,10 +64,6 @@ export function getSelectedProjects(): ProjectPreview[] {
 
 export function getHomeCta(): CallToActionContent {
   return validateContent(CallToActionContentSchema, homeCta, "home CTA");
-}
-
-export function getProfile() {
-  return validateContent(ProfileSchema, profile, "profile");
 }
 
 export function getHomePageData(): HomePageData {
@@ -96,6 +81,17 @@ export function getHomePageData(): HomePageData {
 export function getHomeSeo() {
   return seo;
 }
+
+export {
+  getEducation,
+  getExperience,
+  getProfile,
+  getResume,
+  getResumeProjects,
+  getResumeSeo,
+  getResumeSkillGroupsByCategory,
+  getSkillGroups,
+} from "./resume";
 
 export {
   getProject,

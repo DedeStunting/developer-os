@@ -40,10 +40,12 @@ export const featuredProjectFixture: FeaturedProjectShowcase = {
 export const experienceFixture: ExperienceEntry[] = [
   {
     company: "Bundo Tech Inc.",
-    role: "Backend Software Engineer",
-    startDate: "2024-03",
-    endDate: null,
-    description: "Designed and shipped production APIs and deployment pipelines.",
+    title: "Backend Software Engineer",
+    location: "Remote",
+    start: "2024-03",
+    end: null,
+    highlights: ["Designed and shipped production APIs and deployment pipelines."],
+    technologies: ["TypeScript", "Node.js", "PostgreSQL"],
   },
 ];
 

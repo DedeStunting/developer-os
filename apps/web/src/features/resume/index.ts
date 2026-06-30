@@ -1,3 +1,1 @@
-// Resume feature — interactive resume view and download actions.
-
-export * from "./components";
+export { ResumePageView, type ResumePageViewProps } from "./components/ResumePageView";

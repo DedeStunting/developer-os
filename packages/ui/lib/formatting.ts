@@ -13,6 +13,6 @@ export function formatExperienceDate(date: string | null): string {
   return formatter.format(new Date(Number(year), Number(month) - 1));
 }
 
-export function formatExperienceRange(startDate: string, endDate: string | null): string {
-  return `${formatExperienceDate(startDate)} — ${formatExperienceDate(endDate)}`;
+export function formatExperienceRange(start: string, end: string | null): string {
+  return `${formatExperienceDate(start)} — ${formatExperienceDate(end)}`;
 }

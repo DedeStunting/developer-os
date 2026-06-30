@@ -1,0 +1,22 @@
+{
+  "name": "@developer-os/content",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "exports": {
+    ".": "./index.ts",
+    "./mdx": "./mdx/index.ts",
+    "./projects": "./projects/index.ts"
+  },
+  "dependencies": {
+    "@developer-os/types": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

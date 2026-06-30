@@ -35,3 +35,10 @@ export {
 } from "./TechnologyDecisionCard";
 export { TechStackGrid, type TechStackGridProps } from "./TechStackGrid";
 export { Timeline, type TimelineProps } from "./Timeline";
+export { ResumeHeader, type ResumeHeaderProps } from "./ResumeHeader";
+export { ResumeSection, type ResumeSectionProps } from "./ResumeSection";
+export { ResumeExperience, type ResumeExperienceProps } from "./ResumeExperience";
+export { ResumeEducation, type ResumeEducationProps } from "./ResumeEducation";
+export { ResumeSkills, type ResumeSkillsProps } from "./ResumeSkills";
+export { ResumeProjectList, type ResumeProjectListProps } from "./ResumeProject";
+export { ResumeDownloadButton, type ResumeDownloadButtonProps } from "./ResumeDownloadButton";

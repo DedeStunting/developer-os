@@ -1,7 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
+import { loadProjectSections } from "@developer-os/content/projects";
 import {
   bundoProject,
   pizzaOrderingProject,
@@ -12,7 +9,6 @@ import {
 import { ProjectCaseStudySchema, ProjectMetadataSchema } from "@developer-os/platform/schemas";
 import type {
   ProjectCaseStudy,
-  ProjectCaseStudySections,
   ProjectMetadata,
   ProjectPreview,
   ProjectSeo,
@@ -25,44 +21,6 @@ const metadataBySlug: Record<string, unknown> = {
   "real-time-chat": realTimeChatProject,
   "pizza-ordering-platform": pizzaOrderingProject,
 };
-
-const sectionFiles: Record<keyof ProjectCaseStudySections, string> = {
-  overview: "overview.mdx",
-  businessProblem: "business-problem.mdx",
-  technicalChallenges: "technical-challenges.mdx",
-  architecture: "architecture.mdx",
-  databaseDesign: "database-design.mdx",
-  apiDesign: "api-design.mdx",
-  security: "security.mdx",
-  performance: "performance.mdx",
-  lessons: "lessons.mdx",
-  future: "future.mdx",
-};
-
-const projectsRoot = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../../../platform/content/portfolio/projects",
-);
-
-function readSection(slug: string, filename: string): string {
-  const filePath = path.join(projectsRoot, slug, filename);
-
-  if (!existsSync(filePath)) {
-    return "";
-  }
-
-  return readFileSync(filePath, "utf8").trim();
-}
-
-function loadProjectSections(slug: string): ProjectCaseStudySections {
-  const sections = {} as ProjectCaseStudySections;
-
-  for (const [key, filename] of Object.entries(sectionFiles)) {
-    sections[key as keyof ProjectCaseStudySections] = readSection(slug, filename);
-  }
-
-  return sections;
-}
 
 function toProjectPreview(metadata: ProjectMetadata): ProjectPreview {
   return {

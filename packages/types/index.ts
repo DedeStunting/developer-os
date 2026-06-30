@@ -13,12 +13,14 @@ export type {
 } from "./project-detail";
 export type {
   Profile,
+  ExperienceLink,
   ExperienceEntry,
   Experience,
   EducationEntry,
   Education,
-  Skills,
+  ResumeProject,
   Resume,
+  ResumeSeo,
 } from "./resume";
 export type { NavigationItem, Navigation } from "./navigation";
 export type { Seo, PageSeo } from "./seo";

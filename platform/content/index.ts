@@ -1,11 +1,11 @@
 export { profile } from "./resume/profile";
 export { experience } from "./resume/experience";
-export { skills } from "./resume/skills";
+export { skillGroups } from "./resume/skills";
 export { education } from "./resume/education";
+export { resumeSeo } from "./resume/seo";
 
 export { hero } from "./site/hero";
 export { trustMetrics } from "./site/trust";
-export { techStackGroups } from "./site/tech-stack";
 export { homeCta } from "./site/cta";
 export { seo } from "./site/seo";
 export { social } from "./site/social";

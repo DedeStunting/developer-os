@@ -1,11 +1,19 @@
 import { z } from "zod";
 
+export const ExperienceLinkSchema = z.object({
+  label: z.string(),
+  href: z.string().url(),
+});
+
 export const ExperienceEntrySchema = z.object({
   company: z.string(),
-  role: z.string(),
-  startDate: z.string(),
-  endDate: z.string().nullable(),
-  description: z.string(),
+  title: z.string(),
+  location: z.string().optional(),
+  start: z.string(),
+  end: z.string().nullable(),
+  highlights: z.array(z.string()).min(1),
+  technologies: z.array(z.string()).optional(),
+  links: z.array(ExperienceLinkSchema).optional(),
 });
 
 export const ExperienceSchema = z.array(ExperienceEntrySchema);

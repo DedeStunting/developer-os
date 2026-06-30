@@ -7,7 +7,7 @@ export const features = {
   search: false,
   rss: false,
   analytics: false,
-  resumeGenerator: false,
+  resumeGenerator: true,
   admin: false,
   publicApi: false,
 } as const;

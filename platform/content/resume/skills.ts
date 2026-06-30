@@ -1,5 +1,18 @@
-export const skills = {
-  languages: ["Java", "TypeScript", "JavaScript", "SQL"],
-  frameworks: ["Spring Boot", "Node.js", "Express", "React"],
-  tools: ["PostgreSQL", "MongoDB", "Docker", "Render", "AWS S3", "Git"],
-} as const;
+export const skillGroups = [
+  {
+    category: "Backend",
+    items: ["Java", "Spring Boot", "Node.js", "Express"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MongoDB", "Supabase"],
+  },
+  {
+    category: "Cloud",
+    items: ["Docker", "Render", "AWS S3"],
+  },
+  {
+    category: "Frontend",
+    items: ["React", "Tailwind CSS"],
+  },
+] as const;
