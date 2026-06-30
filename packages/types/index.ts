@@ -1,5 +1,17 @@
 export type { Project } from "./project";
 export type {
+  TechnologyDecision,
+  EngineeringCallout,
+  ApiEndpoint,
+  SecurityTopic,
+  ProjectSeo,
+  ProjectMetadata,
+  ProjectCaseStudySections,
+  ProjectCaseStudy,
+  ProjectListPageData,
+  ProjectDetailPageData,
+} from "./project-detail";
+export type {
   Profile,
   ExperienceEntry,
   Experience,

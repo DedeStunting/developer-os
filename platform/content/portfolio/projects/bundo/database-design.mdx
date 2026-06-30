@@ -1,0 +1,11 @@
+The data model centers on users, roles, providers, bookings, and operational records that tie marketplace activity together.
+
+Design principles:
+
+- **Entity relationships** were modeled relationally to preserve booking integrity and support reporting-style queries.
+- **Indexing** targeted lookup paths for provider discovery, booking status filters, and user-scoped dashboards.
+- **RBAC** was represented explicitly so authorization checks mapped to business roles rather than hard-coded user IDs.
+- **Migrations** were treated as first-class release artifacts to keep schema changes auditable across environments.
+- **Auditability** favored clear state transitions on core records instead of overwriting historical booking context.
+
+The schema intentionally avoided over-normalizing early domains that were still evolving, while keeping critical transactional paths strict.

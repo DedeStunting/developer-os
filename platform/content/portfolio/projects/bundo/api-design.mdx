@@ -1,0 +1,17 @@
+APIs were designed around resource boundaries and predictable contracts rather than exposing internal implementation details.
+
+Representative endpoints:
+
+- `POST /auth/login` — establishes an authenticated session context
+- `POST /orders` — creates an order with validation and role-aware constraints
+- `GET /providers` — returns paginated provider listings for marketplace discovery
+- `PATCH /bookings/:id` — updates booking state with authorization and transition rules
+
+Design choices:
+
+- **Explicit HTTP verbs** for state changes instead of generic action endpoints
+- **Consistent error shapes** so clients could handle validation and authorization failures uniformly
+- **Pagination defaults** on list endpoints to protect database performance as catalogs grew
+- **Service-layer enforcement** so authorization was applied before mutations, not only at the route edge
+
+This made the API easier to extend when new workflows were added without breaking existing clients.

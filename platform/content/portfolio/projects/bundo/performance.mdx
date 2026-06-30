@@ -1,0 +1,10 @@
+Performance work focused on practical bottlenecks for an early production system rather than premature optimization.
+
+- **Pagination** on list endpoints to avoid unbounded query costs
+- **Indexing** on provider discovery and booking status lookups
+- **Query optimization** for dashboard views that aggregated related records
+- **Lazy loading** of non-critical UI data on the client to improve perceived responsiveness
+- **Image optimization** for uploaded assets served through controlled delivery paths
+- **Caching opportunities** identified for read-heavy catalog endpoints, with invalidation tied to provider updates
+
+Trade-offs were documented explicitly: some endpoints favored consistency over aggressive caching until usage patterns justified more complex invalidation strategies.

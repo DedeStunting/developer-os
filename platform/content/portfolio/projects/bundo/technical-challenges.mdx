@@ -1,0 +1,12 @@
+The engineering challenge was not building CRUD screens—it was designing a system that could support multiple roles, evolving workflows, and production constraints without accumulating fragile shortcuts.
+
+Key technical challenges included:
+
+- **Authentication and authorization** across customer, provider, and admin experiences
+- **Transactional booking flows** with state transitions that had to remain consistent under concurrency
+- **Media uploads** for provider assets without exposing storage credentials to clients
+- **Background processing** for notifications and long-running operational tasks
+- **Database evolution** as product requirements changed during active development
+- **Deployment repeatability** across local, staging, and production environments
+
+Each of these areas influenced API boundaries, schema design, and how services were organized.

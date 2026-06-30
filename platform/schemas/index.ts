@@ -1,5 +1,17 @@
 export { ProjectSchema, type Project } from "./project";
 export {
+  TechnologyDecisionSchema,
+  EngineeringCalloutSchema,
+  ApiEndpointSchema,
+  SecurityTopicSchema,
+  ProjectSeoSchema,
+  ProjectMetadataSchema,
+  ProjectCaseStudySectionsSchema,
+  ProjectCaseStudySchema,
+  type ProjectMetadata,
+  type ProjectCaseStudy,
+} from "./project-detail";
+export {
   ExperienceEntrySchema,
   ExperienceSchema,
   type ExperienceEntry,

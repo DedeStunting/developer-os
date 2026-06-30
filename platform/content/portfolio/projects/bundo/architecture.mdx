@@ -1,3 +1,17 @@
-# Architecture
+The system follows a layered architecture that keeps transport concerns, business rules, and persistence separate.
 
-Placeholder content for Bundo architecture.
+```
+Client (React)
+      ↓
+API Layer (REST)
+      ↓
+Service Layer (domain workflows)
+      ↓
+Database (PostgreSQL)
+      ↓
+Third-party Services (Auth, object storage)
+```
+
+The API layer handles request validation, authentication context, and response contracts. The service layer owns business rules such as booking transitions, role checks, and side effects. Persistence is accessed through explicit data access patterns rather than leaking database details into route handlers.
+
+This structure made it easier to reason about change: new endpoints could reuse existing services, and authorization rules stayed centralized instead of spreading across controllers.

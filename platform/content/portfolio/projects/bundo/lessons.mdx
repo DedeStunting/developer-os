@@ -1,3 +1,7 @@
-# Lessons Learned
+- **RBAC early** paid off when new provider workflows arrived; authorization did not require a rewrite.
+- **Migration discipline** prevented schema drift between environments and made releases less stressful.
+- **Service boundaries** should have been defined even earlier; some endpoints initially carried too much orchestration logic.
+- **Operational visibility** lagged feature delivery—structured logging and dashboards should be part of the first production milestone, not a follow-up.
+- **Scope control** mattered: shipping a reliable core booking loop created more credibility than expanding surface area too quickly.
 
-Placeholder content for Bundo lessons learned.
+The biggest lesson: production readiness is a set of engineering habits, not a single deployment event.

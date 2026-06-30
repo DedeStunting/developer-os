@@ -1,0 +1,11 @@
+Security was treated as a product requirement, not a late hardening pass.
+
+- **Authentication** delegated to Firebase while the backend validated identity on protected routes.
+- **Authorization** used RBAC enforced in the service layer for every sensitive operation.
+- **Validation** applied schema checks to all write paths with explicit failure responses.
+- **Rate limiting** was planned at the edge for authentication and high-risk mutation endpoints.
+- **Secrets management** kept credentials in environment configuration with no secrets in source control.
+- **File uploads** restricted MIME types and sizes, routing storage access through server-controlled flows.
+- **Input sanitization** prevented unsafe content from propagating into persisted records and downstream consumers.
+
+The goal was defense in depth: even if one layer failed, downstream checks still protected critical operations.

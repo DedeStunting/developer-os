@@ -14,3 +14,4 @@ export { navigation } from "./site/navigation";
 export { metadata as bundoProject } from "./portfolio/projects/bundo/metadata";
 export { metadata as realTimeChatProject } from "./portfolio/projects/real-time-chat/metadata";
 export { metadata as pizzaOrderingProject } from "./portfolio/projects/pizza-ordering-platform/metadata";
+export { projectSlugs, projectsSeo } from "./portfolio/projects/index";

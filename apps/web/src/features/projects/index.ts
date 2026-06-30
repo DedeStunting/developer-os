@@ -1,4 +1,2 @@
-// Projects feature — listing grid and project detail case studies.
-
-export * from "./components";
-export * from "./lib";
+export { ProjectDetailView, type ProjectDetailViewProps } from "./components/ProjectDetailView";
+export { ProjectsPageView, type ProjectsPageViewProps } from "./components/ProjectsPageView";

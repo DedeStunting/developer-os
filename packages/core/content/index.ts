@@ -1,15 +1,13 @@
 import {
-  bundoProject,
   hero as heroContent,
   homeCta,
-  pizzaOrderingProject,
   profile,
-  realTimeChatProject,
   seo,
   social,
   techStackGroups,
   trustMetrics,
   experience,
+  bundoProject,
 } from "@developer-os/platform/content";
 import {
   CallToActionContentSchema,
@@ -17,7 +15,6 @@ import {
   FeaturedProjectShowcaseSchema,
   HeroContentSchema,
   ProfileSchema,
-  ProjectPreviewSchema,
   TechStackGroupSchema,
   TrustMetricSchema,
 } from "@developer-os/platform/schemas";
@@ -34,6 +31,7 @@ import type {
 
 import { sortExperience } from "../formatting";
 import { validateContent } from "../validation";
+import { getProjects } from "./projects";
 
 export function getHero(): HeroContent {
   const hero: HeroContent = {
@@ -72,40 +70,7 @@ export function getTechStack(): TechStackGroup[] {
 }
 
 export function getSelectedProjects(): ProjectPreview[] {
-  const previews: ProjectPreview[] = [
-    {
-      slug: bundoProject.slug,
-      title: bundoProject.title,
-      summary: bundoProject.summary,
-      technologies: [...bundoProject.technologies],
-      featured: bundoProject.featured,
-      liveUrl: bundoProject.liveUrl,
-      href: bundoProject.caseStudyHref,
-      imageAlt: `${bundoProject.title} preview`,
-    },
-    {
-      slug: realTimeChatProject.slug,
-      title: realTimeChatProject.title,
-      summary: realTimeChatProject.summary,
-      technologies: [...realTimeChatProject.technologies],
-      featured: realTimeChatProject.featured,
-      href: realTimeChatProject.href,
-      imageAlt: realTimeChatProject.imageAlt,
-    },
-    {
-      slug: pizzaOrderingProject.slug,
-      title: pizzaOrderingProject.title,
-      summary: pizzaOrderingProject.summary,
-      technologies: [...pizzaOrderingProject.technologies],
-      featured: pizzaOrderingProject.featured,
-      href: pizzaOrderingProject.href,
-      imageAlt: pizzaOrderingProject.imageAlt,
-    },
-  ];
-
-  return previews.map((preview, index) =>
-    validateContent(ProjectPreviewSchema, preview, `selected project ${index + 1}`),
-  );
+  return getProjects();
 }
 
 export function getHomeCta(): CallToActionContent {
@@ -131,3 +96,11 @@ export function getHomePageData(): HomePageData {
 export function getHomeSeo() {
   return seo;
 }
+
+export {
+  getProject,
+  getProjects,
+  getProjectSlugs,
+  getProjectsSeo,
+  getRelatedProjects,
+} from "./projects";
