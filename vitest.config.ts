@@ -5,6 +5,12 @@ import { defineConfig } from "vitest/config";
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      "next/link": path.resolve(rootDir, "apps/storybook/mocks/next-link.tsx"),
+      "next/navigation": path.resolve(rootDir, "apps/storybook/mocks/next-navigation.ts"),
+    },
+  },
   test: {
     environment: "node",
     environmentMatchGlobs: [["**/*.{test,spec}.tsx", "jsdom"]],

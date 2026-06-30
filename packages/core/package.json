@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@developer-os/platform": "workspace:*",
-    "@developer-os/types": "workspace:*"
+    "@developer-os/types": "workspace:*",
+    "zod": "^3.25.67"
   }
 }

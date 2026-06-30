@@ -1,4 +1,11 @@
-// Schema validation wrappers around platform/schemas.
-// Validates content at build time and runtime.
+import type { ZodSchema } from "zod";
 
-export {};
+export function validateContent<T>(schema: ZodSchema<T>, data: unknown, label: string): T {
+  const result = schema.safeParse(data);
+
+  if (!result.success) {
+    throw new Error(`Invalid ${label}: ${result.error.message}`);
+  }
+
+  return result.data;
+}

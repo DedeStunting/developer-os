@@ -1,13 +1,3 @@
-import type { ExperienceEntry } from "@developer-os/types";
-
-function sortKey(entry: ExperienceEntry): string {
-  return entry.endDate ?? "9999-12";
-}
-
-export function sortExperience(entries: ExperienceEntry[]): ExperienceEntry[] {
-  return [...entries].sort((a, b) => sortKey(b).localeCompare(sortKey(a)));
-}
-
 export function formatExperienceDate(date: string | null): string {
   if (!date) {
     return "Present";

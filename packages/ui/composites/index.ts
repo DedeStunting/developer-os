@@ -1,4 +1,11 @@
+export { CallToAction, type CallToActionProps } from "./CallToAction";
+export { FeaturedProject, type FeaturedProjectProps } from "./FeaturedProject";
 export { Footer } from "./Footer";
+export { Hero, type HeroProps } from "./Hero";
+export { MetricCard, MetricGrid, type MetricCardProps, type MetricGridProps } from "./MetricCard";
 export { MobileMenu, type MobileMenuProps } from "./MobileMenu";
 export { NavLink, type NavLinkProps } from "./NavLink";
 export { Navbar, type NavbarProps } from "./Navbar";
+export { ProjectPreviewCard, type ProjectPreviewCardProps } from "./ProjectPreviewCard";
+export { TechStackGrid, type TechStackGridProps } from "./TechStackGrid";
+export { Timeline, type TimelineProps } from "./Timeline";

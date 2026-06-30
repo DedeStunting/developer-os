@@ -1,3 +1,3 @@
-// SEO metadata generation from platform content.
+// SEO helpers for page metadata composition.
 
 export {};

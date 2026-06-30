@@ -10,7 +10,8 @@
   },
   "exports": {
     "./schemas": "./schemas/index.ts",
-    "./schemas/*": "./schemas/*.ts"
+    "./schemas/*": "./schemas/*.ts",
+    "./content": "./content/index.ts"
   },
   "dependencies": {
     "zod": "^3.25.67"

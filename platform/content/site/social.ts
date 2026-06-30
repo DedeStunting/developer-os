@@ -1,5 +1,5 @@
 export const social = {
-  github: "",
+  github: "https://github.com/chiedudavid",
   linkedin: "",
-  email: "",
+  email: "mailto:hello@chiedudavid.com",
 } as const;
