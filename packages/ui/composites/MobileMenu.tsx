@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 
 import { primaryNavigation } from "@developer-os/config/navigation";
 
+import { ButtonLink } from "../primitives/ButtonLink";
 import { NavLink } from "./NavLink";
 
 export interface MobileMenuProps {
@@ -70,7 +71,7 @@ export function MobileMenu({ open, activePath, onClose }: MobileMenuProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden" role="presentation">
+    <div className="fixed inset-0 z-50 md:hidden" role="presentation">
       <button
         type="button"
         aria-label="Close navigation menu"
@@ -81,9 +82,9 @@ export function MobileMenu({ open, activePath, onClose }: MobileMenuProps) {
         ref={panelRef}
         id={menuId}
         aria-label="Mobile"
-        className="border-border bg-background absolute right-0 top-0 flex h-full w-[min(280px,80vw)] flex-col border-l p-6 shadow-lg"
+        className="border-border bg-background absolute right-0 top-0 flex h-full w-[min(300px,85vw)] flex-col border-l p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-[max(1.5rem,env(safe-area-inset-top))] shadow-lg"
       >
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between">
           <span className="text-foreground text-sm font-semibold">Menu</span>
           <button
             ref={closeButtonRef}
@@ -95,7 +96,8 @@ export function MobileMenu({ open, activePath, onClose }: MobileMenuProps) {
             <X className="h-5 w-5" aria-hidden />
           </button>
         </div>
-        <div className="flex flex-col gap-4">
+
+        <div className="flex flex-col gap-1">
           {primaryNavigation.map((item) => (
             <NavLink
               key={item.href}
@@ -103,8 +105,15 @@ export function MobileMenu({ open, activePath, onClose }: MobileMenuProps) {
               label={item.label}
               activePath={activePath}
               onNavigate={onClose}
+              className="block min-h-11 py-3 text-base"
             />
           ))}
+        </div>
+
+        <div className="mt-auto pt-8">
+          <ButtonLink href="/contact" size="lg" className="w-full" onClick={onClose}>
+            Contact
+          </ButtonLink>
         </div>
       </nav>
     </div>

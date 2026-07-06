@@ -21,6 +21,11 @@
   color-scheme: light;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--color-background);
@@ -64,5 +69,24 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+.page-hero-offset {
+  padding-top: clamp(7rem, 22vh, 12rem);
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .page-hero-offset {
+    padding-top: clamp(9rem, 20vh, 14rem);
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-hero-offset {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
   }
 }

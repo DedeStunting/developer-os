@@ -8,7 +8,11 @@ export interface ResumeDownloadButtonProps {
 
 export function ResumeDownloadButton({ href = "/resume.pdf" }: ResumeDownloadButtonProps) {
   return (
-    <ButtonLink href={href} size="md" className="inline-flex items-center gap-2">
+    <ButtonLink
+      href={href}
+      size="lg"
+      className="inline-flex w-full items-center justify-center gap-2 sm:w-auto"
+    >
       <Download className="h-4 w-4" aria-hidden />
       Download PDF
     </ButtonLink>

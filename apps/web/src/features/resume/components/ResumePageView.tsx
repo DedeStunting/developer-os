@@ -20,10 +20,10 @@ export interface ResumePageViewProps {
 export function ResumePageView({ resume }: ResumePageViewProps) {
   return (
     <Page>
-      <Section spacing="default">
+      <Section spacing="hero">
         <Container size="narrow">
-          <Stack gap={12}>
-            <div className="flex justify-end">
+          <Stack gap={12} className="gap-8 md:gap-12">
+            <div className="flex justify-stretch sm:justify-end">
               <ResumeDownloadButton />
             </div>
 

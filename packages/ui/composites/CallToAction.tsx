@@ -9,16 +9,21 @@ export interface CallToActionProps {
 
 export function CallToAction({ content }: CallToActionProps) {
   return (
-    <div className="border-border bg-background-subtle rounded-2xl border px-6 py-10 text-center md:px-10 md:py-12">
+    <div className="border-border bg-background-subtle rounded-2xl border px-5 py-8 text-center sm:px-6 sm:py-10 md:px-10 md:py-12">
       <Stack gap={6} className="items-center">
-        <h2 className="text-foreground max-w-2xl text-2xl font-semibold tracking-tight md:text-3xl">
+        <h2 className="text-foreground max-w-2xl text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
           {content.heading}
         </h2>
-        <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink href={content.primaryAction.href} size="lg">
+        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center">
+          <ButtonLink href={content.primaryAction.href} size="lg" className="w-full sm:w-auto">
             {content.primaryAction.label}
           </ButtonLink>
-          <ButtonLink href={content.secondaryAction.href} variant="secondary" size="lg">
+          <ButtonLink
+            href={content.secondaryAction.href}
+            variant="secondary"
+            size="lg"
+            className="w-full sm:w-auto"
+          >
             {content.secondaryAction.label}
           </ButtonLink>
         </div>

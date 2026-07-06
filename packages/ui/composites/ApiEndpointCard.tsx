@@ -11,7 +11,7 @@ export function ApiEndpointCard({ endpoint }: ApiEndpointCardProps) {
         <span className="bg-background-muted text-foreground rounded-md px-2 py-1 font-mono text-xs font-semibold">
           {endpoint.method}
         </span>
-        <code className="text-foreground text-sm font-medium">{endpoint.path}</code>
+        <code className="text-foreground break-all text-sm font-medium">{endpoint.path}</code>
       </div>
       <p className="text-foreground-secondary mt-3 text-sm leading-relaxed">
         {endpoint.description}

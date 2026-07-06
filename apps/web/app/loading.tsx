@@ -3,7 +3,7 @@ import { Container, Page, Section } from "@developer-os/ui";
 export default function LoadingPage() {
   return (
     <Page>
-      <Section>
+      <Section className="page-hero-offset">
         <Container size="narrow">
           <div
             className="flex flex-col gap-4"

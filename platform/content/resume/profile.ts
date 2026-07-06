@@ -1,6 +1,6 @@
 export const profile = {
   name: "Chiedu David",
-  title: "Backend Software Engineer",
+  title: "Software Engineer",
   email: "hello@chiedudavid.com",
   location: "Remote",
   summary:

@@ -13,9 +13,9 @@ const variantClasses: Record<ButtonLinkVariant, string> = {
 };
 
 const sizeClasses: Record<ButtonLinkSize, string> = {
-  sm: "h-8 px-3 text-sm",
-  md: "h-10 px-4 text-sm",
-  lg: "h-12 px-6 text-base",
+  sm: "min-h-9 h-9 px-3 text-sm",
+  md: "min-h-11 h-11 px-4 text-sm",
+  lg: "min-h-12 h-12 px-6 text-base",
 };
 
 export interface ButtonLinkProps {
@@ -25,6 +25,7 @@ export interface ButtonLinkProps {
   size?: ButtonLinkSize;
   className?: string;
   external?: boolean;
+  onClick?: () => void;
 }
 
 export function ButtonLink({
@@ -34,6 +35,7 @@ export function ButtonLink({
   size = "md",
   className,
   external = false,
+  onClick,
 }: ButtonLinkProps) {
   const classes = cn(
     "inline-flex items-center justify-center rounded-lg font-medium transition-opacity duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
@@ -44,14 +46,20 @@ export function ButtonLink({
 
   if (external) {
     return (
-      <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+      <a
+        href={href}
+        className={classes}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+      >
         {children}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={onClick}>
       {children}
     </Link>
   );

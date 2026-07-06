@@ -4,17 +4,15 @@ import { primaryNavigation } from "@developer-os/config/navigation";
 
 describe("primaryNavigation", () => {
   it("defines the MVP navigation order", () => {
-    expect(primaryNavigation.map((item) => item.label)).toEqual([
-      "Home",
-      "Projects",
-      "Resume",
-      "About",
-      "Contact",
-    ]);
+    expect(primaryNavigation.map((item) => item.label)).toEqual(["Home", "Projects", "Resume"]);
   });
 
   it("uses unique hrefs", () => {
     const hrefs = primaryNavigation.map((item) => item.href);
     expect(new Set(hrefs).size).toBe(hrefs.length);
+  });
+
+  it("does not duplicate the contact CTA in the nav list", () => {
+    expect(primaryNavigation.some((item) => item.href === "/contact")).toBe(false);
   });
 });

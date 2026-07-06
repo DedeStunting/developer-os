@@ -27,7 +27,7 @@ export function ProjectDetailView({ project, relatedProjects }: ProjectDetailVie
 
   return (
     <Page>
-      <Section spacing="default">
+      <Section spacing="hero">
         <Container>
           <Stack gap={8}>
             <Breadcrumb
@@ -45,7 +45,7 @@ export function ProjectDetailView({ project, relatedProjects }: ProjectDetailVie
 
       <Section>
         <Container size="narrow">
-          <Stack gap={12}>
+          <Stack gap={12} className="gap-8 md:gap-12">
             <CaseStudySection title="Project Overview" hidden={!sections.overview}>
               <MarkdownContent content={sections.overview} />
             </CaseStudySection>
@@ -69,7 +69,7 @@ export function ProjectDetailView({ project, relatedProjects }: ProjectDetailVie
 
       <Section>
         <Container size="narrow">
-          <Stack gap={12}>
+          <Stack gap={12} className="gap-8 md:gap-12">
             {metadata.engineeringCallouts ? (
               <EngineeringDecisions callouts={metadata.engineeringCallouts} />
             ) : null}

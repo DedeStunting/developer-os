@@ -2,13 +2,9 @@ export const primaryNavigation = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
   { label: "Resume", href: "/resume" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const footerNavigation = [
-  { label: "GitHub", href: "", external: true },
-  { label: "Email", href: "", external: true },
   { label: "Resume", href: "/resume", external: false },
   { label: "Bundo", href: "/projects/bundo", external: false },
 ] as const;

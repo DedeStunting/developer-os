@@ -10,11 +10,11 @@ export interface TimelineProps {
 
 export function Timeline({ entries }: TimelineProps) {
   return (
-    <ol className="grid gap-4 md:grid-cols-2">
+    <ol className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
       {entries.map((entry) => (
         <li
           key={`${entry.company}-${entry.start}`}
-          className="border-border bg-background-subtle rounded-xl border p-6"
+          className="border-border bg-background-subtle rounded-xl border p-5 sm:p-6"
         >
           <Stack gap={2}>
             <div>

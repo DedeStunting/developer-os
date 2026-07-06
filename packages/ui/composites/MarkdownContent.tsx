@@ -16,7 +16,7 @@ export function MarkdownContent({ content, className }: MarkdownContentProps) {
   return (
     <div
       className={cn(
-        "text-foreground-secondary [&_code]:bg-background-muted [&_code]:text-foreground [&_h3]:text-foreground [&_pre]:bg-background-muted [&_strong]:text-foreground space-y-4 text-base leading-relaxed [&_code]:rounded [&_code]:px-1 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-sm [&_h3]:text-lg [&_h3]:font-semibold [&_li]:ml-5 [&_li]:list-disc [&_ol]:space-y-2 [&_p]:leading-relaxed [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:font-mono [&_pre]:text-sm [&_ul]:space-y-2",
+        "text-foreground-secondary [&_code]:bg-background-muted [&_code]:text-foreground [&_h3]:text-foreground [&_pre]:bg-background-muted [&_strong]:text-foreground space-y-4 text-base leading-relaxed [&_code]:break-words [&_code]:rounded [&_code]:px-1 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-sm [&_h3]:text-lg [&_h3]:font-semibold [&_li]:ml-5 [&_li]:list-disc [&_ol]:space-y-2 [&_p]:leading-relaxed [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:font-mono [&_pre]:text-sm [&_table]:block [&_table]:w-full [&_table]:overflow-x-auto [&_td]:break-words [&_th]:break-words [&_ul]:space-y-2",
         className,
       )}
     >

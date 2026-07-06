@@ -52,10 +52,12 @@ export function ProjectHero({ metadata }: ProjectHeroProps) {
   return (
     <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
       <Stack gap={4}>
-        <h1 className="text-foreground text-4xl font-bold tracking-tight md:text-5xl">
+        <h1 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
           {metadata.title}
         </h1>
-        <p className="text-foreground-secondary text-lg leading-relaxed">{metadata.summary}</p>
+        <p className="text-foreground-secondary text-base leading-relaxed sm:text-lg">
+          {metadata.summary}
+        </p>
         {metadata.technologies.length > 0 ? (
           <ul className="flex flex-wrap gap-2" aria-label="Technologies">
             {metadata.technologies.map((tech) => (
@@ -68,14 +70,19 @@ export function ProjectHero({ metadata }: ProjectHeroProps) {
             ))}
           </ul>
         ) : null}
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           {metadata.liveUrl ? (
-            <ButtonLink href={metadata.liveUrl} external>
+            <ButtonLink href={metadata.liveUrl} external className="w-full sm:w-auto">
               Live URL
             </ButtonLink>
           ) : null}
           {metadata.repositoryUrl ? (
-            <ButtonLink href={metadata.repositoryUrl} variant="secondary" external>
+            <ButtonLink
+              href={metadata.repositoryUrl}
+              variant="secondary"
+              external
+              className="w-full sm:w-auto"
+            >
               Repository
             </ButtonLink>
           ) : metadata.repositoryAccess === "private" ? (

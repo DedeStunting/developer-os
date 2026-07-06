@@ -12,7 +12,7 @@ export function ResumeHeader({ profile }: ResumeHeaderProps) {
       <a
         key="email"
         href={`mailto:${profile.email}`}
-        className="hover:text-foreground transition-colors"
+        className="hover:text-foreground break-all transition-colors"
       >
         {profile.email}
       </a>
@@ -46,10 +46,12 @@ export function ResumeHeader({ profile }: ResumeHeaderProps) {
     <header>
       <Stack gap={4}>
         <div className="flex flex-col gap-2">
-          <h1 className="text-foreground text-3xl font-bold tracking-tight md:text-4xl">
+          <h1 className="text-foreground text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
             {profile.name}
           </h1>
-          <p className="text-foreground-secondary text-lg font-medium">{profile.title}</p>
+          <p className="text-foreground-secondary text-base font-medium sm:text-lg">
+            {profile.title}
+          </p>
         </div>
 
         {contactItems.length > 0 ? (

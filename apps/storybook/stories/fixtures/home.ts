@@ -10,7 +10,7 @@ import type {
 
 export const heroFixture: HeroContent = {
   name: "Chiedu David",
-  title: "Backend Software Engineer",
+  title: "Software Engineer",
   headline:
     "Backend Software Engineer building scalable products, developer tools, and production systems.",
   supportingParagraph:

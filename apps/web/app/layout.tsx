@@ -3,7 +3,7 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 
 import { metadata as siteMetadata, site } from "@developer-os/config";
-import { Footer, Navbar, ThemeProvider } from "@developer-os/ui";
+import { Footer, ThemeProvider } from "@developer-os/ui";
 
 import "./globals.css";
 
@@ -46,7 +46,7 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground flex min-h-screen flex-col font-sans antialiased">
+      <body className="bg-background text-foreground flex min-h-screen flex-col overflow-x-clip font-sans antialiased">
         <ThemeProvider>
           <a
             href="#main-content"
@@ -54,8 +54,7 @@ export default function RootLayout({
           >
             Skip to content
           </a>
-          <Navbar />
-          <main id="main-content" className="flex flex-1 flex-col">
+          <main id="main-content" className="flex flex-1 flex-col pt-[env(safe-area-inset-top)]">
             {children}
           </main>
           <Footer />

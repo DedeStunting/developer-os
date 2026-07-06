@@ -21,12 +21,14 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
           Product showcase placeholder
         </div>
 
-        <div className="flex flex-col gap-6 p-6 md:p-8">
+        <div className="flex flex-col gap-6 p-5 sm:p-6 md:p-8">
           <Stack gap={4}>
             <p className="text-foreground-muted text-sm font-medium uppercase tracking-wide">
               Featured project
             </p>
-            <h2 className="text-foreground text-3xl font-bold tracking-tight">{project.title}</h2>
+            <h2 className="text-foreground text-2xl font-bold tracking-tight sm:text-3xl">
+              {project.title}
+            </h2>
             <p className="text-foreground-secondary leading-relaxed">{project.summary}</p>
           </Stack>
 
@@ -61,10 +63,17 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
             </Stack>
           ) : null}
 
-          <div className="mt-auto flex flex-wrap gap-3">
-            <ButtonLink href={project.caseStudyHref}>Read Case Study</ButtonLink>
+          <div className="mt-auto flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <ButtonLink href={project.caseStudyHref} className="w-full sm:w-auto">
+              Read Case Study
+            </ButtonLink>
             {project.liveUrl ? (
-              <ButtonLink href={project.liveUrl} variant="secondary" external>
+              <ButtonLink
+                href={project.liveUrl}
+                variant="secondary"
+                external
+                className="w-full sm:w-auto"
+              >
                 View live
                 <ArrowUpRight className="ml-1 h-4 w-4" aria-hidden />
               </ButtonLink>

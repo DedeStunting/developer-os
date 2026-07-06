@@ -18,7 +18,7 @@ export function CaseStudySection({ title, children, className, hidden }: CaseStu
   return (
     <section className={cn(className)}>
       <Stack gap={4}>
-        <h2 className="text-foreground text-2xl font-semibold tracking-tight md:text-3xl">
+        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
           {title}
         </h2>
         {children}

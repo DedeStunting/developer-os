@@ -26,9 +26,9 @@ export function ProjectPreviewCard({ project, className }: ProjectPreviewCardPro
         Screenshot placeholder
       </div>
 
-      <div className="flex flex-1 flex-col gap-4 p-6">
+      <div className="flex flex-1 flex-col gap-4 p-5 sm:p-6">
         <div className="flex flex-col gap-2">
-          <h3 className="text-foreground text-xl font-semibold">{project.title}</h3>
+          <h3 className="text-foreground text-lg font-semibold sm:text-xl">{project.title}</h3>
           <p className="text-foreground-secondary text-sm leading-relaxed">{project.summary}</p>
         </div>
 
@@ -45,12 +45,17 @@ export function ProjectPreviewCard({ project, className }: ProjectPreviewCardPro
           </ul>
         ) : null}
 
-        <div className="mt-auto flex flex-wrap gap-3">
-          <ButtonLink href={project.href} variant="secondary">
+        <div className="mt-auto flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <ButtonLink href={project.href} variant="secondary" className="w-full sm:w-auto">
             View Project
           </ButtonLink>
           {project.liveUrl ? (
-            <ButtonLink href={project.liveUrl} variant="ghost" external>
+            <ButtonLink
+              href={project.liveUrl}
+              variant="ghost"
+              external
+              className="w-full sm:w-auto"
+            >
               Live demo
               <ArrowUpRight className="ml-1 h-4 w-4" aria-hidden />
             </ButtonLink>

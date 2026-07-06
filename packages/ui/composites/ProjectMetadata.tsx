@@ -27,7 +27,7 @@ export function ProjectMetadataPanel({ metadata }: ProjectMetadataProps) {
       {facts.map((fact) => (
         <div key={fact.label}>
           <dt className="text-foreground-muted text-sm font-medium">{fact.label}</dt>
-          <dd className="text-foreground mt-1 text-sm">{fact.value}</dd>
+          <dd className="text-foreground mt-1 break-all text-sm">{fact.value}</dd>
         </div>
       ))}
     </dl>

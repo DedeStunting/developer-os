@@ -12,9 +12,9 @@ const variantClasses: Record<ButtonVariant, string> = {
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: "h-8 px-3 text-sm",
-  md: "h-10 px-4 text-base",
-  lg: "h-12 px-6 text-base",
+  sm: "min-h-9 h-9 px-3 text-sm",
+  md: "min-h-11 h-11 px-4 text-base",
+  lg: "min-h-12 h-12 px-6 text-base",
 };
 
 export interface ButtonProps extends ComponentProps<"button"> {

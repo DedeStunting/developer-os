@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @import "@developer-os/ui/styles/tokens.css";
+
+@source "../../packages/ui";
+@source "../src";
+@source ".";

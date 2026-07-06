@@ -21,7 +21,9 @@ interface SectionHeadingProps {
 function SectionHeading({ title, description }: SectionHeadingProps) {
   return (
     <Stack gap={2}>
-      <h2 className="text-foreground text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
+      <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
+        {title}
+      </h2>
       {description ? (
         <p className="text-foreground-secondary max-w-2xl text-base leading-relaxed">
           {description}
@@ -38,7 +40,7 @@ export interface HomePageViewProps {
 export function HomePageView({ data }: HomePageViewProps) {
   return (
     <Page>
-      <Section spacing="loose">
+      <Section spacing="hero">
         <Container>
           <Hero content={data.hero} />
         </Container>

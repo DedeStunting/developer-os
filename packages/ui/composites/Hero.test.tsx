@@ -8,7 +8,7 @@ import { Hero } from "./Hero";
 
 const hero: HeroContent = {
   name: "Chiedu David",
-  title: "Backend Software Engineer",
+  title: "Software Engineer",
   headline: "Building production systems.",
   supportingParagraph: "Focused on backend delivery.",
   primaryCta: { label: "View Projects", href: "/projects" },
@@ -21,7 +21,7 @@ describe("Hero", () => {
     render(<Hero content={hero} />);
 
     expect(screen.getByRole("heading", { level: 1, name: hero.name })).toBeInTheDocument();
-    expect(screen.getByText(hero.headline)).toBeInTheDocument();
+    expect(screen.getByText(hero.supportingParagraph)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: hero.primaryCta.label })).toHaveAttribute(
       "href",
       "/projects",
