@@ -1,5 +1,6 @@
 import { profile } from "./profile";
 import { skillGroups } from "./skills";
+import { social } from "../site/social";
 
 const knowsAbout = skillGroups.flatMap((group) => group.items);
 
@@ -8,7 +9,7 @@ export const resumeSeo = {
   description: profile.summary,
   jobTitle: profile.title,
   organization: "Bundo Tech Inc.",
-  sameAs: [profile.github],
+  sameAs: [profile.github, social.twitter],
   worksFor: {
     name: "Bundo Tech Inc.",
   },

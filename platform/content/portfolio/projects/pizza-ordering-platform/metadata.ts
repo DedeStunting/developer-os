@@ -1,11 +1,11 @@
 export const metadata = {
   slug: "pizza-ordering-platform",
   title: "Pizza Ordering Platform",
-  summary:
-    "End-to-end ordering system with menu management, cart flows, and order processing APIs for a restaurant use case.",
+  summary: "Restaurant ordering system with menu, cart, and checkout APIs.",
   technologies: ["Java", "Spring Boot", "PostgreSQL", "React", "Tailwind CSS"],
+  repositoryUrl: "https://github.com/DedeStunting/Pizza-Mern-Application",
   featured: false,
-  order: 3,
+  order: 2,
   duration: "2022",
   role: "Backend Engineer",
   teamSize: "Academic team project",

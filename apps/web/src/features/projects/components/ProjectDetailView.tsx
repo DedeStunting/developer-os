@@ -13,7 +13,6 @@ import {
   RelatedProjects,
   Section,
   SecurityChecklist,
-  Stack,
   TechnologyDecisions,
 } from "@developer-os/ui";
 
@@ -28,8 +27,8 @@ export function ProjectDetailView({ project, relatedProjects }: ProjectDetailVie
   return (
     <Page>
       <Section spacing="hero">
-        <Container>
-          <Stack gap={8}>
+        <Container size="content">
+          <div className="page-stack">
             <Breadcrumb
               items={[
                 { label: "Home", href: "/" },
@@ -39,14 +38,14 @@ export function ProjectDetailView({ project, relatedProjects }: ProjectDetailVie
             />
             <ProjectHero metadata={metadata} />
             <ProjectMetadataPanel metadata={metadata} />
-          </Stack>
+          </div>
         </Container>
       </Section>
 
-      <Section>
-        <Container size="narrow">
-          <Stack gap={12} className="gap-8 md:gap-12">
-            <CaseStudySection title="Project Overview" hidden={!sections.overview}>
+      <Section spacing="compact">
+        <Container size="content">
+          <div className="page-stack">
+            <CaseStudySection title="Overview" hidden={!sections.overview}>
               <MarkdownContent content={sections.overview} />
             </CaseStudySection>
 
@@ -57,19 +56,9 @@ export function ProjectDetailView({ project, relatedProjects }: ProjectDetailVie
             <CaseStudySection title="Technical Challenges" hidden={!sections.technicalChallenges}>
               <MarkdownContent content={sections.technicalChallenges} />
             </CaseStudySection>
-          </Stack>
-        </Container>
-      </Section>
 
-      <Section>
-        <Container>
-          <ArchitectureSection content={sections.architecture} />
-        </Container>
-      </Section>
+            <ArchitectureSection content={sections.architecture} />
 
-      <Section>
-        <Container size="narrow">
-          <Stack gap={12} className="gap-8 md:gap-12">
             {metadata.engineeringCallouts ? (
               <EngineeringDecisions callouts={metadata.engineeringCallouts} />
             ) : null}
@@ -108,12 +97,12 @@ export function ProjectDetailView({ project, relatedProjects }: ProjectDetailVie
             <CaseStudySection title="Future Improvements" hidden={!sections.future}>
               <MarkdownContent content={sections.future} />
             </CaseStudySection>
-          </Stack>
+          </div>
         </Container>
       </Section>
 
-      <Section spacing="loose">
-        <Container>
+      <Section spacing="compact">
+        <Container size="content">
           <RelatedProjects projects={relatedProjects} />
         </Container>
       </Section>

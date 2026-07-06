@@ -1,6 +1,6 @@
 import type { TechnologyDecision } from "@developer-os/types";
 
-import { Stack } from "../layouts/Stack";
+import { SectionLabel } from "./SectionLabel";
 
 export interface TechnologyDecisionCardProps {
   decision: TechnologyDecision;
@@ -8,9 +8,11 @@ export interface TechnologyDecisionCardProps {
 
 export function TechnologyDecisionCard({ decision }: TechnologyDecisionCardProps) {
   return (
-    <article className="border-border bg-background-subtle rounded-xl border p-5">
-      <h3 className="text-foreground text-base font-semibold">{decision.name}</h3>
-      <p className="text-foreground-secondary mt-2 text-sm leading-relaxed">{decision.reason}</p>
+    <article className="project-list-item">
+      <h3 className="text-foreground text-sm font-semibold sm:text-[15px]">{decision.name}</h3>
+      <p className="text-foreground-secondary mt-2 text-sm leading-relaxed sm:text-[15px]">
+        {decision.reason}
+      </p>
     </article>
   );
 }
@@ -25,15 +27,15 @@ export function TechnologyDecisions({ decisions }: TechnologyDecisionsProps) {
   }
 
   return (
-    <Stack gap={4}>
-      <h2 className="text-foreground text-2xl font-semibold tracking-tight md:text-3xl">
-        Technology Decisions
-      </h2>
-      <div className="grid gap-4 md:grid-cols-2">
+    <section className="flex flex-col gap-4 sm:gap-5">
+      <SectionLabel className="mb-0">Technology</SectionLabel>
+      <ul className="project-list">
         {decisions.map((decision) => (
-          <TechnologyDecisionCard key={decision.name} decision={decision} />
+          <li key={decision.name}>
+            <TechnologyDecisionCard decision={decision} />
+          </li>
         ))}
-      </div>
-    </Stack>
+      </ul>
+    </section>
   );
 }

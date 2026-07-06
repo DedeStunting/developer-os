@@ -10,7 +10,6 @@ import {
   ResumeSection,
   ResumeSkills,
   Section,
-  Stack,
 } from "@developer-os/ui";
 
 export interface ResumePageViewProps {
@@ -21,14 +20,19 @@ export function ResumePageView({ resume }: ResumePageViewProps) {
   return (
     <Page>
       <Section spacing="hero">
-        <Container size="narrow">
-          <Stack gap={12} className="gap-8 md:gap-12">
-            <div className="flex justify-stretch sm:justify-end">
+        <Container size="content">
+          <div className="page-stack">
+            <div className="flex justify-center sm:justify-end">
               <ResumeDownloadButton />
             </div>
-
             <ResumeHeader profile={resume.profile} />
+          </div>
+        </Container>
+      </Section>
 
+      <Section spacing="compact">
+        <Container size="content">
+          <div className="page-stack">
             <ResumeSection title="Experience">
               <ResumeExperience entries={resume.experience} />
             </ResumeSection>
@@ -46,7 +50,7 @@ export function ResumePageView({ resume }: ResumePageViewProps) {
             <ResumeSection title="Skills">
               <ResumeSkills groups={resume.skillGroups} />
             </ResumeSection>
-          </Stack>
+          </div>
         </Container>
       </Section>
     </Page>

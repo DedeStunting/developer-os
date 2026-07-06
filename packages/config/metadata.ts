@@ -3,7 +3,7 @@ export const metadata = {
   defaultTitle: "Chiedu David — Software Engineer",
   defaultDescription:
     "Professional engineering platform showcasing production software, architecture, and technical writing.",
-  twitterHandle: "",
+  twitterHandle: "@DedeStunting",
   ogImage: "/og/default.png",
 } as const;
 

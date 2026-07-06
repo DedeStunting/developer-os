@@ -1,7 +1,5 @@
 import type { EducationEntry } from "@developer-os/types";
 
-import { Stack } from "../layouts/Stack";
-
 export interface ResumeEducationProps {
   entries: EducationEntry[];
 }
@@ -12,19 +10,21 @@ export function ResumeEducation({ entries }: ResumeEducationProps) {
   }
 
   return (
-    <Stack gap={4}>
+    <ul className="flex flex-col gap-8 sm:gap-9">
       {entries.map((entry) => (
-        <article key={`${entry.institution}-${entry.graduationDate}`}>
-          <Stack gap={2}>
-            <h3 className="text-foreground text-base font-semibold">{entry.institution}</h3>
-            <p className="text-foreground-secondary text-sm">
-              {entry.degree}
-              {entry.field ? `, ${entry.field}` : ""}
-            </p>
-            <p className="text-foreground-muted text-sm">{entry.graduationDate}</p>
-          </Stack>
-        </article>
+        <li key={`${entry.institution}-${entry.graduationDate}`}>
+          <h3 className="text-foreground text-base font-semibold sm:text-[17px]">
+            {entry.institution}
+          </h3>
+          <p className="text-foreground-secondary mt-1.5 text-sm sm:text-[15px]">
+            {entry.degree}
+            {entry.field ? `, ${entry.field}` : ""}
+          </p>
+          <p className="text-foreground-muted mt-1.5 text-sm sm:text-[15px]">
+            {entry.graduationDate}
+          </p>
+        </li>
       ))}
-    </Stack>
+    </ul>
   );
 }

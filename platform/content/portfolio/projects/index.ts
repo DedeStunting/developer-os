@@ -1,4 +1,4 @@
-export const projectSlugs = ["bundo", "real-time-chat", "pizza-ordering-platform"] as const;
+export const projectSlugs = ["bundo", "pizza-ordering-platform", "real-time-chat"] as const;
 
 export type ProjectSlug = (typeof projectSlugs)[number];
 

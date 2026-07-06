@@ -13,7 +13,7 @@ const resumeFixture: Resume = {
     email: "hello@chiedudavid.com",
     location: "Remote",
     summary: "Backend engineer focused on shipping reliable production systems.",
-    github: "https://github.com/chiedudavid",
+    github: "https://github.com/DedeStunting",
     portfolio: "https://chiedudavid.com",
   },
   experience: [

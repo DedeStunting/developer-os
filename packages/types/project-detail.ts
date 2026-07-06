@@ -38,6 +38,7 @@ export interface ProjectMetadata {
   imageAlt: string;
   liveUrl?: string;
   repositoryUrl?: string;
+  logoUrl?: string;
   repositoryAccess?: "public" | "private";
   duration?: string;
   role?: string;

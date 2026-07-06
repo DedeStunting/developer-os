@@ -7,6 +7,7 @@ export const ProjectSchema = z.object({
   technologies: z.array(z.string()),
   liveUrl: z.string().url().optional(),
   repositoryUrl: z.string().url().optional(),
+  logoUrl: z.string().optional(),
   featured: z.boolean(),
 });
 

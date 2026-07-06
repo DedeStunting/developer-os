@@ -42,6 +42,8 @@ export interface ResumeProject {
   title: string;
   summary: string;
   href: string;
+  external?: boolean;
+  logoUrl?: string;
   featured: boolean;
 }
 

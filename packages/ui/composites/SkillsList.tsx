@@ -1,15 +1,15 @@
 import type { TechStackGroup } from "@developer-os/types";
 
-export interface ResumeSkillsProps {
+export interface SkillsListProps {
   groups: TechStackGroup[];
 }
 
-export function ResumeSkills({ groups }: ResumeSkillsProps) {
+export function SkillsList({ groups }: SkillsListProps) {
   return (
-    <ul className="flex flex-col gap-6 sm:gap-7">
+    <ul className="flex flex-col gap-5">
       {groups.map((group) => (
         <li key={group.category}>
-          <p className="text-foreground-muted mb-2 font-mono text-[10px] uppercase tracking-[0.14em] sm:text-[11px]">
+          <p className="text-foreground-muted mb-1 text-[10px] font-medium uppercase tracking-[0.24em] sm:text-[11px]">
             {group.category}
           </p>
           <p className="text-foreground-secondary text-sm leading-relaxed sm:text-[15px]">

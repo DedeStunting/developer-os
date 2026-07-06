@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Stack } from "../layouts/Stack";
+import { SectionLabel } from "./SectionLabel";
 
 export interface ResumeSectionProps {
   title: string;
@@ -9,13 +9,9 @@ export interface ResumeSectionProps {
 
 export function ResumeSection({ title, children }: ResumeSectionProps) {
   return (
-    <section>
-      <Stack gap={4}>
-        <h2 className="text-foreground border-border border-b pb-2 text-sm font-semibold uppercase tracking-widest">
-          {title}
-        </h2>
-        {children}
-      </Stack>
+    <section className="flex flex-col gap-4 sm:gap-5">
+      <SectionLabel className="mb-0">{title}</SectionLabel>
+      {children}
     </section>
   );
 }

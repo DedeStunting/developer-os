@@ -1,11 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { DM_Serif_Display } from "next/font/google";
 
 import { metadata as siteMetadata, site } from "@developer-os/config";
-import { Footer, ThemeProvider } from "@developer-os/ui";
+import { AppShell } from "@developer-os/ui";
 
 import "./globals.css";
+
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  variable: "--font-dm-serif",
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -30,7 +37,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
@@ -43,22 +53,14 @@ export default function RootLayout({
   return (
     <html
       lang={site.locale}
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${dmSerif.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground flex min-h-screen flex-col overflow-x-clip font-sans antialiased">
-        <ThemeProvider>
-          <a
-            href="#main-content"
-            className="focus:bg-background focus:ring-accent sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:px-4 focus:py-2 focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
-          >
-            Skip to content
-          </a>
-          <main id="main-content" className="flex flex-1 flex-col pt-[env(safe-area-inset-top)]">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+      <body
+        className="bg-background text-foreground flex min-h-screen flex-col overflow-x-clip font-sans antialiased"
+        suppressHydrationWarning
+      >
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

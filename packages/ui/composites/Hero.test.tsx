@@ -12,7 +12,7 @@ const hero: HeroContent = {
   headline: "Building production systems.",
   supportingParagraph: "Focused on backend delivery.",
   primaryCta: { label: "View Projects", href: "/projects" },
-  secondaryCta: { label: "Download Resume", href: "/resume" },
+  secondaryCta: { label: "Download PDF", href: "/resume.pdf" },
   githubUrl: "https://github.com/example",
 };
 
@@ -21,10 +21,13 @@ describe("Hero", () => {
     render(<Hero content={hero} />);
 
     expect(screen.getByRole("heading", { level: 1, name: hero.name })).toBeInTheDocument();
-    expect(screen.getByText(hero.supportingParagraph)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: hero.primaryCta.label })).toHaveAttribute(
+    expect(screen.getByText(hero.title)).toBeInTheDocument();
+    expect(screen.queryByText(hero.supportingParagraph)).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute("href", hero.githubUrl);
+    expect(screen.getByRole("link", { name: "X" })).toHaveAttribute(
       "href",
-      "/projects",
+      "https://x.com/DedeStunting",
     );
+    expect(screen.queryByRole("link", { name: hero.secondaryCta.label })).not.toBeInTheDocument();
   });
 });

@@ -1,8 +1,7 @@
 export const metadata = {
   slug: "bundo",
   title: "Bundo",
-  summary:
-    "Production-grade platform for connecting customers with reliable service providers, with modular APIs, role-based access control, and cloud deployment.",
+  summary: "Marketplace for booking trusted local service providers.",
   technologies: [
     "TypeScript",
     "React",
@@ -12,7 +11,8 @@ export const metadata = {
     "Docker",
     "Render",
   ],
-  liveUrl: "https://bundo.example.com",
+  liveUrl: "https://bundo.ng",
+  logoUrl: "/projects/bundo-logo.png",
   repositoryAccess: "private" as const,
   featured: true,
   order: 1,
@@ -27,7 +27,7 @@ export const metadata = {
     "Established migration, deployment, and release practices for production",
   ],
   caseStudyHref: "/projects/bundo",
-  imageAlt: "Bundo platform dashboard preview",
+  imageAlt: "Bundo platform logo",
   technologyDecisions: [
     {
       name: "PostgreSQL",

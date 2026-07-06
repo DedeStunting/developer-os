@@ -17,7 +17,7 @@ export const heroFixture: HeroContent = {
     "I design and ship backend platforms with Spring Boot and Node.js, model data in PostgreSQL, and deploy cloud-native services.",
   primaryCta: { label: "View Projects", href: "/projects" },
   secondaryCta: { label: "Download Resume", href: "/resume" },
-  githubUrl: "https://github.com/chiedudavid",
+  githubUrl: "https://github.com/DedeStunting",
 };
 
 export const trustMetricsFixture: TrustMetric[] = [

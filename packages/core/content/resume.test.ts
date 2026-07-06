@@ -20,7 +20,7 @@ describe("getResumeSeo", () => {
     const seo = getResumeSeo();
 
     expect(seo.jobTitle).toBe("Software Engineer");
-    expect(seo.sameAs).toContain("https://github.com/chiedudavid");
+    expect(seo.sameAs).toContain("https://github.com/DedeStunting");
     expect(seo.knowsAbout.length).toBeGreaterThan(0);
   });
 });

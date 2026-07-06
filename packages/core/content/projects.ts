@@ -22,7 +22,21 @@ const metadataBySlug: Record<string, unknown> = {
   "pizza-ordering-platform": pizzaOrderingProject,
 };
 
+function getProjectHref(metadata: ProjectMetadata): Pick<ProjectPreview, "href" | "external"> {
+  if (metadata.liveUrl) {
+    return { href: metadata.liveUrl, external: true };
+  }
+
+  if (metadata.repositoryUrl) {
+    return { href: metadata.repositoryUrl, external: true };
+  }
+
+  return { href: metadata.caseStudyHref, external: false };
+}
+
 function toProjectPreview(metadata: ProjectMetadata): ProjectPreview {
+  const link = getProjectHref(metadata);
+
   return {
     slug: metadata.slug,
     title: metadata.title,
@@ -31,8 +45,9 @@ function toProjectPreview(metadata: ProjectMetadata): ProjectPreview {
     featured: metadata.featured,
     liveUrl: metadata.liveUrl,
     repositoryUrl: metadata.repositoryUrl,
-    href: metadata.caseStudyHref,
+    logoUrl: metadata.logoUrl,
     imageAlt: metadata.imageAlt,
+    ...link,
   };
 }
 

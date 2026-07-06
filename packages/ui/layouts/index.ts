@@ -1,3 +1,4 @@
+export { AppShell, type AppShellProps } from "./AppShell";
 export { Container, type ContainerProps } from "./Container";
 export { Section, type SectionProps } from "./Section";
 export { Page, type PageProps } from "./Page";

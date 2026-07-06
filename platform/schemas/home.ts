@@ -35,6 +35,7 @@ export const FeaturedProjectShowcaseSchema = ProjectSchema.extend({
 
 export const ProjectPreviewSchema = ProjectSchema.extend({
   href: z.string(),
+  external: z.boolean().optional(),
   imageAlt: z.string().optional(),
 });
 

@@ -27,9 +27,6 @@ describe("ProjectHero", () => {
 
     expect(screen.getByRole("heading", { level: 1, name: metadata.title })).toBeInTheDocument();
     expect(screen.getByText(metadata.summary)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Live URL" })).toHaveAttribute(
-      "href",
-      metadata.liveUrl,
-    );
+    expect(screen.getByRole("link", { name: "Live" })).toHaveAttribute("href", metadata.liveUrl);
   });
 });

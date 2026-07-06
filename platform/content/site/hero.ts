@@ -4,11 +4,11 @@ export const hero = {
   supportingParagraph:
     "I design and ship backend platforms with Spring Boot and Node.js, model data in PostgreSQL, and deploy cloud-native services with a focus on reliability, observability, and system design.",
   primaryCta: {
-    label: "View Projects",
-    href: "/projects",
+    label: "Projects",
+    href: "/#projects",
   },
   secondaryCta: {
-    label: "Download Resume",
-    href: "/resume",
+    label: "Download PDF",
+    href: "/resume.pdf",
   },
 } as const;

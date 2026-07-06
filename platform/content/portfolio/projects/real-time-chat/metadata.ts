@@ -1,11 +1,11 @@
 export const metadata = {
   slug: "real-time-chat",
-  title: "Real-Time Chat Application",
-  summary:
-    "Full-stack messaging application with live updates, room-based conversations, and persistent message history.",
+  title: "Real-Time Chat",
+  summary: "Messaging app with live WebSocket updates and persistent chat history.",
   technologies: ["Node.js", "Express", "Socket.IO", "React", "MongoDB"],
+  repositoryUrl: "https://github.com/DedeStunting/real-time-chat",
   featured: false,
-  order: 2,
+  order: 3,
   duration: "2023",
   role: "Full-Stack Engineer",
   teamSize: "Solo project",

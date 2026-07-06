@@ -1,12 +1,12 @@
 export const primaryNavigation = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "Resume", href: "/resume" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
 ] as const;
 
 export const footerNavigation = [
-  { label: "Resume", href: "/resume", external: false },
-  { label: "Bundo", href: "/projects/bundo", external: false },
+  { label: "Download PDF", href: "/resume.pdf", external: false },
+  { label: "Bundo", href: "https://bundo.ng", external: true },
 ] as const;
 
 export const futureNavigation = [

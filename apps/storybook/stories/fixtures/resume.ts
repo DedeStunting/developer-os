@@ -8,7 +8,7 @@ export const resumeFixture: Resume = {
     location: "Remote",
     summary:
       "Backend engineer focused on shipping reliable production systems, from API design and data modeling to cloud deployment and operational readiness.",
-    github: "https://github.com/chiedudavid",
+    github: "https://github.com/DedeStunting",
     portfolio: "https://chiedudavid.com",
   },
   experience: [

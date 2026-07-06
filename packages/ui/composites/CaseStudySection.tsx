@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { cn } from "../lib/cn";
-import { Stack } from "../layouts/Stack";
+import { SectionLabel } from "./SectionLabel";
 
 export interface CaseStudySectionProps {
   title: string;
@@ -16,13 +16,9 @@ export function CaseStudySection({ title, children, className, hidden }: CaseStu
   }
 
   return (
-    <section className={cn(className)}>
-      <Stack gap={4}>
-        <h2 className="text-foreground text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
-          {title}
-        </h2>
-        {children}
-      </Stack>
+    <section className={cn("flex flex-col gap-4 sm:gap-5", className)}>
+      <SectionLabel className="mb-0">{title}</SectionLabel>
+      {children}
     </section>
   );
 }

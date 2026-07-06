@@ -2,13 +2,14 @@ import type { ReactNode } from "react";
 
 import { cn } from "../lib/cn";
 
-type SectionSpacing = "default" | "compact" | "loose" | "hero";
+type SectionSpacing = "default" | "compact" | "loose" | "hero" | "none";
 
 const spacingClasses: Record<SectionSpacing, string> = {
-  compact: "py-8 md:py-12 lg:py-16",
+  compact: "py-10 md:py-14 lg:py-16",
   default: "py-10 md:py-16 lg:py-24",
   loose: "py-12 md:py-20 lg:py-32",
   hero: "page-hero-offset",
+  none: "",
 };
 
 export interface SectionProps {

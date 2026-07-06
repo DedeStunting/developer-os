@@ -17,6 +17,7 @@ export { CaseStudySection, type CaseStudySectionProps } from "./CaseStudySection
 export { EngineeringDecisions, type EngineeringDecisionsProps } from "./EngineeringDecisions";
 export { FeaturedProject, type FeaturedProjectProps } from "./FeaturedProject";
 export { Footer } from "./Footer";
+export { ExperienceList, type ExperienceListProps } from "./ExperienceList";
 export { Hero, type HeroProps } from "./Hero";
 export { MarkdownContent, type MarkdownContentProps } from "./MarkdownContent";
 export { MetricCard, MetricGrid, type MetricCardProps, type MetricGridProps } from "./MetricCard";
@@ -24,9 +25,14 @@ export { MobileMenu, type MobileMenuProps } from "./MobileMenu";
 export { NavLink, type NavLinkProps } from "./NavLink";
 export { Navbar, type NavbarProps } from "./Navbar";
 export { ProjectMetadataPanel, type ProjectMetadataProps } from "./ProjectMetadata";
+export { ProjectList, type ProjectListProps } from "./ProjectList";
 export { ProjectPreviewCard, type ProjectPreviewCardProps } from "./ProjectPreviewCard";
 export { RelatedProjects, type RelatedProjectsProps } from "./RelatedProjects";
+export { SectionHeading, type SectionHeadingProps } from "./SectionHeading";
+export { SectionLabel, type SectionLabelProps } from "./SectionLabel";
 export { SecurityChecklist, type SecurityChecklistProps } from "./SecurityChecklist";
+export { SkillsList, type SkillsListProps } from "./SkillsList";
+export { SocialLinks, type SocialLinksProps } from "./SocialLinks";
 export {
   TechnologyDecisionCard,
   TechnologyDecisions,
@@ -34,6 +40,7 @@ export {
   type TechnologyDecisionsProps,
 } from "./TechnologyDecisionCard";
 export { TechStackGrid, type TechStackGridProps } from "./TechStackGrid";
+export { ThemeToggle } from "./ThemeToggle";
 export { Timeline, type TimelineProps } from "./Timeline";
 export { ResumeHeader, type ResumeHeaderProps } from "./ResumeHeader";
 export { ResumeSection, type ResumeSectionProps } from "./ResumeSection";

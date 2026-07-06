@@ -6,14 +6,16 @@ export interface ApiEndpointCardProps {
 
 export function ApiEndpointCard({ endpoint }: ApiEndpointCardProps) {
   return (
-    <article className="border-border bg-background-subtle rounded-xl border p-5">
-      <div className="flex flex-wrap items-center gap-3">
-        <span className="bg-background-muted text-foreground rounded-md px-2 py-1 font-mono text-xs font-semibold">
+    <article className="project-list-item">
+      <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+        <span className="text-foreground-muted font-mono text-[10px] uppercase tracking-[0.14em] sm:text-[11px]">
           {endpoint.method}
         </span>
-        <code className="text-foreground break-all text-sm font-medium">{endpoint.path}</code>
+        <code className="text-foreground break-all text-sm font-medium sm:text-[15px]">
+          {endpoint.path}
+        </code>
       </div>
-      <p className="text-foreground-secondary mt-3 text-sm leading-relaxed">
+      <p className="text-foreground-secondary mt-2 text-sm leading-relaxed sm:text-[15px]">
         {endpoint.description}
       </p>
     </article>
@@ -30,10 +32,12 @@ export function ApiEndpointList({ endpoints }: ApiEndpointListProps) {
   }
 
   return (
-    <div className="grid gap-4">
+    <ul className="project-list mt-4">
       {endpoints.map((endpoint) => (
-        <ApiEndpointCard key={`${endpoint.method}-${endpoint.path}`} endpoint={endpoint} />
+        <li key={`${endpoint.method}-${endpoint.path}`}>
+          <ApiEndpointCard endpoint={endpoint} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

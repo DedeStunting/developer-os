@@ -5,5 +5,6 @@ export interface Project {
   technologies: string[];
   liveUrl?: string;
   repositoryUrl?: string;
+  logoUrl?: string;
   featured: boolean;
 }

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import type { ProjectMetadata } from "@developer-os/types";
 
-import { Stack } from "../layouts/Stack";
-import { ButtonLink } from "../primitives/ButtonLink";
+import { cn } from "../lib/cn";
+import { TextLink } from "../primitives/TextLink";
 
 export interface BreadcrumbItem {
   label: string;
@@ -17,21 +17,21 @@ export interface BreadcrumbProps {
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb">
-      <ol className="text-foreground-muted flex flex-wrap items-center gap-2 text-sm">
+      <ol className="text-foreground-muted flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
 
           return (
-            <li key={`${item.label}-${index}`} className="flex items-center gap-2">
+            <li key={`${item.label}-${index}`} className="flex max-w-full items-center gap-2">
               {item.href && !isLast ? (
                 <Link
                   href={item.href}
-                  className="hover:text-foreground focus-visible:ring-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                  className="hover:text-foreground focus-visible:ring-accent transition-colors focus-visible:outline-none focus-visible:ring-2"
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className={isLast ? "text-foreground font-medium" : undefined}>
+                <span className={cn("truncate", isLast ? "text-foreground-secondary" : undefined)}>
                   {item.label}
                 </span>
               )}
@@ -50,56 +50,32 @@ export interface ProjectHeroProps {
 
 export function ProjectHero({ metadata }: ProjectHeroProps) {
   return (
-    <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-      <Stack gap={4}>
-        <h1 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          {metadata.title}
-        </h1>
-        <p className="text-foreground-secondary text-base leading-relaxed sm:text-lg">
-          {metadata.summary}
+    <header className="flex flex-col gap-4 sm:gap-5">
+      <h1 className="font-display text-foreground text-2xl font-normal tracking-tight sm:text-3xl md:text-4xl">
+        {metadata.title}
+      </h1>
+      <p className="text-foreground-secondary text-[15px] leading-relaxed sm:text-base md:leading-7">
+        {metadata.summary}
+      </p>
+      {metadata.technologies.length > 0 ? (
+        <p className="text-foreground-muted font-mono text-[10px] uppercase tracking-[0.14em] sm:text-[11px]">
+          {metadata.technologies.join(" · ")}
         </p>
-        {metadata.technologies.length > 0 ? (
-          <ul className="flex flex-wrap gap-2" aria-label="Technologies">
-            {metadata.technologies.map((tech) => (
-              <li
-                key={tech}
-                className="bg-background-muted text-foreground-secondary rounded-md px-2 py-1 text-xs font-medium"
-              >
-                {tech}
-              </li>
-            ))}
-          </ul>
+      ) : null}
+      <div className="flex flex-wrap gap-x-5 gap-y-1">
+        {metadata.liveUrl ? (
+          <TextLink href={metadata.liveUrl} external>
+            Live
+          </TextLink>
         ) : null}
-        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          {metadata.liveUrl ? (
-            <ButtonLink href={metadata.liveUrl} external className="w-full sm:w-auto">
-              Live URL
-            </ButtonLink>
-          ) : null}
-          {metadata.repositoryUrl ? (
-            <ButtonLink
-              href={metadata.repositoryUrl}
-              variant="secondary"
-              external
-              className="w-full sm:w-auto"
-            >
-              Repository
-            </ButtonLink>
-          ) : metadata.repositoryAccess === "private" ? (
-            <span className="text-foreground-muted inline-flex h-10 items-center text-sm">
-              Repository: Private
-            </span>
-          ) : null}
-        </div>
-      </Stack>
-
-      <div
-        className="bg-background-muted text-foreground-muted flex aspect-video items-center justify-center rounded-xl text-sm font-medium"
-        role="img"
-        aria-label={metadata.imageAlt}
-      >
-        Project screenshot placeholder
+        {metadata.repositoryUrl ? (
+          <TextLink href={metadata.repositoryUrl} external>
+            Repository
+          </TextLink>
+        ) : metadata.repositoryAccess === "private" ? (
+          <span className="text-foreground-muted text-sm">Repository: Private</span>
+        ) : null}
       </div>
-    </div>
+    </header>
   );
 }

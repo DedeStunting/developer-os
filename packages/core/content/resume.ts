@@ -51,6 +51,8 @@ export function getResumeProjects(): ResumeProject[] {
       title: project.title,
       summary: project.summary,
       href: project.href,
+      external: project.external,
+      logoUrl: project.logoUrl,
       featured: project.featured,
     }))
     .sort((a, b) => {

@@ -33,6 +33,7 @@ export interface FeaturedProjectShowcase extends Project {
 
 export interface ProjectPreview extends Project {
   href: string;
+  external?: boolean;
   imageAlt?: string;
 }
 

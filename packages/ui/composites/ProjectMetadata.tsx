@@ -23,11 +23,18 @@ export function ProjectMetadataPanel({ metadata }: ProjectMetadataProps) {
   }
 
   return (
-    <dl className="border-border bg-background-subtle grid gap-4 rounded-xl border p-6 sm:grid-cols-2">
+    <dl className="project-list">
       {facts.map((fact) => (
-        <div key={fact.label}>
-          <dt className="text-foreground-muted text-sm font-medium">{fact.label}</dt>
-          <dd className="text-foreground mt-1 break-all text-sm">{fact.value}</dd>
+        <div
+          key={fact.label}
+          className="project-list-item flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-4"
+        >
+          <dt className="text-foreground-muted shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] sm:text-[11px]">
+            {fact.label}
+          </dt>
+          <dd className="text-foreground-secondary break-all text-sm sm:text-right sm:text-[15px]">
+            {fact.value}
+          </dd>
         </div>
       ))}
     </dl>
