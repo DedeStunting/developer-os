@@ -123,16 +123,22 @@ const styles = StyleSheet.create({
     lineHeight: 1.45,
   },
   skillsList: {
-    gap: 10,
+    gap: 8,
   },
-  skillLine: {
-    fontSize: 11,
-    lineHeight: 1.58,
+  skillGroup: {
+    gap: 2,
+    marginBottom: 6,
   },
   skillCategory: {
     fontFamily: "Helvetica-Bold",
+    fontSize: 11,
+    lineHeight: 1.45,
+    marginBottom: 1,
   },
-  skillItems: {
+  skillItem: {
+    fontSize: 10.5,
+    lineHeight: 1.5,
+    paddingLeft: 8,
     color: "#374151",
   },
 });
@@ -250,11 +256,22 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Skills</Text>
             <View style={styles.skillsList}>
-              {skillGroups.map((group) => (
-                <Text key={group.category} style={styles.skillLine}>
-                  <Text style={styles.skillCategory}>{group.category}: </Text>
-                  <Text style={styles.skillItems}>{group.items.join(", ")}</Text>
-                </Text>
+              {skillGroups.map((group, groupIndex) => (
+                <View
+                  key={group.category}
+                  style={
+                    groupIndex === skillGroups.length - 1
+                      ? [styles.skillGroup, { marginBottom: 0 }]
+                      : styles.skillGroup
+                  }
+                >
+                  <Text style={styles.skillCategory}>{group.category}</Text>
+                  {group.items.map((item) => (
+                    <Text key={item} style={styles.skillItem}>
+                      - {item}
+                    </Text>
+                  ))}
+                </View>
               ))}
             </View>
           </View>
