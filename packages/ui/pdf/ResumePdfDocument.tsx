@@ -4,63 +4,71 @@ import type { Resume } from "@developer-os/types";
 
 import { formatExperienceRange } from "../lib/formatting";
 
+const A4_HEIGHT = 841.89;
+const PAGE_PADDING = {
+  horizontal: 46,
+  top: 50,
+  bottom: 54,
+} as const;
+const CONTENT_HEIGHT = A4_HEIGHT - PAGE_PADDING.top - PAGE_PADDING.bottom;
+
 const styles = StyleSheet.create({
   page: {
-    paddingHorizontal: 44,
-    paddingTop: 46,
-    paddingBottom: 48,
+    paddingHorizontal: PAGE_PADDING.horizontal,
+    paddingTop: PAGE_PADDING.top,
+    paddingBottom: PAGE_PADDING.bottom,
     fontFamily: "Helvetica",
-    fontSize: 10.5,
-    lineHeight: 1.48,
+    fontSize: 11,
+    lineHeight: 1.55,
     color: "#111827",
-    display: "flex",
-    flexDirection: "column",
   },
   content: {
-    flex: 1,
-    display: "flex",
+    height: CONTENT_HEIGHT,
     flexDirection: "column",
-    justifyContent: "space-between",
+  },
+  sectionSpacer: {
+    flexGrow: 1,
+    minHeight: 14,
   },
   header: {
-    gap: 6,
+    gap: 7,
   },
   name: {
-    fontSize: 24,
+    fontSize: 26,
     fontFamily: "Helvetica-Bold",
     marginBottom: 2,
   },
   title: {
-    fontSize: 12,
+    fontSize: 13,
     color: "#374151",
   },
   contact: {
-    fontSize: 9.5,
+    fontSize: 10,
     color: "#4B5563",
-    lineHeight: 1.45,
+    lineHeight: 1.5,
   },
   summary: {
-    fontSize: 10.5,
+    fontSize: 11,
     color: "#374151",
-    lineHeight: 1.55,
+    lineHeight: 1.58,
     marginTop: 2,
   },
   section: {
-    gap: 8,
+    gap: 10,
   },
   sectionTitle: {
-    fontSize: 9.5,
+    fontSize: 10,
     fontFamily: "Helvetica-Bold",
     letterSpacing: 1.1,
     textTransform: "uppercase",
     borderBottomWidth: 1,
     borderBottomColor: "#D1D5DB",
-    paddingBottom: 5,
-    marginBottom: 4,
+    paddingBottom: 6,
+    marginBottom: 5,
   },
   experienceItem: {
-    gap: 3,
-    marginBottom: 10,
+    gap: 4,
+    marginBottom: 12,
   },
   experienceHeader: {
     flexDirection: "row",
@@ -70,50 +78,56 @@ const styles = StyleSheet.create({
   },
   roleTitle: {
     fontFamily: "Helvetica-Bold",
-    fontSize: 11,
+    fontSize: 11.5,
     flex: 1,
   },
   company: {
     color: "#374151",
-    fontSize: 10.5,
-    lineHeight: 1.45,
+    fontSize: 11,
+    lineHeight: 1.5,
   },
   date: {
     color: "#6B7280",
-    fontSize: 9.5,
+    fontSize: 10,
     flexShrink: 0,
   },
   bullet: {
     paddingLeft: 10,
-    fontSize: 10.5,
-    lineHeight: 1.5,
-    marginBottom: 2,
+    fontSize: 11,
+    lineHeight: 1.58,
+    marginBottom: 4,
   },
   techLine: {
     color: "#6B7280",
-    fontSize: 9.5,
-    marginTop: 3,
-    lineHeight: 1.45,
+    fontSize: 10,
+    marginTop: 4,
+    lineHeight: 1.5,
   },
   projectItem: {
-    marginBottom: 8,
-  },
-  projectLine: {
-    fontSize: 10.5,
-    lineHeight: 1.48,
+    gap: 3,
+    marginBottom: 11,
   },
   projectTitle: {
     fontFamily: "Helvetica-Bold",
+    fontSize: 11.5,
+    lineHeight: 1.45,
   },
-  projectSummary: {
+  projectDescription: {
+    fontSize: 11,
+    lineHeight: 1.58,
     color: "#374151",
   },
+  projectUrl: {
+    fontSize: 10,
+    color: "#6B7280",
+    lineHeight: 1.45,
+  },
   skillsList: {
-    gap: 8,
+    gap: 10,
   },
   skillLine: {
-    fontSize: 10.5,
-    lineHeight: 1.5,
+    fontSize: 11,
+    lineHeight: 1.58,
   },
   skillCategory: {
     fontFamily: "Helvetica-Bold",
@@ -146,7 +160,7 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
 
   return (
     <Document title={`${profile.name} — Resume`}>
-      <Page size="LETTER" style={styles.page}>
+      <Page size="A4" style={styles.page}>
         <View style={styles.content}>
           <View style={styles.header}>
             <Text style={styles.name}>{profile.name}</Text>
@@ -154,6 +168,8 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
             <Text style={styles.contact}>{contactParts.join(" · ")}</Text>
             <Text style={styles.summary}>{profile.summary}</Text>
           </View>
+
+          <View style={styles.sectionSpacer} />
 
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Experience</Text>
@@ -186,6 +202,8 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
             ))}
           </View>
 
+          <View style={styles.sectionSpacer} />
+
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Projects</Text>
             {projects.map((project, index) => (
@@ -197,16 +215,14 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
                     : styles.projectItem
                 }
               >
-                <Text style={styles.projectLine}>
-                  <Text style={styles.projectTitle}>{project.title}</Text>
-                  <Text style={styles.projectSummary}>
-                    {" — "}
-                    {project.summary} ({formatDisplayUrl(project.href)})
-                  </Text>
-                </Text>
+                <Text style={styles.projectTitle}>{project.title}</Text>
+                <Text style={styles.projectDescription}>{project.summary}</Text>
+                <Text style={styles.projectUrl}>{formatDisplayUrl(project.href)}</Text>
               </View>
             ))}
           </View>
+
+          <View style={styles.sectionSpacer} />
 
           {education.length > 0 ? (
             <View style={styles.section}>

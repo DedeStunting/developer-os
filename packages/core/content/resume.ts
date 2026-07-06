@@ -2,6 +2,7 @@ import {
   education,
   experience,
   profile,
+  resumePdf,
   resumeProjectSummaries,
   resumeSeo,
   skillGroups,
@@ -71,7 +72,7 @@ export function getResume(): Resume {
   return validateContent(
     ResumeSchema,
     {
-      profile: getProfile(),
+      profile: { ...getProfile(), summary: resumePdf.summary },
       experience: getExperience(),
       education: getEducation(),
       skillGroups: getSkillGroups(),

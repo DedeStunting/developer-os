@@ -56,7 +56,7 @@ const fullResumeFixture: Resume = {
     email: "chibundochiedu@gmail.com",
     location: "Remote",
     summary:
-      "Backend engineer focused on shipping reliable production systems, from API design and data modeling to cloud deployment and operational readiness.",
+      "Backend engineer focused on shipping reliable production systems, from API design and data modeling to cloud deployment, operational readiness, and maintainable service architecture in production environments.",
     github: "https://github.com/DedeStunting",
     portfolio: "https://chiedudev.vercel.app",
   },
@@ -99,7 +99,7 @@ const fullResumeFixture: Resume = {
       slug: "bundo",
       title: "Bundo",
       summary:
-        "Marketplace for booking trusted local service providers, with production REST APIs, PostgreSQL, RBAC, Firebase auth, and Docker on Render for live bookings and orders.",
+        "Production marketplace connecting customers with verified local service providers for home and trade services. Designed REST APIs, PostgreSQL data models, role-based access control, Firebase authentication, and Docker deployment on Render for live bookings, orders, and multi-role workflows.",
       href: "https://bundo.ng",
       featured: true,
     },
@@ -107,7 +107,7 @@ const fullResumeFixture: Resume = {
       slug: "pizza-ordering-platform",
       title: "Pizza Ordering Platform",
       summary:
-        "Restaurant ordering system with Spring Boot menu, cart, and checkout APIs backed by PostgreSQL and a React frontend for transactional ordering.",
+        "Full-stack restaurant ordering platform with Spring Boot APIs for menu management, cart composition, and transactional checkout. Implemented PostgreSQL relational modeling and a React frontend for complete end-to-end order submission flows.",
       href: "https://github.com/DedeStunting/Pizza-Mern-Application",
       featured: false,
     },
@@ -115,7 +115,7 @@ const fullResumeFixture: Resume = {
       slug: "real-time-chat",
       title: "Real-Time Chat",
       summary:
-        "Messaging app with Socket.IO WebSockets, MongoDB-backed history, and room-based live chat with persistent threads and presence updates.",
+        "Real-time messaging application using Socket.IO for live WebSocket delivery and MongoDB for durable chat history. Built room-based conversations with presence updates and persistent threads users can reopen and continue anytime.",
       href: "https://github.com/DedeStunting/real-time-chat",
       featured: false,
     },
@@ -134,5 +134,13 @@ describe("ResumePdfDocument", () => {
     const buffer = await renderToBuffer(<ResumePdfDocument resume={fullResumeFixture} />);
 
     expect(countPdfPages(buffer)).toBe(1);
+    expect(buffer.toString("latin1")).toContain("/MediaBox");
+  });
+
+  it("renders on A4 page size", async () => {
+    const buffer = await renderToBuffer(<ResumePdfDocument resume={fullResumeFixture} />);
+    const pdf = buffer.toString("latin1");
+
+    expect(pdf).toMatch(/\/MediaBox\s*\[0 0 595(\.\d+)? 841(\.\d+)?\]/);
   });
 });
