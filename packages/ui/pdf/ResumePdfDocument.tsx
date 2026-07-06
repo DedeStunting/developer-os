@@ -4,61 +4,63 @@ import type { Resume } from "@developer-os/types";
 
 import { formatExperienceRange } from "../lib/formatting";
 
-const SECTION_GAP = 11;
-const ITEM_GAP = 9;
-
 const styles = StyleSheet.create({
   page: {
-    paddingHorizontal: 40,
-    paddingVertical: 36,
+    paddingHorizontal: 44,
+    paddingTop: 48,
+    paddingBottom: 52,
     fontFamily: "Helvetica",
-    fontSize: 10,
-    lineHeight: 1.4,
+    fontSize: 10.5,
+    lineHeight: 1.5,
     color: "#111827",
+    display: "flex",
+    flexDirection: "column",
   },
   content: {
+    flex: 1,
+    display: "flex",
     flexDirection: "column",
-    gap: SECTION_GAP,
+    justifyContent: "space-between",
   },
   header: {
-    gap: 5,
+    gap: 6,
   },
   name: {
-    fontSize: 22,
+    fontSize: 24,
     fontFamily: "Helvetica-Bold",
-    marginBottom: 6,
+    marginBottom: 2,
   },
   title: {
     fontSize: 12,
     color: "#374151",
   },
   contact: {
-    fontSize: 9,
+    fontSize: 9.5,
     color: "#4B5563",
-    marginTop: 1,
+    lineHeight: 1.45,
   },
   summary: {
-    fontSize: 10,
+    fontSize: 10.5,
     color: "#374151",
-    lineHeight: 1.45,
+    lineHeight: 1.55,
     marginTop: 2,
   },
   section: {
-    gap: 6,
+    gap: 9,
   },
   sectionTitle: {
-    fontSize: 9,
+    fontSize: 9.5,
     fontFamily: "Helvetica-Bold",
-    letterSpacing: 1,
+    letterSpacing: 1.1,
     textTransform: "uppercase",
     borderBottomWidth: 1,
     borderBottomColor: "#D1D5DB",
-    paddingBottom: 4,
-    marginBottom: 2,
+    paddingBottom: 5,
+    marginBottom: 4,
   },
   experienceItem: {
-    gap: 3,
-    marginBottom: ITEM_GAP,
+    gap: 4,
+    marginBottom: 13,
   },
   experienceHeader: {
     flexDirection: "row",
@@ -73,30 +75,32 @@ const styles = StyleSheet.create({
   },
   company: {
     color: "#374151",
-    fontSize: 10,
+    fontSize: 10.5,
+    lineHeight: 1.45,
   },
   date: {
     color: "#6B7280",
-    fontSize: 9,
+    fontSize: 9.5,
     flexShrink: 0,
   },
   bullet: {
-    paddingLeft: 8,
-    fontSize: 10,
-    lineHeight: 1.4,
-    marginBottom: 2,
+    paddingLeft: 10,
+    fontSize: 10.5,
+    lineHeight: 1.52,
+    marginBottom: 3,
   },
   techLine: {
     color: "#6B7280",
-    fontSize: 9,
-    marginTop: 2,
+    fontSize: 9.5,
+    marginTop: 3,
+    lineHeight: 1.45,
   },
   projectItem: {
-    marginBottom: 6,
+    marginBottom: 10,
   },
   projectLine: {
-    fontSize: 10,
-    lineHeight: 1.4,
+    fontSize: 10.5,
+    lineHeight: 1.5,
   },
   projectTitle: {
     fontFamily: "Helvetica-Bold",
@@ -104,19 +108,12 @@ const styles = StyleSheet.create({
   projectSummary: {
     color: "#374151",
   },
-  skillsGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    gap: 6,
-  },
-  skillGroup: {
-    width: "48%",
-    gap: 2,
+  skillsList: {
+    gap: 8,
   },
   skillLine: {
-    fontSize: 10,
-    lineHeight: 1.4,
+    fontSize: 10.5,
+    lineHeight: 1.5,
   },
   skillCategory: {
     fontFamily: "Helvetica-Bold",
@@ -179,7 +176,7 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
                 </Text>
                 {entry.highlights.map((highlight) => (
                   <Text key={highlight} style={styles.bullet}>
-                    • {highlight}
+                    - {highlight}
                   </Text>
                 ))}
                 {entry.technologies && entry.technologies.length > 0 ? (
@@ -236,14 +233,12 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
 
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Skills</Text>
-            <View style={styles.skillsGrid}>
+            <View style={styles.skillsList}>
               {skillGroups.map((group) => (
-                <View key={group.category} style={styles.skillGroup}>
-                  <Text style={styles.skillLine}>
-                    <Text style={styles.skillCategory}>{group.category}: </Text>
-                    <Text style={styles.skillItems}>{group.items.join(", ")}</Text>
-                  </Text>
-                </View>
+                <Text key={group.category} style={styles.skillLine}>
+                  <Text style={styles.skillCategory}>{group.category}: </Text>
+                  <Text style={styles.skillItems}>{group.items.join(", ")}</Text>
+                </Text>
               ))}
             </View>
           </View>
