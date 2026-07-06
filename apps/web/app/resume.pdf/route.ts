@@ -4,7 +4,7 @@ import { renderToBuffer } from "@react-pdf/renderer";
 import { getResume } from "@developer-os/core/content";
 import { ResumePdfDocument } from "@developer-os/ui/pdf";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   const resume = getResume();
@@ -16,7 +16,7 @@ export async function GET() {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": 'attachment; filename="chiedu-david-resume.pdf"',
-      "Cache-Control": "public, max-age=31536000, immutable",
+      "Cache-Control": "public, max-age=0, must-revalidate",
     },
   });
 }
