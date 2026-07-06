@@ -6,6 +6,12 @@ import type { Resume } from "@developer-os/types";
 
 import { ResumePdfDocument } from "./ResumePdfDocument";
 
+function countPdfPages(buffer: Buffer): number {
+  const text = buffer.toString("latin1");
+  const pageMatches = text.match(/\/Type\s*\/Page\b/g);
+  return pageMatches ? pageMatches.length : 0;
+}
+
 const resumeFixture: Resume = {
   profile: {
     name: "Chiedu David",
@@ -43,11 +49,87 @@ const resumeFixture: Resume = {
   ],
 };
 
+const fullResumeFixture: Resume = {
+  profile: {
+    name: "Chiedu David",
+    title: "Software Engineer",
+    email: "chibundochiedu@gmail.com",
+    location: "Remote",
+    summary:
+      "Backend engineer focused on shipping reliable production systems, from API design and data modeling to cloud deployment and operational readiness.",
+    github: "https://github.com/DedeStunting",
+    portfolio: "https://developer-os-theta.vercel.app/",
+  },
+  experience: [
+    {
+      company: "Bundo Tech Inc.",
+      title: "Backend Software Engineer",
+      location: "Remote",
+      start: "2024-03",
+      end: null,
+      highlights: [
+        "Designed and shipped production APIs, data workflows, and deployment pipelines for a customer-facing product used in live environments.",
+        "Modeled relational data in PostgreSQL and implemented service boundaries that support marketplace operations at scale.",
+        "Improved deployment reliability with containerized services and environment-aware configuration.",
+      ],
+      technologies: ["TypeScript", "Node.js", "PostgreSQL", "Docker", "Render"],
+    },
+    {
+      company: "NDF",
+      title: "Software Engineer",
+      location: "Remote",
+      start: "2022-06",
+      end: "2024-02",
+      highlights: [
+        "Built backend services and integrations supporting business operations with maintainable architecture.",
+        "Delivered API integrations and data workflows with emphasis on testing and delivery discipline.",
+      ],
+      technologies: ["Java", "Spring Boot", "PostgreSQL", "MongoDB"],
+    },
+  ],
+  education: [],
+  skillGroups: [
+    { category: "Backend", items: ["Java", "Spring Boot", "Node.js", "Express"] },
+    { category: "Databases", items: ["PostgreSQL", "MongoDB", "Supabase"] },
+    { category: "Cloud", items: ["Docker", "Render", "AWS S3"] },
+    { category: "Frontend", items: ["React", "Tailwind CSS"] },
+  ],
+  projects: [
+    {
+      slug: "bundo",
+      title: "Bundo",
+      summary: "Marketplace for booking trusted local service providers.",
+      href: "https://bundo.ng",
+      featured: true,
+    },
+    {
+      slug: "pizza-ordering-platform",
+      title: "Pizza Ordering Platform",
+      summary: "Restaurant ordering system with menu, cart, and checkout APIs.",
+      href: "https://github.com/DedeStunting/Pizza-Mern-Application",
+      featured: false,
+    },
+    {
+      slug: "real-time-chat",
+      title: "Real-Time Chat",
+      summary: "Messaging app with live WebSocket updates and persistent chat history.",
+      href: "https://github.com/DedeStunting/real-time-chat",
+      featured: false,
+    },
+  ],
+};
+
 describe("ResumePdfDocument", () => {
   it("generates a PDF buffer from resume data", async () => {
     const buffer = await renderToBuffer(<ResumePdfDocument resume={resumeFixture} />);
 
     expect(buffer.byteLength).toBeGreaterThan(0);
     expect(buffer.subarray(0, 4).toString()).toBe("%PDF");
+  });
+
+  it("fits the full resume on a single page", async () => {
+    const buffer = await renderToBuffer(<ResumePdfDocument resume={fullResumeFixture} />);
+
+    expect(countPdfPages(buffer)).toBe(1);
   });
 });

@@ -2,7 +2,7 @@ export const hero = {
   headline:
     "Backend Software Engineer building scalable products, developer tools, and production systems.",
   supportingParagraph:
-    "I design and ship backend platforms with Spring Boot and Node.js, model data in PostgreSQL, and deploy cloud-native services with a focus on reliability, observability, and system design.",
+    "Backend engineer focused on shipping reliable production systems, from API design and data modeling to cloud deployment and operational readiness.",
   primaryCta: {
     label: "Projects",
     href: "/#projects",

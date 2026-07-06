@@ -135,13 +135,23 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.hero-header > p {
+.hero-header > .hero-title {
   margin-bottom: 1.25rem;
 }
 
 @media (min-width: 640px) {
-  .hero-header > p {
+  .hero-header > .hero-title {
     margin-bottom: 1.5rem;
+  }
+}
+
+.hero-about {
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-about {
+    margin-top: 1.25rem;
   }
 }
 
@@ -253,15 +263,27 @@ body {
   padding-top: 5rem;
 }
 
+.portfolio-sections > section:first-child {
+  padding-top: 2.5rem;
+}
+
 @media (min-width: 768px) {
   .portfolio-sections > section {
     padding-top: 6rem;
+  }
+
+  .portfolio-sections > section:first-child {
+    padding-top: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
   .portfolio-sections > section {
     padding-top: 6.5rem;
+  }
+
+  .portfolio-sections > section:first-child {
+    padding-top: 3.25rem;
   }
 }
 

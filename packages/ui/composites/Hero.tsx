@@ -17,10 +17,13 @@ export function Hero({ content }: HeroProps) {
   return (
     <header className="hero-header">
       <h1 className="hero-name text-foreground font-bold">{content.name}</h1>
-      <p className="text-foreground-muted text-[10px] font-medium uppercase tracking-[0.24em] sm:text-[11px]">
+      <p className="hero-title text-foreground-muted text-[10px] font-medium uppercase tracking-[0.24em] sm:text-[11px]">
         {content.title}
       </p>
       <SocialLinks links={socialLinks} />
+      <p className="hero-about text-foreground-secondary max-w-[36rem] text-sm leading-relaxed sm:text-[15px]">
+        {content.supportingParagraph}
+      </p>
     </header>
   );
 }
