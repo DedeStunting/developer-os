@@ -8,6 +8,7 @@ export { hero } from "./site/hero";
 export { trustMetrics } from "./site/trust";
 export { homeCta } from "./site/cta";
 export { seo } from "./site/seo";
+export { siteUrl } from "./site/url";
 export { social } from "./site/social";
 export { navigation } from "./site/navigation";
 

@@ -10,6 +10,7 @@ export function generateMetadata(): Metadata {
   return {
     title: homeSeo.title,
     description: homeSeo.description,
+    ...(homeSeo.url ? { alternates: { canonical: homeSeo.url } } : {}),
     openGraph: {
       title: homeSeo.title,
       description: homeSeo.description,

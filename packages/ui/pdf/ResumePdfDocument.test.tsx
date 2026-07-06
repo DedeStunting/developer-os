@@ -58,7 +58,7 @@ const fullResumeFixture: Resume = {
     summary:
       "Backend engineer focused on shipping reliable production systems, from API design and data modeling to cloud deployment and operational readiness.",
     github: "https://github.com/DedeStunting",
-    portfolio: "https://developer-os-theta.vercel.app/",
+    portfolio: "https://chiedudev.vercel.app",
   },
   experience: [
     {

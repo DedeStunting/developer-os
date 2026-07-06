@@ -1,3 +1,5 @@
+import { siteUrl } from "../site/url";
+
 export const profile = {
   name: "Chiedu David",
   title: "Software Engineer",
@@ -6,5 +8,5 @@ export const profile = {
   summary:
     "Backend engineer focused on shipping reliable production systems, from API design and data modeling to cloud deployment and operational readiness.",
   github: "https://github.com/DedeStunting",
-  portfolio: "https://developer-os-theta.vercel.app/",
+  portfolio: siteUrl,
 } as const;
