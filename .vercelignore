@@ -1,0 +1,4 @@
+# Only deploy the Next.js app — not Storybook or other workspace packages.
+apps/storybook
+apps/studio
+apps/resume
