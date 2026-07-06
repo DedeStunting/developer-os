@@ -163,10 +163,11 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
             {experience.map((entry, index) => (
               <View
                 key={`${entry.company}-${entry.start}`}
-                style={[
-                  styles.experienceItem,
-                  index === experience.length - 1 ? { marginBottom: 0 } : undefined,
-                ]}
+                style={
+                  index === experience.length - 1
+                    ? [styles.experienceItem, { marginBottom: 0 }]
+                    : styles.experienceItem
+                }
               >
                 <View style={styles.experienceHeader}>
                   <Text style={styles.roleTitle}>{entry.title}</Text>
@@ -193,10 +194,11 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
             {projects.map((project, index) => (
               <View
                 key={project.slug}
-                style={[
-                  styles.projectItem,
-                  index === projects.length - 1 ? { marginBottom: 0 } : undefined,
-                ]}
+                style={
+                  index === projects.length - 1
+                    ? [styles.projectItem, { marginBottom: 0 }]
+                    : styles.projectItem
+                }
               >
                 <Text style={styles.projectLine}>
                   <Text style={styles.projectTitle}>{project.title}</Text>
@@ -215,10 +217,11 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
               {education.map((entry, index) => (
                 <View
                   key={`${entry.institution}-${entry.graduationDate}`}
-                  style={[
-                    styles.experienceItem,
-                    index === education.length - 1 ? { marginBottom: 0 } : undefined,
-                  ]}
+                  style={
+                    index === education.length - 1
+                      ? [styles.experienceItem, { marginBottom: 0 }]
+                      : styles.experienceItem
+                  }
                 >
                   <Text style={styles.roleTitle}>{entry.institution}</Text>
                   <Text style={styles.company}>
