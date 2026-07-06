@@ -49,12 +49,12 @@ export function ResumeHeader({ profile }: ResumeHeaderProps) {
   ].filter(Boolean);
 
   return (
-    <header className="flex flex-col gap-5 sm:gap-6">
-      <div className="flex flex-col gap-2 sm:gap-3">
+    <header className="resume-header flex flex-col gap-5 sm:gap-6">
+      <div className="flex flex-col">
         <h1 className="font-display text-foreground text-2xl font-normal tracking-tight sm:text-3xl md:text-4xl">
           {profile.name}
         </h1>
-        <p className="text-foreground-muted text-[10px] font-medium uppercase tracking-[0.28em] sm:text-[11px]">
+        <p className="text-foreground-muted mt-2 text-[10px] font-medium uppercase tracking-[0.28em] sm:mt-2.5 sm:text-[11px]">
           {profile.title}
         </p>
       </div>

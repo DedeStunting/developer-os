@@ -6,99 +6,110 @@ import { formatExperienceRange } from "../lib/formatting";
 
 const styles = StyleSheet.create({
   page: {
-    padding: 48,
+    padding: 36,
     fontFamily: "Helvetica",
-    fontSize: 10,
-    lineHeight: 1.45,
+    fontSize: 9,
+    lineHeight: 1.35,
     color: "#111827",
   },
   header: {
-    marginBottom: 20,
+    marginBottom: 12,
   },
   name: {
-    fontSize: 22,
+    fontSize: 20,
     fontFamily: "Helvetica-Bold",
-    marginBottom: 4,
-  },
-  title: {
-    fontSize: 12,
-    color: "#4B5563",
     marginBottom: 8,
   },
+  title: {
+    fontSize: 11,
+    color: "#4B5563",
+    marginBottom: 6,
+  },
   contact: {
-    fontSize: 9,
+    fontSize: 8,
     color: "#6B7280",
-    marginBottom: 10,
+    marginBottom: 6,
   },
   summary: {
-    fontSize: 10,
+    fontSize: 9,
     color: "#374151",
+    lineHeight: 1.4,
   },
   section: {
-    marginTop: 16,
+    marginTop: 10,
   },
   sectionTitle: {
-    fontSize: 9,
+    fontSize: 8,
     fontFamily: "Helvetica-Bold",
     letterSpacing: 1.2,
     textTransform: "uppercase",
     borderBottomWidth: 1,
     borderBottomColor: "#E5E7EB",
-    paddingBottom: 4,
-    marginBottom: 10,
+    paddingBottom: 3,
+    marginBottom: 6,
   },
   experienceItem: {
-    marginBottom: 12,
+    marginBottom: 8,
   },
   experienceHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 2,
+    marginBottom: 1,
   },
   roleTitle: {
     fontFamily: "Helvetica-Bold",
-    fontSize: 11,
+    fontSize: 10,
   },
   company: {
     color: "#4B5563",
-    marginBottom: 4,
+    fontSize: 9,
+    marginBottom: 2,
   },
   date: {
     color: "#6B7280",
-    fontSize: 9,
+    fontSize: 8,
   },
   bullet: {
-    marginBottom: 3,
-    paddingLeft: 8,
+    marginBottom: 2,
+    paddingLeft: 6,
+    fontSize: 9,
   },
-  tagRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 4,
-    marginTop: 4,
-  },
-  tag: {
-    backgroundColor: "#F3F4F6",
-    color: "#374151",
+  techLine: {
+    color: "#6B7280",
     fontSize: 8,
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-    borderRadius: 3,
+    marginTop: 2,
+  },
+  projectItem: {
+    marginBottom: 5,
   },
   projectTitle: {
     fontFamily: "Helvetica-Bold",
-    marginBottom: 2,
+    fontSize: 9,
+    marginBottom: 1,
   },
   projectSummary: {
     color: "#4B5563",
-    marginBottom: 8,
+    fontSize: 8,
+    lineHeight: 1.35,
+  },
+  skillsGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
   },
   skillGroup: {
-    marginBottom: 8,
+    width: "48%",
+    marginBottom: 4,
   },
   skillCategory: {
     fontFamily: "Helvetica-Bold",
-    marginBottom: 4,
+    fontSize: 8,
+    marginBottom: 1,
+  },
+  skillItems: {
+    color: "#4B5563",
+    fontSize: 8,
+    lineHeight: 1.35,
   },
 });
 
@@ -149,13 +160,7 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
                 </Text>
               ))}
               {entry.technologies && entry.technologies.length > 0 ? (
-                <View style={styles.tagRow}>
-                  {entry.technologies.map((technology) => (
-                    <Text key={technology} style={styles.tag}>
-                      {technology}
-                    </Text>
-                  ))}
-                </View>
+                <Text style={styles.techLine}>{entry.technologies.join(" · ")}</Text>
               ) : null}
             </View>
           ))}
@@ -164,7 +169,7 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Projects</Text>
           {projects.map((project) => (
-            <View key={project.slug}>
+            <View key={project.slug} style={styles.projectItem}>
               <Link src={resolveProjectHref(project.href, profile.portfolio)}>
                 <Text style={styles.projectTitle}>{project.title}</Text>
               </Link>
@@ -194,18 +199,14 @@ export function ResumePdfDocument({ resume }: ResumePdfDocumentProps) {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Skills</Text>
-          {skillGroups.map((group) => (
-            <View key={group.category} style={styles.skillGroup}>
-              <Text style={styles.skillCategory}>{group.category}</Text>
-              <View style={styles.tagRow}>
-                {group.items.map((item) => (
-                  <Text key={item} style={styles.tag}>
-                    {item}
-                  </Text>
-                ))}
+          <View style={styles.skillsGrid}>
+            {skillGroups.map((group) => (
+              <View key={group.category} style={styles.skillGroup}>
+                <Text style={styles.skillCategory}>{group.category}</Text>
+                <Text style={styles.skillItems}>{group.items.join(", ")}</Text>
               </View>
-            </View>
-          ))}
+            ))}
+          </View>
         </View>
       </Page>
     </Document>

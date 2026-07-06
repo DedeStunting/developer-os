@@ -6,10 +6,10 @@ export interface ResumeSkillsProps {
 
 export function ResumeSkills({ groups }: ResumeSkillsProps) {
   return (
-    <ul className="flex flex-col gap-6 sm:gap-7">
+    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-4">
       {groups.map((group) => (
         <li key={group.category}>
-          <p className="text-foreground-muted mb-2 font-mono text-[10px] uppercase tracking-[0.14em] sm:text-[11px]">
+          <p className="text-foreground-muted mb-1 text-[10px] font-medium uppercase tracking-[0.14em] sm:text-[11px]">
             {group.category}
           </p>
           <p className="text-foreground-secondary text-sm leading-relaxed sm:text-[15px]">
