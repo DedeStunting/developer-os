@@ -2,6 +2,7 @@ import {
   education,
   experience,
   profile,
+  resumeProjectSummaries,
   resumeSeo,
   skillGroups,
 } from "@developer-os/platform/content";
@@ -49,7 +50,9 @@ export function getResumeProjects(): ResumeProject[] {
     .map((project) => ({
       slug: project.slug,
       title: project.title,
-      summary: project.summary,
+      summary:
+        resumeProjectSummaries[project.slug as keyof typeof resumeProjectSummaries] ??
+        project.summary,
       href: project.href,
       external: project.external,
       logoUrl: project.logoUrl,

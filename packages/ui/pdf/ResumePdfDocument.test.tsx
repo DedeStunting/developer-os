@@ -98,21 +98,24 @@ const fullResumeFixture: Resume = {
     {
       slug: "bundo",
       title: "Bundo",
-      summary: "Marketplace for booking trusted local service providers.",
+      summary:
+        "Marketplace for booking trusted local service providers, with production REST APIs, PostgreSQL, RBAC, Firebase auth, and Docker on Render for live bookings and orders.",
       href: "https://bundo.ng",
       featured: true,
     },
     {
       slug: "pizza-ordering-platform",
       title: "Pizza Ordering Platform",
-      summary: "Restaurant ordering system with menu, cart, and checkout APIs.",
+      summary:
+        "Restaurant ordering system with Spring Boot menu, cart, and checkout APIs backed by PostgreSQL and a React frontend for transactional ordering.",
       href: "https://github.com/DedeStunting/Pizza-Mern-Application",
       featured: false,
     },
     {
       slug: "real-time-chat",
       title: "Real-Time Chat",
-      summary: "Messaging app with live WebSocket updates and persistent chat history.",
+      summary:
+        "Messaging app with Socket.IO WebSockets, MongoDB-backed history, and room-based live chat with persistent threads and presence updates.",
       href: "https://github.com/DedeStunting/real-time-chat",
       featured: false,
     },

@@ -3,6 +3,7 @@ export { experience } from "./resume/experience";
 export { skillGroups } from "./resume/skills";
 export { education } from "./resume/education";
 export { resumeSeo } from "./resume/seo";
+export { resumeProjectSummaries } from "./resume/projects";
 
 export { hero } from "./site/hero";
 export { trustMetrics } from "./site/trust";

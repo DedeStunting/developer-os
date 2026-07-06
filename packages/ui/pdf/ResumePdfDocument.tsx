@@ -7,11 +7,11 @@ import { formatExperienceRange } from "../lib/formatting";
 const styles = StyleSheet.create({
   page: {
     paddingHorizontal: 44,
-    paddingTop: 48,
-    paddingBottom: 52,
+    paddingTop: 46,
+    paddingBottom: 48,
     fontFamily: "Helvetica",
     fontSize: 10.5,
-    lineHeight: 1.5,
+    lineHeight: 1.48,
     color: "#111827",
     display: "flex",
     flexDirection: "column",
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   section: {
-    gap: 9,
+    gap: 8,
   },
   sectionTitle: {
     fontSize: 9.5,
@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   experienceItem: {
-    gap: 4,
-    marginBottom: 13,
+    gap: 3,
+    marginBottom: 10,
   },
   experienceHeader: {
     flexDirection: "row",
@@ -86,8 +86,8 @@ const styles = StyleSheet.create({
   bullet: {
     paddingLeft: 10,
     fontSize: 10.5,
-    lineHeight: 1.52,
-    marginBottom: 3,
+    lineHeight: 1.5,
+    marginBottom: 2,
   },
   techLine: {
     color: "#6B7280",
@@ -96,11 +96,11 @@ const styles = StyleSheet.create({
     lineHeight: 1.45,
   },
   projectItem: {
-    marginBottom: 10,
+    marginBottom: 8,
   },
   projectLine: {
     fontSize: 10.5,
-    lineHeight: 1.5,
+    lineHeight: 1.48,
   },
   projectTitle: {
     fontFamily: "Helvetica-Bold",
