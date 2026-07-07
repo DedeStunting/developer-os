@@ -1,3 +1,5 @@
+import { resumeDownload } from "./resume";
+
 export const primaryNavigation = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/#projects" },
@@ -5,7 +7,7 @@ export const primaryNavigation = [
 ] as const;
 
 export const footerNavigation = [
-  { label: "Download PDF", href: "/resume.pdf", external: false },
+  { label: "Download PDF", href: resumeDownload.url, external: false },
   { label: "Bundo", href: "https://bundo.ng", external: true },
 ] as const;
 

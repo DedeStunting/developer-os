@@ -1,3 +1,5 @@
+import { resumeDownload } from "@developer-os/config/resume";
+
 export const hero = {
   headline:
     "Backend Software Engineer building scalable products, developer tools, and production systems.",
@@ -9,6 +11,6 @@ export const hero = {
   },
   secondaryCta: {
     label: "Download PDF",
-    href: "/resume.pdf",
+    href: resumeDownload.url,
   },
 } as const;

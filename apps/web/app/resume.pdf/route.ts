@@ -14,8 +14,9 @@ export async function GET() {
       headers: {
         "Content-Type": "application/pdf",
         "Content-Disposition": `attachment; filename="${RESUME_DOWNLOAD_FILENAME}"`,
-        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
         Pragma: "no-cache",
+        Expires: "0",
         ETag: etag,
         "Last-Modified": stats.mtime.toUTCString(),
       },

@@ -16,6 +16,7 @@
     "./analytics": "./analytics.ts",
     "./metadata": "./metadata.ts",
     "./theme": "./theme.ts",
-    "./social": "./social.ts"
+    "./social": "./social.ts",
+    "./resume": "./resume.ts"
   }
 }

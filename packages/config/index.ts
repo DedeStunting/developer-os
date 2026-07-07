@@ -1,4 +1,5 @@
 export { site, type SiteConfig } from "./site";
+export { resumeDownload, RESUME_VERSION } from "./resume";
 export {
   primaryNavigation,
   footerNavigation,

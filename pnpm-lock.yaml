@@ -257,6 +257,9 @@ importers:
 
   platform:
     dependencies:
+      '@developer-os/config':
+        specifier: workspace:*
+        version: link:../packages/config
       zod:
         specifier: ^3.25.67
         version: 3.25.76
