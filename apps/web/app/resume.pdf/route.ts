@@ -16,7 +16,7 @@ export async function GET() {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": 'attachment; filename="chiedu-david-resume.pdf"',
-      "Cache-Control": "public, max-age=0, must-revalidate",
+      "Cache-Control": "no-store",
     },
   });
 }
