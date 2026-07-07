@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --passWithNoTests",
-    "generate:resume-pdf": "tsx scripts/generate-resume-pdf.ts"
+    "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
     "@developer-os/config": "workspace:*",
@@ -28,7 +27,6 @@
     "@tailwindcss/postcss": "^4.1.10",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.10",
-    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
 }
