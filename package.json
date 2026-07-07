@@ -10,6 +10,7 @@
     "test": "turbo test",
     "storybook": "pnpm --filter @developer-os/storybook dev",
     "build-storybook": "pnpm --filter @developer-os/storybook build",
+    "generate:resume-pdf": "pnpm --filter @developer-os/web generate:resume-pdf",
     "prepare": "husky"
   },
   "devDependencies": {
